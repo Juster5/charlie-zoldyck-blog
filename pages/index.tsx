@@ -16,6 +16,13 @@ const sectionFourItems = [
   }
 ]
 
+export async function getStaticPaths() {
+  return {
+    paths: '/',
+    fallback: 'blocking',
+  };
+}
+
 export default function Home() {
   
   const [activeIndex, setActiveIndex ]= useState(0)
