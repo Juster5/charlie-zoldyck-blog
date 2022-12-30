@@ -38,6 +38,14 @@
     border-radius: 4px;
     cursor: pointer;
   }
+  .menu {
+    margin-left: 20px;
+    font-size: 20px;
+    &::before {
+      content: "\e055";
+      font-family: fa-f5350cc488;  
+    }
+  }
 }
 .languages {
   margin-left:12px;

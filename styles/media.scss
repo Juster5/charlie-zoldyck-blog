@@ -1,9 +1,29 @@
+// 小屏样式
 @media (max-width: 1023px) {
   #body{
     .okx-app {
-      .media-hidden {
+      .sm-screen-hidden {
         display: none;
+      }
+      .sm-screen-show {
+        display: inline-block;
       }
     }
   }
 }
+
+// 大屏样式
+@media (min-width: 1023px) {
+  #body{
+    .okx-app {
+      .bg-screen-hidden {
+        display: none;
+      }
+      .bg-screen-show {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+

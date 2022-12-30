@@ -16,20 +16,20 @@ const Header: NextPage = () => {
       <div className={styles.navs}>
         {
           navs.map(el=>{
-            return <span key={el.title} className={styles['nav-item'] + ' media-hidden'}>{el.title}</span>
+            return <span key={el.title} className={styles['nav-item'] + ' sm-screen-hidden'}>{el.title}</span>
           })
         }
       </div>
 
       {/* 登录区域 */}
       <div className={styles['login-wrapper']}>
-        <span className={styles.login}>Log in</span>
+        <span className={styles.login + ' sm-screen-hidden'}>Log in</span>
         <span className={styles.signup}>Sign up</span>
+        <span className={styles.menu + ' bg-screen-hidden'}></span>
       </div>
 
       {/* 多语言区域 */}
-      <div className={styles.languages}>
-
+      <div className={styles.languages + ' sm-screen-hidden'}>
       </div>
 
     </header>    
