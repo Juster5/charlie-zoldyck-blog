@@ -1,3 +1,4 @@
+
 .collpase-wrapper {
   position: relative;
   height: 100%;
@@ -8,19 +9,20 @@
       z-index: 9999;
       opacity: 1;
       transform: translateY(0);
+      pointer-events: all;
     } 
   }
   .collpase-menu:hover{
     z-index: 9999;
     opacity: 1;
     transform: translateY(0);
+    pointer-events: all;
   }
   
   .collpase-menu {
-    z-index: -1;
     position: absolute;
     top: 48px;
-    // left: -50%;
+    pointer-events: none;
     min-width: 245px;
     padding: 10px;
     border-radius: 6px;

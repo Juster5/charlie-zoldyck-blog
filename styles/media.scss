@@ -1,9 +1,23 @@
-$width-ipad: 768px;
-$width-ipad-pro: 1024px;
-$width-pc:  1270px;
+$width-min: 768px;
+$width-mid: 1024px;
+$width-lg:  1270px;
+
+@mixin responsive($width) {
+  @if $width == sm {
+      @media only screen and (max-width: $width-min) { @content; }
+  }
+
+  @else if $width == mid {
+      @media only screen and (min-width: $width-mid){  @content; }
+  }
+
+  @else if $width == lg {
+      @media only screen and (min-width: $width-lg) { @content; }
+  }
+}
 
 // 小屏样式
-@media (max-width: $width-ipad-pro) {
+@media (max-width: $width-min) {
   #body{
     .okx-app {
       .sm-screen-hidden {
@@ -12,12 +26,18 @@ $width-pc:  1270px;
       .sm-screen-show {
         display: inline-block;
       }
+      .pc-text {
+        display: none;
+      }
+      .mobile-text {
+        display: block;
+      }      
     }
   }
 }
 
 // 大屏样式
-@media (min-width: $width-ipad-pro) {
+@media (min-width: $width-min) {
   #body{
     .okx-app {
       .bg-screen-hidden {
@@ -25,6 +45,12 @@ $width-pc:  1270px;
       }
       .bg-screen-show {
         display: inline-block;
+      }
+      .pc-text {
+        display: block;
+      }
+      .mobile-text {
+        display: none;
       }
     }
   }

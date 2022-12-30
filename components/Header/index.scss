@@ -6,6 +6,13 @@
   background-color: #121212;
   color: #fff;
 
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
   .navs {
     display: flex;
     align-items: center;  
@@ -18,7 +25,17 @@
       align-items: center;
       height: 100%;
       cursor: pointer;
+      &:hover{
+        .title-arrow {
+          transform: rotate(-180deg);
+          margin-left: 12px;
+        }        
+      }
     }  
+    .title-arrow {
+      margin-left: 12px;
+      transition: all 0.1s ease;
+    }
   }
   
   .logo-wrapper {
@@ -59,6 +76,13 @@
     cursor: pointer;
     height: 100%;
   }  
+}
+
+.fixed-block {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
 }
 
 
