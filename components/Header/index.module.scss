@@ -1,4 +1,4 @@
-.navs {
+.header {
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -6,18 +6,45 @@
   background-color: #121212;
   color: #fff;
 }
-.nav-item {
+.navs {
   display: flex;
-  padding: 0 10px;
-  align-items: center;
-  height: 100%;
-  cursor: pointer;
+  align-items: center;  
+  flex: 1;
+  .nav-item {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+  }  
 }
 
 .logo-wrapper {
   margin-right: 24px;
 }
 
-.user-login {
-  
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  .login {
+    display: inline-block;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+  .signup{
+    display: inline-block;
+    padding: 6px 8px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+.languages {
+  margin: 0 12px;
+  font-size: 20px;
+  cursor: pointer;
+  &::before{
+    content: "\e039";
+    font-family: fa-f5350cc488;  
+  } 
 }

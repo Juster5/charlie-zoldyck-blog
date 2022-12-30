@@ -6,16 +6,32 @@ import { navs } from './constant';
 
 const Header: NextPage = () => {
   return (
-    <header className={styles.navs}>
+    <header className={styles.header}>
+      {/* logo区域 */}
       <div className={styles['logo-wrapper']}>
         <Image src="/images/logo.png" alt="OKX" width={82} height={36} />
       </div>
-      {
-        navs.map(el=>{
-          return <span key={el.title} className={styles['nav-item']}>{el.title}</span>
-        })
-      }
-      
+
+      {/* 导航栏区域 */}
+      <div className={styles.navs}>
+        {
+          navs.map(el=>{
+            return <span key={el.title} className={styles['nav-item']}>{el.title}</span>
+          })
+        }
+      </div>
+
+      {/* 登录区域 */}
+      <div className={styles['login-wrapper']}>
+        <span className={styles.login}>login in</span>
+        <span className={styles.signup}>sign up</span>
+      </div>
+
+      {/* 多语言区域 */}
+      <div className={styles.languages}>
+
+      </div>
+
     </header>    
   )
 }

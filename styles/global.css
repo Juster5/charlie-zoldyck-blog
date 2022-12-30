@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: HarmonyOS Sans,PingFang SC,Microsoft Yahei,Heiti SC,WenQuanYi Micro Hei,Helvetica Neue,Helvetica,Arial,sans-serif !important; */
+  font-family: inherit;
+  font-size: 14px;
 }
 
 * {
