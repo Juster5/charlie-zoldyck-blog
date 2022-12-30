@@ -6,14 +6,14 @@
   .collpase-trigger {
     height: 100%;
     &:hover+.collpase-menu {
-      z-index: 9999;
+      // z-index: 9999;
       opacity: 1;
       transform: translateY(0);
       pointer-events: all;
     } 
   }
   .collpase-menu:hover{
-    z-index: 9999;
+    // z-index: 9999;
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;

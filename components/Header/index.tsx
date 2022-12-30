@@ -34,7 +34,7 @@ const Header: NextPage = () => {
         <div className="login-wrapper">
           <span className="login sm-screen-hidden">Log in</span>
           <span className="signup">Sign up</span>
-          <span className="menu bg-screen-hidden"></span>
+          <span className="menu bg-screen-hidden okx-header-footer-hamburger"></span>
         </div>
 
         {/* 多语言区域 */}
