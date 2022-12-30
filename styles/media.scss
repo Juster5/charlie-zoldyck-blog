@@ -1,5 +1,9 @@
+$width-ipad: 768px;
+$width-ipad-pro: 1024px;
+$width-pc:  1270px;
+
 // 小屏样式
-@media (max-width: 1023px) {
+@media (max-width: $width-ipad-pro) {
   #body{
     .okx-app {
       .sm-screen-hidden {
@@ -13,7 +17,7 @@
 }
 
 // 大屏样式
-@media (min-width: 1023px) {
+@media (min-width: $width-ipad-pro) {
   #body{
     .okx-app {
       .bg-screen-hidden {

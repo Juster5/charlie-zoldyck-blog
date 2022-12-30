@@ -18,8 +18,8 @@ const Header: NextPage = () => {
         {
           navs.map(el=>{
             return (
-              <CollpaseMenu menu={el.children}>
-                <div key={el.title} className="nav-item sm-screen-hidden">{el.title}</div>              
+              <CollpaseMenu menu={el.children} key={el.title}>
+                <div className="nav-item sm-screen-hidden">{el.title}</div>              
               </CollpaseMenu>
             )
           })

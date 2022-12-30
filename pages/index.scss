@@ -1,0 +1,47 @@
+
+.home-page-container {
+  overflow-x: hidden;
+  height: 100%;
+  @media (max-width: 767px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  } 
+  
+  @media (min-width: 1024px) {
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
+  }
+  
+  @media (min-width: 1270px) {
+    padding-left: calc(50% - 624px);
+    padding-right: calc(50% - 624px);
+  }  
+}
+
+.first-section {
+  min-height: 585px;
+  width: 25%;
+  padding-bottom: 120px;
+  padding-top: 120px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 16.66666667%;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+
+// @media (max-width: 600px) {
+//   .grid {
+//     width: 100%;
+//     flex-direction: column;
+//   }
+// }

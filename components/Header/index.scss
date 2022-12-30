@@ -23,6 +23,7 @@
   
   .logo-wrapper {
     margin-right: 24px;
+    font-size: 0;
   }
   
   .login-wrapper {
@@ -57,10 +58,6 @@
     font-size: 20px;
     cursor: pointer;
     height: 100%;
-    // &::before{
-    //   content: "\e039";
-    //   font-family: fa-f5350cc488;  
-    // } 
   }  
 }
 
