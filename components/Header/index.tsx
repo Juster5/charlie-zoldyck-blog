@@ -16,15 +16,15 @@ const Header: NextPage = () => {
       <div className={styles.navs}>
         {
           navs.map(el=>{
-            return <span key={el.title} className={styles['nav-item']}>{el.title}</span>
+            return <span key={el.title} className={styles['nav-item'] + ' media-hidden'}>{el.title}</span>
           })
         }
       </div>
 
       {/* 登录区域 */}
       <div className={styles['login-wrapper']}>
-        <span className={styles.login}>login in</span>
-        <span className={styles.signup}>sign up</span>
+        <span className={styles.login}>Log in</span>
+        <span className={styles.signup}>Sign up</span>
       </div>
 
       {/* 多语言区域 */}

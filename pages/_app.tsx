@@ -1,8 +1,8 @@
 import '@/styles/global.css'
+import '@/styles/media.scss'
 import type { AppProps } from 'next/app'
 // import { NextPage } from 'next';
 import Layout from 'components/layout';
-import HeadLink from '@/components/Head';
 
 
 // type IProps = {
@@ -13,11 +13,10 @@ import HeadLink from '@/components/Head';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <HeadLink/>
+    <div className='okx-app'>
       <Layout>    
         <Component {...pageProps} />
       </Layout>      
-    </>
+    </div>
   )
 }
