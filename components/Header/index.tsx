@@ -7,7 +7,7 @@ import { navs } from './constant';
 
 const Header: NextPage = () => {
   return (
-    <header className="header">
+    <header className="okx-header">
       {/* logo区域 */}
       <div className="logo-wrapper">
         <Image src="/images/logo.png" alt="OKX" width={82} height={36} />
@@ -18,10 +18,8 @@ const Header: NextPage = () => {
         {
           navs.map(el=>{
             return (
-              <CollpaseMenu>
-                <div key={el.title} className="nav-item sm-screen-hidden">{el.title}
-                  <div className="collpase-menu"></div>
-                </div>              
+              <CollpaseMenu menu={el.children}>
+                <div key={el.title} className="nav-item sm-screen-hidden">{el.title}</div>              
               </CollpaseMenu>
             )
           })
@@ -36,9 +34,17 @@ const Header: NextPage = () => {
       </div>
 
       {/* 多语言区域 */}
-      <div className="languages sm-screen-hidden">
-      </div>
-
+      <CollpaseMenu position="right" 
+        menu={[{
+          title: '简体中文'
+        }, {
+          title: 'English'
+        }]}
+      >
+        <div className="languages sm-screen-hidden" >
+          <span className='okx-header-footer-language'></span>     
+        </div>
+      </CollpaseMenu>
     </header>    
   )
 }
