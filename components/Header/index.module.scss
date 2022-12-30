@@ -1,0 +1,23 @@
+.navs {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 48px;
+  background-color: #121212;
+  color: #fff;
+}
+.nav-item {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.logo-wrapper {
+  margin-right: 24px;
+}
+
+.user-login {
+  
+}
