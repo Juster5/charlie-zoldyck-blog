@@ -11,6 +11,7 @@
   align-items: center;  
   flex: 1;
   .nav-item {
+    position: relative;
     display: flex;
     padding: 0 10px;
     align-items: center;
@@ -56,3 +57,5 @@
     font-family: fa-f5350cc488;  
   } 
 }
+
+

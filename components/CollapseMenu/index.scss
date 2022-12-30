@@ -1,0 +1,17 @@
+.collpase-trigger:hover {
+  .collpase-menu {
+    opacity: 1;
+    transform: translateY(0);
+  } 
+}
+.collpase-menu {
+  position: absolute;
+  top: 32px;
+  left: -50%;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
