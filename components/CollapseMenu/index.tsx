@@ -16,7 +16,7 @@ type CollpaseMenuProps = {
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
   return (
     <div className="collpase-wrapper">
-      <div className="collpase-trigger">{props.children}</div>
+      {props.children}
       {props.menu && props.menu.length && (
         <div
           className={`collpase-menu collpase-${
