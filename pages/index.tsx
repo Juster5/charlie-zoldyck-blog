@@ -22,10 +22,17 @@ export default function Home() {
   const [activeImg, setActiveImg] = useState(sectionFourItems[0].img)
 
   useEffect(() => {
-    const videos = document.querySelectorAll("video")
-    for (let i = 0; i < videos.length; i++) {
-      const video = videos[i]
-      video.play()
+    const fn = () => {
+      const videos = document.querySelectorAll(".home-page-video")
+      for (let i = 0; i < videos.length; i++) {
+        const video = videos[i]
+        video.play()
+      }      
+    }
+    window.addEventListener('load', fn)
+
+    return () => {
+      window.removeEventListener('load', fn)
     }
   }, [])
 
@@ -34,7 +41,7 @@ export default function Home() {
 
       <div className='first-section'>
         <video
-          className='first-img'
+          className='first-img home-page-video'
           title='Faster, better, stronger than your average crypto exchange'
           autoPlay
           loop
@@ -54,8 +61,10 @@ export default function Home() {
         </div>
         <div className='second-body'>
           <video
-            className='img-wrapper'
+            className='img-wrapper home-page-video'
             title='Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more.'
+            autoPlay
+            loop            
             width='936'
             height='536'
             muted
@@ -103,8 +112,10 @@ export default function Home() {
         </div>
         <div className='fourth-body'>
           <video
-            className='img-wrapper pc-text'
+            className='img-wrapper pc-text home-page-video'
             title='Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more.'
+            autoPlay
+            loop            
             width='936'
             height='536'
             muted
