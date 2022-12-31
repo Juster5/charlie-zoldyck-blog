@@ -43,7 +43,7 @@ export default function Home() {
           title="Faster, better, stronger than your average crypto exchange"
           autoPlay
           playsInline
-          webkit-playsinline="true"          
+          webkit-playsinline="true"
           loop
           width="280"
           height="580"
@@ -70,7 +70,7 @@ export default function Home() {
             title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
             autoPlay
             playsInline
-            webkit-playsinline="true"                    
+            webkit-playsinline="true"
             loop
             width="936"
             height="536"
@@ -142,7 +142,7 @@ export default function Home() {
             title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
             autoPlay
             playsInline
-            webkit-playsinline="true"          
+            webkit-playsinline="true"
             loop
             width="936"
             height="536"

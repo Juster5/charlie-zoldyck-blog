@@ -4,18 +4,18 @@
   position: relative;
   height: 100%;
   overflow: hidden;
-  
+
   // @include responsive(bg) {
-    &:hover {
-      overflow: visible;
-    }
-    &:hover .collpase-menu {
-      z-index: 9999;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-      visibility: visible;
-    }
+  &:hover {
+    overflow: visible;
+  }
+  &:hover .collpase-menu {
+    z-index: 9999;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
   // }
 
   .collpase-menu {
