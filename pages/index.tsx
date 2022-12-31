@@ -21,7 +21,6 @@ const sectionFourItems = [
   },
 ]
 
-
 export default function Home() {
   const { t } = useTranslation()
 

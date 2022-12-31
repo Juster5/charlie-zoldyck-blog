@@ -4,7 +4,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 type LayoutProps = {
-  children: React.ReactNode,
+  children: React.ReactNode
   className: string
 }
 
