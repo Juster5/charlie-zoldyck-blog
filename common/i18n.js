@@ -19,12 +19,17 @@ if (typeof window !== 'undefined') {
     interpolation: {
       escapeValue: false,
     },
+    // resources: {
+    //   en: {
+    //     translation: resource        
+    //   }
+    // }    
   });
 } else { // 服务端
   instance = i18n
   .use(initReactI18next)
   .init({
-    debug: true,
+    debug: false,
     lng: 'en',
     fallbackLng: 'en',
     interpolation: {

@@ -77,9 +77,8 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
-  include: {
-    paths: [ './pages', './common',  './components']
-  }, 
+  include: ['.next/server/pages'],
+  // urlPrefix: '~/_next'        // 最关键的，相对路径
 };
 
 module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
