@@ -6,17 +6,19 @@
   .collpase-trigger {
     height: 100%;
     &:hover+.collpase-menu {
-      // z-index: 9999;
+      z-index: 9999;
       opacity: 1;
       transform: translateY(0);
       pointer-events: all;
+      visibility: visible;
     } 
   }
   .collpase-menu:hover{
-    // z-index: 9999;
+    z-index: 9999;
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+    visibility: visible;
   }
   
   .collpase-menu {
@@ -29,6 +31,7 @@
     overflow: hidden;
     background-color: #fff;
     opacity: 0;
+    visibility: hidden;    
     transform: translateY(50px);
     transition: all .3s cubic-bezier(.645,.045,.355,1);
   }
