@@ -1,23 +1,23 @@
-import React from 'react';
+import React from 'react'
 
 class ErrorBoundary extends React.Component<any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       hasError: false,
-    };
+    }
   }
 
   static getDerivedStateFromError(error: any) {
-    console.log(error);
+    console.log(error)
     return {
       hasError: true,
-    };
+    }
   }
 
   componentDidCatch(error: any, errorInfo: any) {
-    console.log(error);
-    console.log(errorInfo);
+    console.log(error)
+    console.log(errorInfo)
   }
 
   render() {
@@ -32,11 +32,11 @@ class ErrorBoundary extends React.Component<any> {
             重试一次试试？
           </button>
         </div>
-      );
+      )
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }
 
-export default ErrorBoundary;
+export default ErrorBoundary
