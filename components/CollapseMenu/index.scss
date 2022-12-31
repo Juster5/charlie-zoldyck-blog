@@ -5,7 +5,7 @@
   height: 100%;
   overflow: hidden;
   
-  @include responsive(bg) {
+  // @include responsive(bg) {
     &:hover {
       overflow: visible;
     }
@@ -16,7 +16,7 @@
       pointer-events: auto;
       visibility: visible;
     }
-  }
+  // }
 
   .collpase-menu {
     position: absolute;
