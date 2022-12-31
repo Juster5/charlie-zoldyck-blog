@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 
-
 const sectionFourItems = [
   {
     title: 'okx_web_home_global_modes_btn_lite',
@@ -104,7 +103,9 @@ export default function Home() {
             {/* </picture> */}
           </div>
           <div className="third-body">
-            <p className="common-title">{t('okx_web_home_global_modes_title_one_app')}</p>
+            <p className="common-title">
+              {t('okx_web_home_global_modes_title_one_app')}
+            </p>
             <div className="tab-container">
               {sectionFourItems.map((el, index) => {
                 return (
@@ -132,8 +133,12 @@ export default function Home() {
 
       <div className="fourth-section">
         <div className="fourth-title">
-          <p className="common-title pc-text">{t('okx_web_home_global_evolution_title_with_you')}</p>
-          <p className="common-title mobile-text">{t('okx_web_home_global_evolution_title_with_you_mobile')}</p>
+          <p className="common-title pc-text">
+            {t('okx_web_home_global_evolution_title_with_you')}
+          </p>
+          <p className="common-title mobile-text">
+            {t('okx_web_home_global_evolution_title_with_you_mobile')}
+          </p>
           <p className="common-desc response-text pc-text">
             {t('okx_web_home_global_evolution_text_confidence')}
           </p>

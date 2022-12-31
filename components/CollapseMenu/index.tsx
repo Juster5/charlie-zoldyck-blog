@@ -19,7 +19,6 @@ type CollpaseMenuProps = {
 }
 
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
-
   const { t } = useTranslation()
 
   return (

@@ -13,7 +13,7 @@ if (typeof window !== 'undefined') {
   .use(initReactI18next)
   .use(Backend)
   .init({
-    debug: true,
+    debug: false,
     lng: 'en',
     fallbackLng: 'en',
     interpolation: {
