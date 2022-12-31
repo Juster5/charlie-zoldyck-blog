@@ -12,6 +12,7 @@ const Header: NextPage = () => {
 
   const changeLang = useCallback((lang: any) => {
     i18n.changeLanguage(lang.key)
+    // i18n.reloadResources()
   }, [])
 
   return (

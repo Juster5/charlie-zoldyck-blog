@@ -1,6 +1,7 @@
 const path = require('path')
 
 const nextConfig = {
+
   // other settings...
   webpack (config) {
     // loop over all rules and find the ones with `oneOf` key

@@ -17,8 +17,10 @@ const sectionFourItems = [
   },
 ]
 
+
 export default function Home() {
   const { t } = useTranslation()
+
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeImg, setActiveImg] = useState(sectionFourItems[0].img)
 
