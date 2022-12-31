@@ -9,7 +9,8 @@
     "test:ci": "jest --ci",
     "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='pages/**/*.{ts,tsx}' --collectCoverageFrom='!pages/**/*.{types, stories, constants, test, spec}.{ts,tsx}'",
     "lint": "eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "latest",
@@ -45,13 +46,17 @@
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "18.0.9",
+    "eslint": "^8.30.0",
+    "eslint-config-next": "^13.1.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest-dom": "^4.0.2",
+    "eslint-plugin-testing-library": "^5.9.1",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "msw": "^0.44.2",
     "prettier": "2.7.1",
     "sass": "^1.57.1",
-    "typescript": "4.6.4"
+    "typescript": "4.6.4",
+    "husky": "^8.0.0"
   }
 }

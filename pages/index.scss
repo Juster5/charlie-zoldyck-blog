@@ -8,36 +8,36 @@
     padding-left: 12px;
     padding-right: 12px;
   }
-  
+
   @include responsive(mid) {
     padding-left: calc(50% - 480px);
-    padding-right: calc(50% - 480px);    
+    padding-right: calc(50% - 480px);
   }
 
   @include responsive(lg) {
     padding-left: calc(50% - 624px);
     padding-right: calc(50% - 624px);
-  }    
+  }
 
   .common-title {
     font-size: 46px;
     font-weight: 500;
-    line-height: 132%;        
+    line-height: 132%;
     @include responsive(sm) {
       font-size: 28px;
     }
     @include responsive(lg) {
       font-size: 46px;
-    }          
+    }
   }
 
   .common-desc {
     @include responsive(sm) {
       font-size: 16px;
-    }      
+    }
     font-size: 20px;
     font-weight: 400;
-    line-height: 32px;      
+    line-height: 32px;
   }
 
   .first-section {
@@ -53,49 +53,49 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;    
+      align-items: center;
       width: 100%;
-    }  
+    }
   }
 
   .img-wrapper {
     width: 100%;
-    height: auto;    
+    height: auto;
   }
-  
+
   .second-section {
     padding-left: 12px;
     padding-right: 12px;
-    width: 100%;  
+    width: 100%;
     text-align: center;
     @include responsive(sm) {
       padding-left: 12px;
       padding-right: 12px;
-    }  
+    }
     .second-body {
       @include responsive(lg) {
         margin-top: 80px;
-      }      
+      }
     }
-    .second-img {            
+    .second-img {
       width: 100%;
       height: auto;
     }
   }
-  
+
   .third-section {
     padding-bottom: 120px;
     padding-top: 120px;
     @include responsive(sm) {
-      padding-top: 60px;       
+      padding-top: 60px;
       padding-bottom: 60px;
     }
     .third-container {
-      display: flex; 
+      display: flex;
       @include responsive(sm) {
         flex-direction: column-reverse;
-      }           
-    }    
+      }
+    }
     .third-animation {
       @include responsive(lg) {
         margin-left: 16.66667%;
@@ -103,7 +103,7 @@
       @include responsive(sm) {
         width: 100%;
         margin-left: 0;
-      }      
+      }
     }
     .third-animation-img {
       display: block;
@@ -111,10 +111,10 @@
     }
     .third-body {
       margin-top: 146px;
-      margin-left: 8.33333333%;            
+      margin-left: 8.33333333%;
       width: 41.6%;
       @include responsive(sm) {
-        margin: 0;        
+        margin: 0;
         padding: 8px;
         text-align: center;
         width: 100%;
@@ -135,11 +135,11 @@
         font-weight: 500;
         justify-content: center;
         line-height: 16px;
-        padding: 20px 10px;  
+        padding: 20px 10px;
         border-radius: 100px;
         text-align: center;
         @include responsive(sm) {
-          padding: 15px 10px          
+          padding: 15px 10px;
         }
         &.active {
           color: #000;
@@ -147,11 +147,9 @@
         }
       }
     }
-  }  
-
+  }
 
   .fourth-section {
     text-align: center;
   }
 }
-

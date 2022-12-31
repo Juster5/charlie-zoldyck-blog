@@ -1,26 +1,25 @@
-
 .collpase-wrapper {
   position: relative;
   height: 100%;
 
   .collpase-trigger {
     height: 100%;
-    &:hover+.collpase-menu {
+    &:hover + .collpase-menu {
       z-index: 9999;
       opacity: 1;
       transform: translateY(0);
       pointer-events: all;
       visibility: visible;
-    } 
+    }
   }
-  .collpase-menu:hover{
+  .collpase-menu:hover {
     z-index: 9999;
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
     visibility: visible;
   }
-  
+
   .collpase-menu {
     position: absolute;
     top: 48px;
@@ -31,9 +30,9 @@
     overflow: hidden;
     background-color: #fff;
     opacity: 0;
-    visibility: hidden;    
+    visibility: hidden;
     transform: translateY(50px);
-    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   .collpase-center {
     left: -50%;
@@ -53,11 +52,11 @@
     background-color: #fff;
     cursor: pointer;
     font-size: 24px;
-    color: #000; 
-    &:hover{
+    color: #000;
+    &:hover {
       background: #f9f9f9;
       border-radius: 4px;
-      color: #000;      
+      color: #000;
     }
   }
 
@@ -85,5 +84,4 @@
       visibility: visible;
     }
   }
-
 }

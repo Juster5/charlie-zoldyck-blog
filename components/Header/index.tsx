@@ -1,9 +1,9 @@
-import type { NextPage } from 'next';
-import Image from 'next/image';
+import type { NextPage } from 'next'
+import Image from 'next/image'
 import './index.scss'
-import CollpaseMenu from '../CollapseMenu';
+import CollpaseMenu from '../CollapseMenu'
 
-import { navs } from './constant';
+import { navs } from './constant'
 
 const Header: NextPage = () => {
   return (
@@ -16,18 +16,16 @@ const Header: NextPage = () => {
 
         {/* 导航栏区域 */}
         <div className="navs">
-          {
-            navs.map(el=>{
-              return (
-                <CollpaseMenu menu={el.children} key={el.title}>
-                  <div className="nav-item sm-screen-hidden">
-                    <span>{el.title}</span>
-                    <span className='title-arrow okx-header-footer-arrow-chevrons-down'></span>
-                  </div>              
-                </CollpaseMenu>
-              )
-            })
-          }
+          {navs.map((el) => {
+            return (
+              <CollpaseMenu menu={el.children} key={el.title}>
+                <div className="nav-item sm-screen-hidden">
+                  <span>{el.title}</span>
+                  <span className="title-arrow okx-header-footer-arrow-chevrons-down"></span>
+                </div>
+              </CollpaseMenu>
+            )
+          })}
         </div>
 
         {/* 登录区域 */}
@@ -38,20 +36,24 @@ const Header: NextPage = () => {
         </div>
 
         {/* 多语言区域 */}
-        <CollpaseMenu position="right" 
-          menu={[{
-            title: '简体中文'
-          }, {
-            title: 'English'
-          }]}
+        <CollpaseMenu
+          position="right"
+          menu={[
+            {
+              title: '简体中文',
+            },
+            {
+              title: 'English',
+            },
+          ]}
         >
-          <div className="languages sm-screen-hidden" >
-            <span className='okx-header-footer-language'></span>     
+          <div className="languages sm-screen-hidden">
+            <span className="okx-header-footer-language"></span>
           </div>
-        </CollpaseMenu>        
-      </header>    
+        </CollpaseMenu>
+      </header>
       <div className="fixed-block"></div>
-    </>    
+    </>
   )
 }
 

@@ -6,19 +6,19 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
   },
   {
     title: 'Discover',
@@ -27,19 +27,19 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]    
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
   },
   {
     title: 'Trade',
@@ -48,19 +48,19 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]    
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
   },
   {
     title: 'Grow',
@@ -69,19 +69,19 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]    
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
   },
   {
     title: 'Build',
@@ -90,19 +90,19 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]    
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
   },
   {
     title: 'Learn',
@@ -111,19 +111,19 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]    
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
   },
   {
     title: 'More',
@@ -132,18 +132,18 @@ export const navs = [
       {
         icon: 'okx-header-footer-buy-with-card',
         title: 'Buy with card',
-        subTitle: 'Visa, Mastercard, and others'
+        subTitle: 'Visa, Mastercard, and others',
       },
       {
         icon: 'okx-header-footer-p2p-trading',
         title: 'P2P trading',
-        subTitle: 'Buy/Sell at your own rate'
-      },      
+        subTitle: 'Buy/Sell at your own rate',
+      },
       {
         icon: 'okx-header-footer-third-party-payment',
         title: 'Third-party payment',
-        subTitle: 'Banxa, Simplex, and others'
-      },      
-    ]    
-  }
+        subTitle: 'Banxa, Simplex, and others',
+      },
+    ],
+  },
 ]

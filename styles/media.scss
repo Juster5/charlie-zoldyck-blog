@@ -1,24 +1,26 @@
 $width-min: 768px;
 $width-mid: 1024px;
-$width-lg:  1270px;
+$width-lg: 1270px;
 
 @mixin responsive($width) {
   @if $width == sm {
-      @media only screen and (max-width: $width-min) { @content; }
-  }
-
-  @else if $width == mid {
-      @media only screen and (min-width: $width-mid){  @content; }
-  }
-
-  @else if $width == lg {
-      @media only screen and (min-width: $width-lg) { @content; }
+    @media only screen and (max-width: $width-min) {
+      @content;
+    }
+  } @else if $width == mid {
+    @media only screen and (min-width: $width-mid) {
+      @content;
+    }
+  } @else if $width == lg {
+    @media only screen and (min-width: $width-lg) {
+      @content;
+    }
   }
 }
 
 // 小屏样式
 @media (max-width: $width-min) {
-  #body{
+  #body {
     .okx-app {
       .sm-screen-hidden {
         display: none;
@@ -31,14 +33,14 @@ $width-lg:  1270px;
       }
       .mobile-text {
         display: block;
-      }      
+      }
     }
   }
 }
 
 // 大屏样式
 @media (min-width: $width-min) {
-  #body{
+  #body {
     .okx-app {
       .bg-screen-hidden {
         display: none;
@@ -55,5 +57,3 @@ $width-lg:  1270px;
     }
   }
 }
-
-

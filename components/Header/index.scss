@@ -17,7 +17,7 @@
 
   .navs {
     display: flex;
-    align-items: center;  
+    align-items: center;
     flex: 1;
     height: 100%;
     .nav-item {
@@ -27,24 +27,24 @@
       align-items: center;
       height: 100%;
       cursor: pointer;
-      &:hover{
+      &:hover {
         .title-arrow {
           transform: rotate(-180deg);
           margin-left: 12px;
-        }        
+        }
       }
-    }  
+    }
     .title-arrow {
       margin-left: 12px;
       transition: all 0.1s ease;
     }
   }
-  
+
   .logo-wrapper {
     margin-right: 24px;
     font-size: 0;
   }
-  
+
   .login-wrapper {
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@
       margin-right: 12px;
       cursor: pointer;
     }
-    .signup{
+    .signup {
       display: inline-block;
       padding: 6px 8px;
       border: 1px solid #fff;
@@ -72,11 +72,11 @@
   .languages {
     display: flex;
     align-items: center;
-    margin-left:12px;
+    margin-left: 12px;
     font-size: 20px;
     cursor: pointer;
     height: 100%;
-  }  
+  }
 }
 
 .fixed-block {
@@ -85,5 +85,3 @@
     display: block;
   }
 }
-
-

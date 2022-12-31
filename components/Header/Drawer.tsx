@@ -12,12 +12,8 @@ type DrawerProps = {
   menu?: menuItem[]
 }
 
-const Drawer: React.FC<DrawerProps> = (props) => {
-  return (
-    <div className='collpase-wrapper'>
- 
-    </div>
-  )
+const Drawer: React.FC<DrawerProps> = () => {
+  return <div className="collpase-wrapper"></div>
 }
 
 export default Drawer
