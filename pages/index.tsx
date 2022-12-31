@@ -1,5 +1,6 @@
 import '@/pages/index.scss'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
 const sectionFourItems = [
   {
@@ -17,6 +18,7 @@ const sectionFourItems = [
 ]
 
 export default function Home() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeImg, setActiveImg] = useState(sectionFourItems[0].img)
 
@@ -55,7 +57,7 @@ export default function Home() {
 
       <div className="second-section">
         <div className="second-title">
-          <p className="common-title">Trade like a pro</p>
+          <p className="common-title">{t('okx_web_home_global_trader_title_pro_trader')}</p>
           <p className="common-desc response-text pc-text">
             Get the lowest fees, fastest transactions, powerful APIs, and more.
           </p>

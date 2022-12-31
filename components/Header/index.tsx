@@ -2,10 +2,19 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import './index.scss'
 import CollpaseMenu from '../CollapseMenu'
+import { useTranslation } from 'react-i18next';
 
 import { navs } from './constant'
+import { useCallback } from 'react';
 
 const Header: NextPage = () => {
+
+  const { i18n } = useTranslation();
+
+  const changeLang = useCallback((lang: any)=>{
+    i18n.changeLanguage(lang.key)
+  }, [])
+
   return (
     <>
       <header className="okx-header">
@@ -41,11 +50,14 @@ const Header: NextPage = () => {
           menu={[
             {
               title: '简体中文',
+              key: 'zh'
             },
             {
               title: 'English',
+              key: 'en'
             },
           ]}
+          menuClick={changeLang}
         >
           <div className="languages sm-screen-hidden">
             <span className="okx-header-footer-language"></span>

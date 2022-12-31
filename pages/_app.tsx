@@ -4,6 +4,8 @@ import type { AppProps } from 'next/app'
 // import { NextPage } from 'next';
 import Layout from 'components/layout'
 
+import '../common/i18n'
+
 // type IProps = {
 //   initialValue?: Record<any, any>;
 //   Component?: NextPage;
