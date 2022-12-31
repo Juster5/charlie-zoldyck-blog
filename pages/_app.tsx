@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import type { AppProps } from 'next/app'
-import Layout from 'components/layout'
+import Layout from 'components/Layout'
 import ErrorBoundary from 'components/ErrorBoundary'
 
 import '@/styles/global.css'

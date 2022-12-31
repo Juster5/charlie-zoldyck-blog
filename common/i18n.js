@@ -19,6 +19,17 @@ if (typeof window !== 'undefined') {
     interpolation: {
       escapeValue: false,
     },
+    react: {
+      wait: true
+    },
+    backend: {
+      requestOptions: { 
+        mode: 'cors',
+        credentials: 'same-origin',
+        cache: 'default'
+      },
+      reloadInterval: true
+    }
     // resources: {
     //   en: {
     //     translation: resource        
