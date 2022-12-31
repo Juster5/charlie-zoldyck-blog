@@ -44,5 +44,19 @@
   "okx_web_home_global_video3_subtitle_bring_family": "Brings in the whole family",
   "okx_web_home_global_video3_title_snowboarder_sj": "Snowboarder Scotty James",
   "project": "okx_web_home_global_en_US",
-  "version": "1672376534"
+  "version": "1672376534",
+
+  "header_buy_crypto": "Buy crypto",
+  "header_buy_with_card": "Buy with card",
+  "header_buy_with_other": "Visa, Mastercard, and others",
+  "header_p2p": "P2P trading",
+  "header_p2p_rate": "Buy/Sell at your own rate",
+  "header_third_pay": "Third-party payment",
+  "header_third_pay_type": "Banxa, Simplex, and others",
+  "header_discover": "Discover",
+  "header_trade": "Trade",
+  "header_grow": "Grow",
+  "header_build": "Build",
+  "header_learn": "Learn",
+  "header_more": "More"
 }

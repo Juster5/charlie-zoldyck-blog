@@ -44,5 +44,20 @@
   "okx_web_home_global_video3_subtitle_bring_family": "带全家出席",
   "okx_web_home_global_video3_title_snowboarder_sj": "单板滑雪运动员斯科特·詹姆斯",
   "project": "okx_web_home_global_zh_CN",
-  "version": "1672376534"
+  "version": "1672376534",
+
+
+  "header_buy_crypto": "买币",
+  "header_buy_with_card": "流程简单",
+  "header_buy_with_other": "快速成交",
+  "header_p2p": "P2P 交易",
+  "header_p2p_rate": "灵活选择, 价格更优",
+  "header_third_pay": "第三方支付",
+  "header_third_pay_type": "多种选择, 成交更快",
+  "header_discover": "发现",
+  "header_trade": "交易",
+  "header_grow": "成长",
+  "header_build": "发展",
+  "header_learn": "学习",
+  "header_more": "更多"  
 }

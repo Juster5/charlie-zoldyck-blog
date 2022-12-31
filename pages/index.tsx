@@ -1,22 +1,26 @@
 import '@/pages/index.scss'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import Image from 'next/image'
+
 
 const sectionFourItems = [
   {
-    title: 'Lite',
+    title: 'okx_web_home_global_modes_btn_lite',
+    subTitle: 'okx_web_home_global_modes_text_lite',
     img: 'https://static.okx.com/cdn/assets/imgs/2212/1F468D0080B73C28.png',
   },
   {
-    title: 'Web3',
+    title: 'okx_web_home_global_modes_btn_web3',
+    subTitle: 'okx_web_home_global_modes_text_web3',
     img: 'https://static.okx.com/cdn/assets/imgs/2212/57F89DAF3464757B.png',
   },
   {
-    title: 'Pro',
+    title: 'okx_web_home_global_modes_btn_pro',
+    subTitle: 'okx_web_home_global_modes_text_pro',
     img: 'https://static.okx.com/cdn/assets/imgs/2212/510A1B1163A3AD7B.png',
   },
 ]
-
 
 export default function Home() {
   const { t } = useTranslation()
@@ -47,7 +51,6 @@ export default function Home() {
           title="Faster, better, stronger than your average crypto exchange"
           autoPlay
           playsInline
-          webkit-playsinline="true"
           loop
           width="280"
           height="580"
@@ -63,11 +66,10 @@ export default function Home() {
             {t('okx_web_home_global_trader_title_pro_trader')}
           </p>
           <p className="common-desc response-text pc-text">
-            Get the lowest fees, fastest transactions, powerful APIs, and more.
+            {t('okx_web_home_global_trader_text_lowest_fees')}
           </p>
           <p className="common-desc response-text mobile-text">
-            Lowest fees, world-class matching engine, powerful APIs and much
-            more
+            {t('okx_web_home_global_trader_text_lowest_fees_mobile')}
           </p>
         </div>
         <div className="second-body">
@@ -92,7 +94,7 @@ export default function Home() {
           <div className="third-animation">
             {/* <picture className="okui-image-webp"> */}
             {/* <source srcset="https://static.okx.com/cdn/assets/imgs/2212/1F468D0080B73C28.png?x-oss-process=image/format,webp" /> */}
-            <img
+            <Image
               className="third-animation-img"
               src={activeImg}
               alt="One app. Unlimited possibilities.Lite"
@@ -102,7 +104,7 @@ export default function Home() {
             {/* </picture> */}
           </div>
           <div className="third-body">
-            <p className="common-title">One app. Unlimited possibilities.</p>
+            <p className="common-title">{t('okx_web_home_global_modes_title_one_app')}</p>
             <div className="tab-container">
               {sectionFourItems.map((el, index) => {
                 return (
@@ -116,14 +118,13 @@ export default function Home() {
                       setActiveImg(el.img)
                     }}
                   >
-                    {el.title}
+                    {t(el.title)}
                   </div>
                 )
               })}
             </div>
             <p className="common-desc">
-              With margin and derivatives trading, powerful APIs and trading
-              bots, you can trade like a pro on the go.
+              {t(sectionFourItems[activeIndex].subTitle)}
             </p>
           </div>
         </div>
@@ -131,15 +132,13 @@ export default function Home() {
 
       <div className="fourth-section">
         <div className="fourth-title">
-          <p className="common-title pc-text">With you every step of the way</p>
-          <p className="common-title mobile-text">A mode for everyone</p>
+          <p className="common-title pc-text">{t('okx_web_home_global_evolution_title_with_you')}</p>
+          <p className="common-title mobile-text">{t('okx_web_home_global_evolution_title_with_you_mobile')}</p>
           <p className="common-desc response-text pc-text">
-            From your first crypto trade to your first NFT purchase, you&apos;ll
-            have us to guide you through the process. No stupid questions. No
-            sleepless nights. Have confidence in your crypto.
+            {t('okx_web_home_global_evolution_text_confidence')}
           </p>
           <p className="common-desc response-text mobile-text">
-            Jump from trading, to DeFi, to NFTs all in one place.
+            {t('okx_web_home_global_evolution_text_confidence_mobile')}
           </p>
         </div>
         <div className="fourth-body">
@@ -148,7 +147,6 @@ export default function Home() {
             title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
             autoPlay
             playsInline
-            webkit-playsinline="true"
             loop
             width="936"
             height="536"
@@ -156,7 +154,7 @@ export default function Home() {
             poster="https://static.okx.com/cdn/assets/imgs/2210/2763D233C494439D.jpg?x-oss-process=image/format,webp"
             src="https://static.okx.com/cdn/assets/files/2210/D47D930F643E7A00.webm"
           />
-          <img
+          <Image
             className="mobile-text"
             alt="With you every step of the wayFrom your first crypto trade to your first NFT purchase, you'll have us to guide you through the process. No stupid questions. No sleepless nights. Have confidence in your crypto."
             width="400"

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 import './index.scss'
 
 type menuItem =
@@ -17,6 +19,9 @@ type CollpaseMenuProps = {
 }
 
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
+
+  const { t } = useTranslation()
+
   return (
     <div className="collpase-wrapper">
       {props.children}
@@ -37,8 +42,8 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
               >
                 {el.icon && <div className={`menu-item__icon  ${el.icon}`} />}
                 <div className="menu-item__text">
-                  <div className="title">{el.title}</div>
-                  <div className="sub-title">{el.subTitle}</div>
+                  <div className="title">{t(el.title)}</div>
+                  <div className="sub-title">{t(el.subTitle)}</div>
                 </div>
               </div>
             )

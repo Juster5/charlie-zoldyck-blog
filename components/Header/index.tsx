@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import './index.scss'
-import CollpaseMenu from '../CollapseMenu'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import './index.scss'
+import CollpaseMenu from '../CollapseMenu'
 import { navs } from './constant'
-import { useCallback } from 'react'
 
 const Header: NextPage = () => {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const changeLang = useCallback((lang: any) => {
     i18n.changeLanguage(lang.key)
@@ -29,7 +29,7 @@ const Header: NextPage = () => {
             return (
               <CollpaseMenu menu={el.children} key={el.title}>
                 <div className="nav-item sm-screen-hidden">
-                  <span>{el.title}</span>
+                  <span>{t(el.title)}</span>
                   <span className="title-arrow okx-header-footer-arrow-chevrons-down"></span>
                 </div>
               </CollpaseMenu>

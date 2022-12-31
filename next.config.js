@@ -2,9 +2,13 @@ const path = require('path')
 
 const nextConfig = {
 
-  // other settings...
+  // 图片域名白名单
+  images: {
+    domains: ['static.okx.com'],
+  },
+
+  // webpack配置
   webpack (config) {
-    // loop over all rules and find the ones with `oneOf` key
     // 移除css module
     config.module.rules.forEach(rule => {
       if (!rule.oneOf) return

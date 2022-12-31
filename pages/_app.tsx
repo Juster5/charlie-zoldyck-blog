@@ -25,7 +25,7 @@ import '../common/i18n'
 
 // export default appWithTranslation(MyApp)
 
-export default function MyApp ({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="okx-app">
       <Layout>
