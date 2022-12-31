@@ -42,6 +42,7 @@ export default function Home() {
           className="first-img home-page-video"
           title="Faster, better, stronger than your average crypto exchange"
           autoPlay
+          playsInline
           loop
           width="280"
           height="580"
@@ -67,6 +68,7 @@ export default function Home() {
             className="img-wrapper home-page-video"
             title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
             autoPlay
+            playsInline
             loop
             width="936"
             height="536"
@@ -137,6 +139,7 @@ export default function Home() {
             className="img-wrapper pc-text home-page-video"
             title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
             autoPlay
+            playsInline
             loop
             width="936"
             height="536"
