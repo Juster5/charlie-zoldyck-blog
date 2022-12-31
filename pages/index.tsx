@@ -24,7 +24,7 @@ export default function Home() {
     const fn = () => {
       const videos = document.querySelectorAll('.home-page-video')
       for (let i = 0; i < videos.length; i++) {
-        const video  = videos[i] as HTMLVideoElement
+        const video = videos[i] as HTMLVideoElement
         video.play()
       }
     }
@@ -124,8 +124,8 @@ export default function Home() {
           <p className="common-title pc-text">With you every step of the way</p>
           <p className="common-title mobile-text">A mode for everyone</p>
           <p className="common-desc response-text pc-text">
-            From your first crypto trade to your first NFT purchase, you&apos;ll have
-            us to guide you through the process. No stupid questions. No
+            From your first crypto trade to your first NFT purchase, you&apos;ll
+            have us to guide you through the process. No stupid questions. No
             sleepless nights. Have confidence in your crypto.
           </p>
           <p className="common-desc response-text mobile-text">
