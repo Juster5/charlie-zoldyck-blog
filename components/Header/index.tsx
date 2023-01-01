@@ -15,11 +15,17 @@ const Header: NextPage = () => {
 
   const [showDrawer, setShowDrawer] = useState(false)
 
-  const clickMenu = useCallback(()=>{
+  const clickMenu = useCallback(() => {
+    // 防止穿屏幕滚动
+    document.querySelector('body')!.style.overflow = 'hidden'
+
     setShowDrawer(true)
   }, [])
 
-  const closeDrawer = useCallback(()=>{
+  const closeDrawer = useCallback(() => {
+    // 移除"防止穿屏幕滚动"逻辑
+    document.querySelector('body')!.style.overflow = 'auto'
+
     setShowDrawer(false)
   }, [])
 
@@ -54,7 +60,8 @@ const Header: NextPage = () => {
         <div className="login-wrapper">
           <span className="login sm-screen-hidden">Log in</span>
           <span className="signup">Sign up</span>
-          <span className="menu bg-screen-hidden okx-header-footer-hamburger"
+          <span
+            className="menu bg-screen-hidden okx-header-footer-hamburger"
             onClick={clickMenu}
           ></span>
         </div>
@@ -78,17 +85,11 @@ const Header: NextPage = () => {
             <span className="okx-header-footer-language"></span>
           </div>
         </CollpaseMenu>
-
       </header>
 
       {/* 抽屉 */}
-      <Drawer
-        isShow={showDrawer}
-        rightMenuClick={closeDrawer}
-      >
-        {
-          <DropdownMenu menu={navs}/>
-        }
+      <Drawer isShow={showDrawer} rightMenuClick={closeDrawer}>
+        {<DropdownMenu menu={navs} />}
       </Drawer>
     </>
   )

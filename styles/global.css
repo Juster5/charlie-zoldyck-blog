@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   font-family: HarmonyOS Sans, PingFang SC, Microsoft Yahei, Heiti SC,
     WenQuanYi Micro Hei, Helvetica Neue, Helvetica, Arial, sans-serif !important;
   /* font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; */
@@ -10,10 +11,10 @@ html, body {
 
 * {
   padding: 0;
-  margin: 0;  
+  margin: 0;
   box-sizing: border-box;
 }
 
 li {
-  list-style:none;
-}  
+  list-style: none;
+}
