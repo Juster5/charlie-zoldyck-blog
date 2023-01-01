@@ -46,6 +46,9 @@
   "project": "okx_web_home_global_en_US",
   "version": "1672376534",
 
+  "common_login": "Log in",
+  "common_signup": "Sign up",
+
   "header_buy_crypto": "Buy crypto",
   "header_buy_with_card": "Buy with card",
   "header_buy_with_other": "Visa, Mastercard, and others",
@@ -58,5 +61,7 @@
   "header_grow": "Grow",
   "header_build": "Build",
   "header_learn": "Learn",
-  "header_more": "More"
+  "header_more": "More", 
+
+  "footer_community": "Community"
 }

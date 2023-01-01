@@ -147,3 +147,33 @@ export const navs = [
     ],
   },
 ]
+
+export const communities = [
+  {
+    icon: 'okx-header-footer-twitter',
+  },
+  {
+    icon: 'okx-header-footer-tiktok',
+  },
+  {
+    icon: 'okx-header-footer-instagram',
+  },
+  {
+    icon: 'okx-header-footer-discord',
+  },
+  {
+    icon: 'okx-header-footer-telegram',
+  },
+  {
+    icon: 'okx-header-footer-facebook',
+  },
+  {
+    icon: 'okx-header-footer-linkedin',
+  },
+  {
+    icon: 'okx-header-footer-youtube',
+  },
+  {
+    icon: 'okx-header-footer-more',
+  },
+]

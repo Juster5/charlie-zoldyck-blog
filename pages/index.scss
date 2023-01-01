@@ -43,20 +43,23 @@
   }
 
   .first-section {
-    min-height: 585px;
-    width: 25%;
+    margin: 0;
     padding-bottom: 120px;
     padding-top: 120px;
     padding-left: 12px;
     padding-right: 12px;
-    margin-left: 16.66666667%;
+    min-height: 585px;
+    width: 100%;
+
     @include responsive(sm) {
-      margin: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100%;
+    }
+    @include responsive(lg) {
+      width: 25%;
+      margin-left: 16.66666667%;
     }
   }
 

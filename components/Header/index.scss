@@ -45,30 +45,6 @@
     font-size: 0;
   }
 
-  .login-wrapper {
-    display: flex;
-    align-items: center;
-    .login {
-      display: inline-block;
-      margin-right: 12px;
-      cursor: pointer;
-    }
-    .signup {
-      display: inline-block;
-      padding: 6px 8px;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      cursor: pointer;
-      @include responsive(sm) {
-        padding: 4px 6px;
-      }
-    }
-    .menu {
-      margin-left: 20px;
-      font-size: 20px;
-    }
-  }
-
   .languages {
     display: flex;
     align-items: center;
@@ -76,6 +52,33 @@
     font-size: 20px;
     cursor: pointer;
     height: 100%;
+  }
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  .mr12 {
+    margin-right: 12px;
+  }
+
+  .login {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .signup {
+    display: inline-block;
+    padding: 6px 8px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    @include responsive(sm) {
+      padding: 4px 6px;
+    }
+  }
+  .menu {
+    margin-left: 20px;
+    font-size: 20px;
   }
 }
 
@@ -111,5 +114,26 @@
     right: 24px;
     top: 20px;
     font-size: 20px;
+  }
+
+  .mobile-language {
+    margin: 16px 0;
+    .mobile-lang-btn {
+      position: relative;
+      z-index: 9999;
+      display: inline-block;
+      width: 48%;
+      background: #242424;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      padding: 10px 16px;
+      text-align: center;
+      &:first-child {
+        margin-right: 4%;
+      }
+      &.active {
+        border: 1px solid #fff;
+      }
+    }
   }
 }

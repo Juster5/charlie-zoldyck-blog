@@ -25,7 +25,8 @@
   .sub-item-wrapper {
     display: none;
     padding: 4px 0 4px 12px;
-    transition: all 0.5s ease;
+    transition: max-height 0.5s ease;
+    transition: max-height 0.3s linear;
     overflow: hidden;
     .sub-item {
       height: 44px;

@@ -11,10 +11,22 @@ import { avoidScollingOverflow } from 'common/util'
 
 import './index.scss'
 
+const langs = [
+  {
+    title: 'English',
+    key: 'en',
+  },
+  {
+    title: '简体中文',
+    key: 'zh',
+  },
+]
+
 const Header: NextPage = () => {
   const { t, i18n } = useTranslation()
 
   const [showDrawer, setShowDrawer] = useState(false)
+  const [lang, setLang] = useState('en')
 
   const clickMenu = useCallback(() => {
     setShowDrawer(true)
@@ -35,8 +47,15 @@ const Header: NextPage = () => {
   }, [showDrawer])
 
   const changeLang = useCallback((lang: any) => {
-    i18n.changeLanguage(lang.key)
-    i18n.reloadResources()
+    // 不存在语言包, 则加载语言包, 然后切换语言
+    if (i18n.languages.indexOf(lang.key) === -1) {
+      i18n.loadLanguages(lang.key, () => {
+        i18n.changeLanguage(lang.key)
+      })
+    } else {
+      // 否则直接切换语言
+      i18n.changeLanguage(lang.key)
+    }
   }, [])
 
   return (
@@ -63,8 +82,10 @@ const Header: NextPage = () => {
 
         {/* 登录区域 */}
         <div className="login-wrapper">
-          <span className="login sm-screen-hidden">Log in</span>
-          <span className="signup">Sign up</span>
+          <span className="login sm-screen-hidden mr12">
+            {t('common_login')}
+          </span>
+          <span className="signup">{t('common_signup')}</span>
           <span
             className="menu bg-screen-hidden okx-header-footer-hamburger"
             onClick={clickMenu}
@@ -72,20 +93,7 @@ const Header: NextPage = () => {
         </div>
 
         {/* 多语言区域 */}
-        <CollpaseMenu
-          position="right"
-          menu={[
-            {
-              title: '简体中文',
-              key: 'zh',
-            },
-            {
-              title: 'English',
-              key: 'en',
-            },
-          ]}
-          menuClick={changeLang}
-        >
+        <CollpaseMenu position="right" menu={langs} menuClick={changeLang}>
           <div className="languages sm-screen-hidden">
             <span className="okx-header-footer-language"></span>
           </div>
@@ -94,6 +102,28 @@ const Header: NextPage = () => {
 
       {/* 移动端菜单区域 */}
       <Drawer isShow={showDrawer} rightMenuClick={closeDrawer}>
+        <div className="login-wrapper">
+          <span className="signup mr12">{t('common_signup')}</span>
+          <span className="login">{t('common_login')}</span>
+        </div>
+
+        <div className="mobile-language">
+          {langs.map((el) => {
+            return (
+              <div
+                className={`mobile-lang-btn ${el.key === lang ? 'active' : ''}`}
+                key={el.key}
+                onClick={() => {
+                  setLang(el.key)
+                  changeLang(el)
+                }}
+              >
+                {el.title}
+              </div>
+            )
+          })}
+        </div>
+
         {<DropdownMenu menu={navs} />}
       </Drawer>
     </>

@@ -12,8 +12,8 @@
   @include responsive(lg) {
     margin: 120px 0;
     padding: 0 calc(50% - 624px);
-  }  
-  
+  }
+
   .list-wrapper {
     display: flex;
   }
@@ -27,7 +27,7 @@
     font-weight: 500;
     line-height: 24px;
     margin-bottom: 18px;
-    vertical-align: top;    
+    vertical-align: top;
   }
 
   .link-list {
@@ -39,6 +39,31 @@
       font-weight: 400;
       line-height: 16px;
       margin-bottom: 16px;
+    }
+  }
+
+  .okx-footer-community {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 44px;
+
+    .community-title {
+      color: #fafafa;
+      font-size: 20px;
+      font-weight: 700;
+      margin-right: 30px;
+    }
+    .community-icon {
+      color: #909090;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 18px;
+      margin-right: 17px;
+      position: relative;
+      &:hover {
+        color: #fafafa;
+      }
     }
   }
 }

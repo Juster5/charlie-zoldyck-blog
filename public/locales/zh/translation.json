@@ -46,7 +46,9 @@
   "project": "okx_web_home_global_zh_CN",
   "version": "1672376534",
 
-
+  "common_login": "登录",
+  "common_signup": "注册",
+  
   "header_buy_crypto": "买币",
   "header_buy_with_card": "流程简单",
   "header_buy_with_other": "快速成交",
@@ -59,5 +61,8 @@
   "header_grow": "成长",
   "header_build": "发展",
   "header_learn": "学习",
-  "header_more": "更多"  
+  "header_more": "更多",
+  
+  "footer_community": "社区"
+
 }

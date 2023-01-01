@@ -1,0 +1,70 @@
+html,
+body {
+  font-family: HarmonyOS Sans, PingFang SC, Microsoft Yahei, Heiti SC,
+    WenQuanYi Micro Hei, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  /* font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; */
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+  font-weight: 300;
+}
+
+b,
+em,
+i,
+strong {
+  font-style: normal;
+  font-weight: 400;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+@import 'constant.scss';
+
+// 小屏样式
+@media (max-width: $width-min) {
+  #body {
+    .okx-app {
+      .sm-screen-hidden {
+        display: none;
+      }
+      .sm-screen-show {
+        display: inline-block;
+      }
+      .pc-text {
+        display: none;
+      }
+      .mobile-text {
+        display: block;
+      }
+    }
+  }
+}
+
+// 大屏样式
+@media (min-width: $width-min) {
+  #body {
+    .okx-app {
+      .bg-screen-hidden {
+        display: none;
+      }
+      .bg-screen-show {
+        display: inline-block;
+      }
+      .pc-text {
+        display: block;
+      }
+      .mobile-text {
+        display: none;
+      }
+    }
+  }
+}

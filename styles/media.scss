@@ -1,6 +1,4 @@
-$width-min: 768px;
-$width-mid: 1024px;
-$width-lg: 1270px;
+@import 'constant.scss';
 
 @mixin responsive($width) {
   @if $width == sm {
@@ -14,46 +12,6 @@ $width-lg: 1270px;
   } @else if $width == lg {
     @media only screen and (min-width: $width-lg) {
       @content;
-    }
-  }
-}
-
-// 小屏样式
-@media (max-width: $width-min) {
-  #body {
-    .okx-app {
-      .sm-screen-hidden {
-        display: none;
-      }
-      .sm-screen-show {
-        display: inline-block;
-      }
-      .pc-text {
-        display: none;
-      }
-      .mobile-text {
-        display: block;
-      }
-    }
-  }
-}
-
-// 大屏样式
-@media (min-width: $width-min) {
-  #body {
-    .okx-app {
-      .bg-screen-hidden {
-        display: none;
-      }
-      .bg-screen-show {
-        display: inline-block;
-      }
-      .pc-text {
-        display: block;
-      }
-      .mobile-text {
-        display: none;
-      }
     }
   }
 }
