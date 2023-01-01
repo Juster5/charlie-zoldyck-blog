@@ -25,12 +25,12 @@ const Header: NextPage = () => {
   }, [])
 
   // 全屏时, 防止穿屏滚动
-  useEffect(()=>{
+  useEffect(() => {
     if (showDrawer) {
       const clear = avoidScollingOverflow('body')
-      return () =>{
+      return () => {
         clear()
-      }      
+      }
     }
   }, [showDrawer])
 

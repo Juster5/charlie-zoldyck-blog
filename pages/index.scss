@@ -21,6 +21,7 @@
   }
 
   .common-title {
+    margin-bottom: 20px;
     font-size: 46px;
     font-weight: 500;
     line-height: 132%;
@@ -123,6 +124,7 @@
     }
     .tab-container {
       display: flex;
+      margin: 28px auto;
       padding: 4px;
       background-color: transparent;
       border: 2px solid #fff;
