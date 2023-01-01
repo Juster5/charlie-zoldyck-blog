@@ -28,17 +28,10 @@ export default function Home() {
   const [activeImg, setActiveImg] = useState(sectionFourItems[0].img)
 
   useEffect(() => {
-    const fn = () => {
-      const videos = document.querySelectorAll('.home-page-video')
-      for (let i = 0; i < videos.length; i++) {
-        const video = videos[i] as HTMLVideoElement
-        video.play()
-      }
-    }
-    window.addEventListener('load', fn)
-
-    return () => {
-      window.removeEventListener('load', fn)
+    const videos = document.querySelectorAll('.home-page-video')
+    for (let i = 0; i < videos.length; i++) {
+      const video = videos[i] as HTMLVideoElement
+      video.play()
     }
   }, [])
 
@@ -88,7 +81,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="third-section">
+      <div className="third-section">
         <div className="third-container">
           <div className="third-animation">
             {/* <picture className="okui-image-webp"> */}
@@ -129,7 +122,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </div>
 
       <div className="fourth-section">
         <div className="fourth-title">

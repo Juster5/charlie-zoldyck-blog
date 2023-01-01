@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import type { AppProps } from 'next/app'
-import Layout from 'components/MyLayout'
+import Layout from 'components/Layout'
 import ErrorBoundary from 'components/ErrorBoundary'
 
 import '@/styles/global.css'
@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps, err }: IProps) {
   return (
     <Suspense fallback="loading">
       <ErrorBoundary>
-        <Layout className="okx-app">
+        <Layout>
           <Component {...pageProps} err={err} />
         </Layout>
       </ErrorBoundary>

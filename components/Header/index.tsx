@@ -1,14 +1,27 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import './index.scss'
 import CollpaseMenu from '../CollapseMenu'
+import DropdownMenu from '../DropdownMenu'
+import Drawer from './Drawer'
 import { navs } from './constant'
+
+import './index.scss'
 
 const Header: NextPage = () => {
   const { t, i18n } = useTranslation()
+
+  const [showDrawer, setShowDrawer] = useState(false)
+
+  const clickMenu = useCallback(()=>{
+    setShowDrawer(true)
+  }, [])
+
+  const closeDrawer = useCallback(()=>{
+    setShowDrawer(false)
+  }, [])
 
   const changeLang = useCallback((lang: any) => {
     i18n.changeLanguage(lang.key)
@@ -41,7 +54,9 @@ const Header: NextPage = () => {
         <div className="login-wrapper">
           <span className="login sm-screen-hidden">Log in</span>
           <span className="signup">Sign up</span>
-          <span className="menu bg-screen-hidden okx-header-footer-hamburger"></span>
+          <span className="menu bg-screen-hidden okx-header-footer-hamburger"
+            onClick={clickMenu}
+          ></span>
         </div>
 
         {/* 多语言区域 */}
@@ -63,8 +78,18 @@ const Header: NextPage = () => {
             <span className="okx-header-footer-language"></span>
           </div>
         </CollpaseMenu>
+
       </header>
-      <div className="fixed-block"></div>
+
+      {/* 抽屉 */}
+      <Drawer
+        isShow={showDrawer}
+        rightMenuClick={closeDrawer}
+      >
+        {
+          <DropdownMenu menu={navs}/>
+        }
+      </Drawer>
     </>
   )
 }

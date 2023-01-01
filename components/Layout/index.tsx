@@ -5,12 +5,11 @@ import Footer from 'components/Footer'
 
 type LayoutProps = {
   children: React.ReactNode
-  className: string
 }
 
 const Layout = (props: LayoutProps) => {
   return (
-    <div className={props.className}>
+    <div className="okx-app">
       <Header />
       <main>{props.children}</main>
       <Footer />

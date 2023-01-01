@@ -1,19 +1,27 @@
 import React from 'react'
 import './index.scss'
 
-type menuItem = {
-  title?: string
-  children: {
-    title: ''
-  }[]
-}
+type DrawerPropsType = {
+  children: any,
+  isShow?: boolean,
+  rightMenuClick: Function
+} 
+const Drawer: React.FC<DrawerPropsType> = ({
+  children,
+  isShow = true,
+  rightMenuClick
+}) => {
+  
+  return <div className={`drawer-wrapper ${isShow ? 'show': ''}`}>
+    <div className='okx-header-footer-close' onClick={()=>{
+      rightMenuClick()
+    }}>
 
-type DrawerProps = {
-  menu?: menuItem[]
-}
-
-const Drawer: React.FC<DrawerProps> = () => {
-  return <div className="collpase-wrapper"></div>
+    </div>
+    {
+      children
+    }
+  </div>
 }
 
 export default Drawer

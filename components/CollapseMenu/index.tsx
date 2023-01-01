@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import './index.scss'
 
+// todo: 类型定义好
 type menuItem =
   | {
       icon?: string // 图标
