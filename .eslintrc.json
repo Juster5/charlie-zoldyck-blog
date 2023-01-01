@@ -11,5 +11,6 @@
       ],
       "extends": ["plugin:testing-library/react"]
     }
-  ]
+  ],
+  "ignorePatterns": ["**/*.test.tsx", "jest.setup.js"]
 }
