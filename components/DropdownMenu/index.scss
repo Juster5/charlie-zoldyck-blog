@@ -10,12 +10,16 @@
       font-size: 18px;
     }
     .menu-arrow {
+      transition: all 0.5s ease;
       color: #909090;
     }
   }
   .expand {
     .sub-item-wrapper {
       display: block;
+    }
+    .menu-arrow {
+      transform: rotate(-180deg);
     }
   }
   .sub-item-wrapper {

@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import CollpaseMenu from '../CollapseMenu'
 import DropdownMenu from '../DropdownMenu'
 import Drawer from './Drawer'
 import { navs } from './constant'
+import { avoidScollingOverflow } from 'common/util'
 
 import './index.scss'
 
@@ -16,18 +17,22 @@ const Header: NextPage = () => {
   const [showDrawer, setShowDrawer] = useState(false)
 
   const clickMenu = useCallback(() => {
-    // 防止穿屏幕滚动
-    document.querySelector('body')!.style.overflow = 'hidden'
-
     setShowDrawer(true)
   }, [])
 
   const closeDrawer = useCallback(() => {
-    // 移除"防止穿屏幕滚动"逻辑
-    document.querySelector('body')!.style.overflow = 'auto'
-
     setShowDrawer(false)
   }, [])
+
+  // 全屏时, 防止穿屏滚动
+  useEffect(()=>{
+    if (showDrawer) {
+      const clear = avoidScollingOverflow('body')
+      return () =>{
+        clear()
+      }      
+    }
+  }, [showDrawer])
 
   const changeLang = useCallback((lang: any) => {
     i18n.changeLanguage(lang.key)
@@ -87,7 +92,7 @@ const Header: NextPage = () => {
         </CollpaseMenu>
       </header>
 
-      {/* 抽屉 */}
+      {/* 移动端菜单区域 */}
       <Drawer isShow={showDrawer} rightMenuClick={closeDrawer}>
         {<DropdownMenu menu={navs} />}
       </Drawer>
