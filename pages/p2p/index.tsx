@@ -1,4 +1,4 @@
-import axios from 'axios'
+import requestInstance from 'service/fetch'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
@@ -12,7 +12,7 @@ export default function P2P() {
   const { t } = useTranslation()
 
   useEffect(() => {
-    axios.get('/api/p2p/buy').then((res) => {
+    requestInstance.get('/api/p2p/buy').then((res) => {
       console.log(res)
     })
 
@@ -21,7 +21,6 @@ export default function P2P() {
       spaceBetween: 30,
       freeMode: true,
     })
-    
   }, [])
 
   return (

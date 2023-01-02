@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const requestInstance = axios.create({
-  baseURL: 'https://www.okx.com',
+  // baseURL: 'https://www.okx.com',
 })
 
 requestInstance.interceptors.request.use(

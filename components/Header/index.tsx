@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Link from 'next/link';
+import Link from 'next/link'
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
