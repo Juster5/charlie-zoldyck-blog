@@ -2,62 +2,55 @@ import React from 'react'
 
 import './index.scss'
 
-// type OKTablePropsType = {
-//   column: []
-//   data: []
-// }
+type columnType = {
+  dataIndex?: string
+  title?: string
+  key?: string
+  // width?: number
+  render?: Function
+}
 
-const OKTable: React.FC<any> = () => {
+type OKTablePropsType = {
+  column: columnType[]
+  data: any[]
+}
+
+const OKTable: React.FC<OKTablePropsType> = (props) => {
+  const { data, column } = props
+
   return (
     <div className="okx-table">
       <table className="okx-table-container">
         <thead className="okx-table-thead">
           <tr className="okx-table-tr">
-            <th className="okx-table-th">
-              标题1
-              <div className="okx-table-bottom-border"></div>
-            </th>
-            <th className="okx-table-th">
-              标题2
-              <div className="okx-table-bottom-border"></div>
-            </th>
+            {column?.map((el, index) => {
+              return (
+                <th className="okx-table-th" key={el.key || index}>
+                  {el.title}
+                  <div className="okx-table-bottom-border" />
+                </th>
+              )
+            })}
           </tr>
         </thead>
         <tbody className="okx-table-tbody">
-          <tr className="okx-table-tr">
-            <td className="okx-table-td">
-              内容1
-              <div className="okx-table-bottom-border"></div>
-            </td>
-            <td className="okx-table-td">
-              内容2
-              <div className="okx-table-bottom-border"></div>
-            </td>
-          </tr>
-          <tr className="okx-table-tr">
-            <td className="okx-table-td">
-              内容1
-              <div className="okx-table-bottom-border"></div>
-            </td>
-            <td className="okx-table-td">
-              内容2
-              <div className="okx-table-bottom-border"></div>
-            </td>
-          </tr>
-          <tr className="okx-table-tr">
-            <td className="okx-table-td">
-              内容1
-              <div className="okx-table-bottom-border"></div>
-            </td>
-            <td className="okx-table-td">
-              内容2
-              <div className="okx-table-bottom-border"></div>
-            </td>
-          </tr>
-          <tr className="okx-table-tr">
-            <td className="okx-table-td">内容1</td>
-            <td className="okx-table-td">内容2</td>
-          </tr>
+          {data?.map((el, index) => {
+            return (
+              <tr className="okx-table-tr" key={el.key || index}>
+                {column.map((item, itemIndex) => {
+                  return (
+                    <td className="okx-table-td" key={item.key || itemIndex}>
+                      {/* 如果有render函数则渲染render函数 */}
+                      {typeof item.render === 'function'
+                        ? item.render(el)
+                        : item.dataIndex && el[item.dataIndex]}
+                      <div className="okx-table-bottom-border" />
+                    </td>
+                  )
+                })}
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

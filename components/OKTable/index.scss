@@ -5,6 +5,7 @@
 
   .okx-table-container {
     width: 100%;
+    border-collapse: collapse;
   }
   .okx-table-tr {
     position: relative;
@@ -15,7 +16,7 @@
     bottom: 0;
     left: 0;
     height: 1px;
-    width: 101%;
+    width: 100%;
     background-color: #f0f0f0;
   }
   .okx-table-thead .okx-table-th {
