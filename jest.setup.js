@@ -6,7 +6,7 @@
 import '@testing-library/jest-dom/extend-expect'
 
 // 测试时默认引入国际化
-import './common/i18nForTest'
+// import './common/i18nForTest'
 
 beforeAll(()=>{
 
