@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
 import OKTable from '@/components/OKTable'
 
-import { slides } from './constant'
+import { slides } from '../../common/constant'
 
 import './index.scss'
 
