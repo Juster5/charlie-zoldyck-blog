@@ -12,7 +12,7 @@ export default async function handler(
   // const { data } = await curly.get(url)
   res?.status(200).json({
     code: 0,
-    msg: '',
+    msg: '调试',
     // data: data.data,
     data: {},
   })
