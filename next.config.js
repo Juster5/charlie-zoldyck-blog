@@ -31,6 +31,8 @@ const nextConfig = {
       })
     })
 
+    // config.experiments.topLevelAwait = true
+    
     // todo: 添加sass全局变量
     // const regexEqual = (x, y) => {
     //   return x instanceof RegExp &&
