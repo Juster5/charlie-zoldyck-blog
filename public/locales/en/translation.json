@@ -74,5 +74,8 @@
   "p2p_slide2_desc": "Become a Super Advertiser",
   "p2p_slide3": "Over 18 ways to buy crypto",
   "p2p_slide3_desc": "Pay with PayPal",
-  "p2p_slide4": "OKX P2P trading legal disclaimer"
+  "p2p_slide4": "OKX P2P trading legal disclaimer",
+  "order": "{{count}} order",
+  "order_other": "{{count}} orders"
+
 }

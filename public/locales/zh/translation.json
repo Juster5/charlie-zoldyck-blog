@@ -66,13 +66,14 @@
   "footer_community": "社区",
 
   "p2p_title": "P2P 交易",
-  "p2p_desc": "Create your own marketplace and trade crypto with others in your local currenc",
-  "p2p_slide1": "Trade USDT on OKX P2P",
-  "p2p_slide_more": "Learn More",
-  "p2p_slide2": "Building a crypto community together",
-  "p2p_slide2_desc": "Become a Super Advertiser",
-  "p2p_slide3": "Over 18 ways to buy crypto",
-  "p2p_slide3_desc": "Pay with PayPal",
-  "p2p_slide4": "OKX P2P trading legal disclaimer"  
+  "p2p_desc": "无需换汇，开拓你的专属交易市场",
+  "p2p_slide1": "在欧易 C2C 交易 USDT",
+  "p2p_slide_more": "了解更多",
+  "p2p_slide2": "共同打造数字货币社区",
+  "p2p_slide2_desc": "成为超级商家",
+  "p2p_slide3": "超 5 种买币方式",
+  "p2p_slide3_desc": "即刻用IPI支付",
+  "p2p_slide4": "欧易 C2C 交易法律免责声明",
+  "order": "{{count}} 单"
 
 }

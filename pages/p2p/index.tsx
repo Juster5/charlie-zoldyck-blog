@@ -33,8 +33,10 @@ export default function P2P() {
                   )}
                 </div>
                 <div className="desc__orders">
-                  {item.completedOrderQuantity} orders |{' '}
-                  {(item.completedRate * 100).toFixed(2)}% completion rate
+                  {t('order', {
+                    count: item.completedOrderQuantity,
+                  })}{' '}
+                  | {(item.completedRate * 100).toFixed(2)}% completion rate
                 </div>
               </div>
             </div>
