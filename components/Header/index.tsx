@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link';
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -63,7 +64,9 @@ const Header: NextPage = () => {
       <header className="okx-header">
         {/* logo区域 */}
         <div className="logo-wrapper">
-          <Image src="/images/logo.png" alt="OKX" width={82} height={36} />
+          <Link href={'/'}>
+            <Image src="/images/logo.png" alt="OKX" width={82} height={36} />
+          </Link>
         </div>
 
         {/* 导航栏区域 */}
@@ -99,7 +102,7 @@ const Header: NextPage = () => {
           </div>
         </CollpaseMenu>
       </header>
-       
+
       {/* 移动端菜单区域 */}
       <Drawer isShow={showDrawer} rightMenuClick={closeDrawer}>
         <div className="login-wrapper">

@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import Layout from 'components/Layout'
 import ErrorBoundary from 'components/ErrorBoundary'
 
-import 'swiper/css';
+import 'swiper/css'
 import '@/styles/global.scss'
 import '@/styles/media.scss'
 import '../common/i18n'
