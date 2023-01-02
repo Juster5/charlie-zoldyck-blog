@@ -4,13 +4,15 @@ import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
 import OKTable from '@/components/OKTable'
 
-import { slides } from '../../common/constant'
+import { slides, payMethodColor } from '../../common/constant'
 
 import './index.scss'
 
 export default function P2P() {
   const { t } = useTranslation()
   const [tableData, setTableData] = useState([])
+  const [currency, setCurrency] = useState('USDT')
+  const [fait, setFait] = useState('AED')
 
   const column = useMemo(() => {
     return [
@@ -46,25 +48,49 @@ export default function P2P() {
       {
         title: 'Available/Order limit',
         render(item: any) {
-          return <>{item.nickName}</>
+          return <div className='avaliable-content'>
+            <p>
+              <span className='avaliable-title'>Available</span>
+              <span className='avaliable-amount'>
+                { item.availableAmount } { currency }
+              </span>
+            </p>
+            <p>
+              <span className='avaliable-title'>Order limit</span> 
+              <span className='avaliable-amount'>
+                {item.quoteMinAmountPerOrder}-{item.quoteMaxAmountPerOrder} {fait}
+              </span>
+            </p>
+          </div>
         },
       },
       {
         title: 'Unit price',
         render(item: any) {
-          return <>{item.nickName}</>
+          return <div className='unit-price g-buy'>{item.price} {fait} </div>
         },
       },
       {
         title: 'Payment methods',
         render(item: any) {
-          return <>{item.nickName}</>
+          return <div className='pay-methods'>
+            {
+              item.paymentMethods?.map((el: string) => {
+                return <span className='pay-item' key={el}>
+                  <span className='pay-color' style={{ backgroundColor: payMethodColor[el] }}></span>
+                  <div className="pay-name">{el}</div>
+                </span>
+              })
+            }
+          </div>
         },
       },
       {
         title: 'Buy/Sell',
-        render(item: any) {
-          return <>{item.nickName}</>
+        render() {
+          return <div className='action-button buy'>
+            Buy {currency}
+          </div>
         },
       },
     ]

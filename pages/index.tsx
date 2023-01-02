@@ -28,10 +28,17 @@ export default function Home() {
   const [activeImg, setActiveImg] = useState(sectionFourItems[0].img)
 
   useEffect(() => {
+    // 首页背景全黑, 其他页面白色
+    document.documentElement.style.backgroundColor = "#000"
+
     const videos = document.querySelectorAll('.home-page-video')
     for (let i = 0; i < videos.length; i++) {
       const video = videos[i] as HTMLVideoElement
       video.play()
+    }
+
+    return ()=>{
+      document.documentElement.style.backgroundColor = "#fff"
     }
   }, [])
 

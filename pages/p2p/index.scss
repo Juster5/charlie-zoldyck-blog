@@ -29,6 +29,7 @@
   .padding-wrapper {
     padding-top: 40px;
     @include responsive-padding;
+
     .session-title {
       color: #000;
       font-size: 28px;
@@ -45,6 +46,8 @@
       line-height: 20px;
       margin-top: 16px;
     }
+
+    // 轮播图样式
     .slide-wrapper {
       margin-top: 30px;
       padding: 10px 0;
@@ -86,6 +89,8 @@
     }
   }
 
+
+  // 表格数据样式
   .advertisers {
     display: flex;
     align-items: center;
@@ -135,6 +140,72 @@
         font-weight: 500;
         line-height: 16px;
       }
+    }
+  }
+
+  .avaliable-content {
+    .avaliable-title {
+      color: #7b8293;
+      font-weight: 400;
+      margin-right: 12px;      
+      font-size: 14px;
+    } 
+    .avaliable-amount {
+      color: #1f2533;
+      font-size: 14px;
+    }
+  }
+
+  .unit-price {
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .pay-methods {
+    max-width: 120px;
+    .pay-item {
+      position: relative;
+      display: inline-block;
+      padding: 3px 0;
+      font-size: 0;
+      height: 16px;
+      line-height: 16px;
+      margin-right: 17px;
+      white-space: nowrap;
+    }
+    .pay-color {
+      display: inline-block;
+      height: 8px;
+      margin-right: 3px;
+      vertical-align: middle;
+      width: 2px;      
+    }
+    .pay-name {
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: middle;      
+    }
+  }
+
+  .action-button {
+    color: #fff;
+    width: 96px;
+    text-align: center;
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    &.buy {
+      background-color: #05c28c;    
+      &:hover {
+        background-color: #00996d;    
+      }  
+    }
+    .sell {
+      background-color: #e3493f;     
+      &:hover {
+        background-color: #d03f36;
+      } 
     }
   }
 }
