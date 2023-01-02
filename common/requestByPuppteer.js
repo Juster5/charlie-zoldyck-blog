@@ -1,44 +1,45 @@
-const chrome = require("chrome-aws-lambda");
+// const chrome = require("chrome-aws-lambda");
 const puppeteer = require('puppeteer-core')
 
 
 // 爬虫抓取请求
 export default async function puppeteerReq (url) {
-  
-  const options = process.env.FUNCTION_NAME
-  ? {
-      args: chrome.args,
-      executablePath: await chrome.executablePath,
-      headless: chrome.headless,
-    }
-  : {
-      args: [],
-      executablePath:
-        process.platform === "win32"
-          ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-          : process.platform === "linux"
-          ? "/usr/bin/google-chrome"
-          : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    };
+
+  // vercel 内存不够, 无法安装chrome内核
+  // const options = process.env.FUNCTION_NAME
+  // ? {
+  //     args: chrome.args,
+  //     executablePath: await chrome.executablePath,
+  //     headless: chrome.headless,
+  //   }
+  // : {
+  //     args: [],
+  //     executablePath:
+  //       process.platform === "win32"
+  //         ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+  //         : process.platform === "linux"
+  //         ? "/usr/bin/google-chrome"
+  //         : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  //   };
+  // const browser = await puppeteer.launch(options)
 
   let result = null
 
-  // const browser = await puppeteer.launch({
-  //   headless: true,
-  //   args: [
-  //       '--no-sandbox',
-  //       '--disable-setuid-sandbox',
-  //       '--disable-blink-features=AutomationControlled',
-  //   ],
-  //   dumpio: false,
-  //   executablePath: process.platform === "win32"
-  //     ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-  //     : process.platform === "linux"
-  //     ? "/usr/bin/google-chrome"
-  //     : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"  
-  // })
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-blink-features=AutomationControlled',
+    ],
+    dumpio: false,
+    executablePath: process.platform === "win32"
+      ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+      : process.platform === "linux"
+      ? "/usr/bin/google-chrome"
+      : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"  
+  })
 
-  const browser = await puppeteer.launch(options)
   
   const page = await browser.newPage()
   
