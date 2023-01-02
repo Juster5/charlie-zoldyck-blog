@@ -1,5 +1,7 @@
 // import { NextApiRequest, NextApiResponse } from 'next'
 const puppeteer = require('puppeteer')
+// import chromium from "chrome-aws-lambda";
+
 
 const url =
   'https://www.okx.com/v3/c2c/tradingOrders/books?t=1672584335185&quoteCurrency=USD&baseCurrency=USDT&side=buy&paymentMethod=all&userType=all&hideOverseasVerificationAds=false&sortType=recommended'
@@ -9,14 +11,24 @@ import { data } from '../data/p2pBuy.json'
 
 export default async function handler(req, res) {
   try {
+  //   const browser = await chromium.puppeteer.launch({
+  //     executablePath: await chromium.executablePath,
+  //     headless: true,
+  //     args: [
+  //         '--no-sandbox',
+  //         '--disable-setuid-sandbox',
+  //         '--disable-blink-features=AutomationControlled',
+  //     ],
+  //     dumpio: false,      
+  // });    
     const browser = await puppeteer.launch({
-      headless: true,
-      args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-blink-features=AutomationControlled',
-      ],
-      dumpio: false,
+      // headless: true,
+      // args: [
+      //     '--no-sandbox',
+      //     '--disable-setuid-sandbox',
+      //     '--disable-blink-features=AutomationControlled',
+      // ],
+      // dumpio: false,
     })
     
     const page = await browser.newPage()
