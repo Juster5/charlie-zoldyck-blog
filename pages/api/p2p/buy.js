@@ -21,26 +21,27 @@ export default async function handler(req, res) {
     
     const page = await browser.newPage()
 
-    await page.evaluateOnNewDocument(() => {
-      window.chrome = {};
-      window.chrome.app = {
-          InstallState: 'hehe',
-          RunningState: 'haha',
-          getDetails: 'xixi',
-          getIsInstalled: 'ohno',
-      };
-      window.chrome.csi = function () {};
-      window.chrome.loadTimes = function () {};
-      window.chrome.runtime = function () {};
-    })
+    // await page.evaluateOnNewDocument(() => {
+    //   window.chrome = {};
+    //   window.chrome.app = {
+    //       InstallState: 'hehe',
+    //       RunningState: 'haha',
+    //       getDetails: 'xixi',
+    //       getIsInstalled: 'ohno',
+    //   };
+    //   window.chrome.csi = function () {};
+    //   window.chrome.loadTimes = function () {};
+    //   window.chrome.runtime = function () {};
+    // })
 
-    await page.evaluateOnNewDocument(() => {
-      Object.defineProperty(navigator, 'userAgent', {
-          //userAgent在无头模式下有headless字样，所以需覆盖
-          get: () =>
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36',
-      });
-    })
+    // await page.evaluateOnNewDocument(() => {
+    //   Object.defineProperty(navigator, 'userAgent', {
+    //       //userAgent在无头模式下有headless字样，所以需覆盖
+    //       get: () =>
+    //       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36',
+    //   });
+    // })
+    
     await page.setUserAgent(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
    )
