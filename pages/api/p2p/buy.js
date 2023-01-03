@@ -5,7 +5,6 @@
 
 const https = require('https');
 
-
 // 模拟数据
 const url =
   'https://www.okx.com/v3/c2c/tradingOrders/books?t=1672584335185&quoteCurrency=USD&baseCurrency=USDT&side=buy&paymentMethod=all&userType=all&hideOverseasVerificationAds=false&sortType=recommended'
@@ -17,12 +16,8 @@ export default async function handler(req, res) {
   https.get(url, (response) => {
     let todo = '';
   
-    // called when a data chunk is received.
     response.on('data', (chunk) => {
       todo += chunk;
-      console.log('==================')
-      console.log(todo)
-      console.log('==================')
     });
   
     // called when the complete response is received.
@@ -31,7 +26,7 @@ export default async function handler(req, res) {
       res?.status(200).json({
         code: 0,
         msg: `Success`,
-        data: todo,
+        data: JSON.parse(todo).data,
       })       
     });
   
