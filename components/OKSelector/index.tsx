@@ -76,13 +76,14 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
       <div className="menus">
         {showSearch && (
           <div className="search-input">
-            <Image
-              className="search-icon"
-              src="/images/search.png"
-              width={16}
-              height={16}
-              alt="select-icon"
-            />
+            <div className="search-icon">
+              <Image
+                src="/images/search.png"
+                width={16}
+                height={16}
+                alt="select-icon"
+              />
+            </div>
             <input
               value={searchValue}
               onChange={searchMenu}
