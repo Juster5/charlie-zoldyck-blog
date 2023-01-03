@@ -1,4 +1,3 @@
-import { slides } from './slides'
-import { payMethodColor } from './payMethodColor'
-
-export { slides, payMethodColor }
+export * from './slides'
+export * from './payMethodColor'
+export * from './screenSize'

@@ -18,7 +18,7 @@ type CollpaseMenuProps = {
   position?: 'center' | 'left' | 'right' // 下拉菜单的位置
   menuClick?: Function // 菜单选择事件
   menusRender?: Function // 子菜单的自定义渲染
-  style: object // 自定义样式
+  style?: object // 自定义样式
 }
 
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
@@ -42,7 +42,7 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
                     className="menu-item"
                     key={index}
                     onClick={() => {
-                      menuClick && menuClick()
+                      menuClick && menuClick(el)
                     }}
                   >
                     {el.icon && (

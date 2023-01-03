@@ -1,0 +1,134 @@
+
+@import '@/styles/media.scss';
+
+.p2p-table{
+  
+  .advertisers {
+    display: flex;
+    align-items: center;
+    .advertisers-icon {
+      background: rgba(228, 236, 255, 0.4);
+      border-radius: 50%;
+      color: #2d60e0;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+      width: 24px;
+      height: 24px;
+      @include responsive(lg) {
+        line-height: 32px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .advertisers-desc {
+      flex: 1;
+      padding: 0 10px;
+      .desc__nickname {
+        color: #1f2533;
+        line-height: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .nickname-icon {
+        height: 16px;
+        margin-bottom: 2px;
+        margin-left: 4px;
+        margin-right: 4px;
+        min-width: 16px;
+        vertical-align: bottom;
+        width: 16px;
+      }
+      .desc__orders {
+        margin-top: 8px;
+        color: #7b8293;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .avaliable-content {
+    .avaliable-title {
+      color: #7b8293;
+      font-weight: 400;
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    .avaliable-amount {
+      color: #1f2533;
+      font-size: 14px;
+    }
+  }
+
+  .unit-price {
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .pay-methods {
+    max-width: 140px;
+    .pay-item {
+      position: relative;
+      display: inline-block;
+      padding: 3px 0;
+      font-size: 0;
+      height: 16px;
+      line-height: 16px;
+      margin-right: 17px;
+      white-space: nowrap;
+    }
+    .pay-color {
+      display: inline-block;
+      height: 8px;
+      margin-right: 3px;
+      vertical-align: middle;
+      width: 2px;
+    }
+    .pay-name {
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+    .pay-methods-more {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      vertical-align: middle;
+      font-size: 12px;
+      transition: all 0.1s ease;
+      &:hover {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .action-button {
+    color: #fff;
+    width: 96px;
+    text-align: center;
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    &.buy {
+      background-color: #05c28c;
+      &:hover {
+        background-color: #00996d;
+      }
+    }
+    .sell {
+      background-color: #e3493f;
+      &:hover {
+        background-color: #d03f36;
+      }
+    }
+  }
+}

@@ -1,143 +1,18 @@
 import requestInstance from 'service/fetch'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
-import OKTable from '@/components/OKTable'
-import CollpaseMenu from '@/components/CollapseMenu'
-
-import { slides, payMethodColor } from '../../common/constant'
+import { slides } from '../../common/constant'
+import P2PTable from '@/components/BizComponents/P2PTable'
 
 import './index.scss'
 
 export default function P2P() {
   const { t } = useTranslation()
   const [tableData, setTableData] = useState([])
+
   const [currency, setCurrency] = useState('USDT')
   const [fait, setFait] = useState('AED')
-
-  const renderPayMethod = useCallback((paymentMethods: any[]) => {
-    const firstArr = paymentMethods.slice(0, 4) // 先取投四个
-    const nextArr = paymentMethods.slice(4) // 再取第4个之后的
-    return (
-      <>
-        {firstArr?.map((el: string) => {
-          return (
-            <span className="pay-item" key={el}>
-              <span
-                className="pay-color"
-                style={{ backgroundColor: payMethodColor[el] }}
-              ></span>
-              <div className="pay-name">{el}</div>
-            </span>
-          )
-        })}
-        {nextArr?.length > 0 && (
-          <CollpaseMenu
-            style={{
-              verticalAlign: 'middle',
-            }}
-            menusRender={() => {
-              return nextArr?.map((el: string) => {
-                return (
-                  <span className="pay-item" key={el}>
-                    <span
-                      className="pay-color"
-                      style={{ backgroundColor: payMethodColor[el] }}
-                    ></span>
-                    <div className="pay-name">{el}</div>
-                  </span>
-                )
-              })
-            }}
-          >
-            <span className="pay-methods-more okx-header-footer-arrow-chevrons-down"></span>
-          </CollpaseMenu>
-        )}
-      </>
-    )
-  }, [])
-
-  const column = useMemo(() => {
-    return [
-      {
-        title: 'Advertisers',
-        render(item: any) {
-          return (
-            <div className="advertisers">
-              <div className="advertisers-icon">
-                {item.nickName.slice(0, 1)}
-              </div>
-              <div className="advertisers-desc">
-                <div className="desc__nickname">
-                  {item.nickName}
-                  {item.verificationType === 0 && (
-                    <img
-                      className="nickname-icon"
-                      src="https://static.okx.com/cdn/assets/imgs/225/23D4D3F3419206E1.png"
-                    />
-                  )}
-                </div>
-                <div className="desc__orders">
-                  {t('order', {
-                    count: item.completedOrderQuantity,
-                  })}{' '}
-                  | {(item.completedRate * 100).toFixed(2)}% completion rate
-                </div>
-              </div>
-            </div>
-          )
-        },
-      },
-      {
-        title: 'Available/Order limit',
-        render(item: any) {
-          return (
-            <div className="avaliable-content">
-              <p>
-                <span className="avaliable-title">Available</span>
-                <span className="avaliable-amount">
-                  {item.availableAmount} {currency}
-                </span>
-              </p>
-              <p>
-                <span className="avaliable-title">Order limit</span>
-                <span className="avaliable-amount">
-                  {item.quoteMinAmountPerOrder}-{item.quoteMaxAmountPerOrder}{' '}
-                  {fait}
-                </span>
-              </p>
-            </div>
-          )
-        },
-      },
-      {
-        title: 'Unit price',
-        render(item: any) {
-          return (
-            <div className="unit-price g-buy">
-              {item.price} {fait}{' '}
-            </div>
-          )
-        },
-      },
-      {
-        title: 'Payment methods',
-        render(item: any) {
-          return (
-            <div className="pay-methods">
-              {renderPayMethod(item.paymentMethods)}
-            </div>
-          )
-        },
-      },
-      {
-        title: 'Buy/Sell',
-        render() {
-          return <div className="action-button buy">Buy {currency}</div>
-        },
-      },
-    ]
-  }, [])
 
   useEffect(() => {
     console.log(setCurrency, setFait)
@@ -192,7 +67,7 @@ export default function P2P() {
           </div>
         </div>
 
-        <OKTable data={tableData} column={column} />
+        <P2PTable tableData={tableData} fait={fait} currency={currency}/>
       </div>
     </div>
   )

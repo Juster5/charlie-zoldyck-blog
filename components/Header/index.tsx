@@ -1,14 +1,15 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { avoidScollingOverflow } from 'common/util'
 
 import CollpaseMenu from '../CollapseMenu'
 import DropdownMenu from '../DropdownMenu'
 import Drawer from './Drawer'
 import { navs } from './constant'
-import { avoidScollingOverflow } from 'common/util'
+import { GloablContext } from '../GloablContextProvider'
 
 import './index.scss'
 
@@ -27,7 +28,8 @@ const Header: NextPage = () => {
   const { t, i18n } = useTranslation()
 
   const [showDrawer, setShowDrawer] = useState(false)
-  const [lang, setLang] = useState('en')
+
+  const { lang, setLang } = useContext(GloablContext)
 
   const clickMenu = useCallback(() => {
     setShowDrawer(true)
@@ -47,17 +49,17 @@ const Header: NextPage = () => {
     }
   }, [showDrawer])
 
-  const changeLang = useCallback((lang: any) => {
+  const changeLang = (lang: any) => {
     // 不存在语言包, 则加载语言包, 然后切换语言
-    if (i18n.languages.indexOf(lang.key) === -1) {
-      i18n.loadLanguages(lang.key, () => {
-        i18n.changeLanguage(lang.key)
+    if (i18n.languages.indexOf(lang) === -1) {
+      i18n.loadLanguages(lang, () => {
+        i18n.changeLanguage(lang)
       })
     } else {
       // 否则直接切换语言
-      i18n.changeLanguage(lang.key)
+      i18n.changeLanguage(lang)
     }
-  }, [])
+  }
 
   return (
     <>
@@ -96,7 +98,9 @@ const Header: NextPage = () => {
         </div>
 
         {/* 多语言区域 */}
-        <CollpaseMenu position="right" menu={langs} menuClick={changeLang}>
+        <CollpaseMenu position="right" menu={langs} menuClick={(el: any)=>{
+          changeLang(el.key)
+        }}>
           <div className="languages sm-screen-hidden">
             <span className="okx-header-footer-language"></span>
           </div>
@@ -118,7 +122,7 @@ const Header: NextPage = () => {
                 key={el.key}
                 onClick={() => {
                   setLang(el.key)
-                  changeLang(el)
+                  changeLang(el.key)
                 }}
               >
                 {el.title}
