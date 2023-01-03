@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { useCallback, useMemo, useState } from 'react'
+// import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 
 import './index.scss'
@@ -22,7 +22,7 @@ type OKSelectorProps = {
 const OKSelector: React.FC<OKSelectorProps> = (props) => {
   const [showMenu, setShowMenu] = useState(false)
   const [searchValue, setSearchValue] = useState('')
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   const { menus, showSearch, onSelect } = props
 
