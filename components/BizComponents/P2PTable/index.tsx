@@ -29,11 +29,7 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
           fait={fait}
         ></PCTable>
       ) : (
-        <MobileTable
-          tableData={tableData}
-          currency={currency}
-          fait={fait}        
-        />
+        <MobileTable tableData={tableData} currency={currency} fait={fait} />
       )}
     </div>
   )

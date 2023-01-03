@@ -19,19 +19,22 @@ type CollpaseMenuProps = {
   menuClick?: Function // 菜单选择事件
   menusRender?: Function // 子菜单的自定义渲染
   style?: object // 自定义样式
+  menuOffsetLeft?: number // 菜单位置偏移量
 }
 
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
   const { t } = useTranslation()
 
-  const { children, menu, position, menuClick, menusRender, style } = props
+  const { children, menu, position, menuClick, menusRender, style, menuOffsetLeft} = props
   return (
     <div className="collpase-wrapper" style={style}>
       {children}
-      {/* menu && menu.length &&  */}
       {
         <div
           className={`collpase-menu collpase-${position ? position : 'center'}`}
+          style={{
+            marginLeft: `-${menuOffsetLeft}px`
+          }}
         >
           {/* 如果有render函数, 优先渲染自定义组件 */}
           {typeof menusRender === 'function'
