@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 // import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 
@@ -20,11 +20,13 @@ type OKSelectorProps = {
 }
 
 const OKSelector: React.FC<OKSelectorProps> = (props) => {
+  const { menus, showSearch, onSelect } = props
+
   const [showMenu, setShowMenu] = useState(false)
   const [searchValue, setSearchValue] = useState('')
+  const [selectValue, setSelectValue] = useState(menus[0])
   // const { t } = useTranslation()
 
-  const { menus, showSearch, onSelect } = props
 
   const cacheMenus = useMemo(() => {
     if (searchValue && searchValue.length > 0) {
@@ -34,9 +36,10 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
     return menus
   }, [menus, searchValue])
 
-  const triggerSelect = useCallback((el: any) => {
+  const triggerSelect = useCallback((el: any) => {    
     setShowMenu(false)
     setSearchValue('')
+    setSelectValue(el)
     typeof onSelect === 'function' && onSelect(el)
   }, [])
 
@@ -45,15 +48,21 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
     setSearchValue(value)
   }, [])
 
-  const onblur = useCallback(() => {
-    setSearchValue('')
-    setShowMenu(false)
+  useEffect(()=>{
+    document.addEventListener('click', () => {
+      if (showMenu) {
+        setSearchValue('')
+        setShowMenu(false)
+      }
+    })
   }, [])
-
+  
   return (
     <div
       className={`okselector-wrapper ${showMenu && ' active'}`}
-      onBlur={onblur}
+      onClick={(e)=>{
+        e.stopPropagation()
+      }}
     >
       <div
         className="default-value menu-item"
@@ -62,15 +71,15 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
         }}
       >
         {/* 有图标则渲染图标 */}
-        {menus[0]?.icon && (
+        {selectValue?.icon && (
           <Image
             width={20}
             height={20}
-            src={menus[0].icon}
-            alt={`${menus[0].title}-icon`}
+            src={selectValue.icon as string}
+            alt={`${selectValue.title}-icon`}
           />
         )}
-        <div className="title">{menus[0].title}</div>
+        <div className="title">{selectValue.title}</div>
         <span className="okx-header-footer-arrow-chevrons-down"></span>
       </div>
       <div className="menus">
@@ -96,9 +105,9 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
           return (
             <div
               className="menu-item select-item"
-              key={el.key || index}
+              key={el.key || el.title || index}
               onClick={() => {
-                triggerSelect(el)
+                triggerSelect(el, index)
               }}
             >
               {el.icon && (

@@ -38,7 +38,8 @@
     position: absolute;
     // top: 48px;
     pointer-events: none;
-    min-width: 245px;
+    // min-width: 245px;
+    min-width: auto;
     padding: 10px;
     border-radius: 6px;
     overflow: hidden;
@@ -97,6 +98,7 @@
       line-height: 18px;
       position: relative;
       visibility: visible;
+      white-space: nowrap;
     }
   }
 }
