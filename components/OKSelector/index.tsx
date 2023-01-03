@@ -127,7 +127,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
                 className="menu-item select-item"
                 key={el.key || el.title || index}
                 onClick={() => {
-                  triggerSelect(el, index)
+                  triggerSelect(el)
                 }}
               >
                 {el.icon && (
