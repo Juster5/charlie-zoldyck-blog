@@ -1,0 +1,28 @@
+@import '@/styles/media.scss';
+
+.okx-tabs {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ebebeb;  
+  @include responsive(bg) {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .tab-item {
+    color: #929292;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+    // height: 24px;
+    // line-height: 24px;
+    margin-right: 32px;
+    padding: 16px 0;    
+    &.active {
+      border-bottom: 2px solid #000;
+      color: #000;      
+      padding-bottom: 14px;    
+    }
+  }  
+}

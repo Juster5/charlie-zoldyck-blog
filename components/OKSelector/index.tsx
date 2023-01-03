@@ -1,8 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 // import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
+import { avoidScollingOverflow } from 'common/util'
+import { GloablContext } from '../GloablContextProvider'
 
 import './index.scss'
+import { SM } from 'common/constant'
 
 type menuItem = {
   key?: string // 唯一标识
@@ -25,8 +28,8 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
   const [showMenu, setShowMenu] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const [selectValue, setSelectValue] = useState(menus[0])
+  const { responseSize } = useContext(GloablContext)
   // const { t } = useTranslation()
-
 
   const cacheMenus = useMemo(() => {
     if (searchValue && searchValue.length > 0) {
@@ -36,7 +39,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
     return menus
   }, [menus, searchValue])
 
-  const triggerSelect = useCallback((el: any) => {    
+  const triggerSelect = useCallback((el: any) => {
     setShowMenu(false)
     setSearchValue('')
     setSelectValue(el)
@@ -48,19 +51,28 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
     setSearchValue(value)
   }, [])
 
-  useEffect(()=>{
-    document.addEventListener('click', () => {
-      if (showMenu) {
-        setSearchValue('')
-        setShowMenu(false)
-      }
-    })
+  useEffect(() => {
+    const clear = () =>{
+      setSearchValue('')
+      setShowMenu(false)
+    }
+    document.addEventListener('click', clear)
+
+    return ()=>{
+      document.removeEventListener('click', clear)
+    }
   }, [])
-  
+
+  useEffect(()=>{
+    if (showMenu && responseSize === SM) {
+      return avoidScollingOverflow()
+    }
+  }, [showMenu, responseSize])
+
   return (
     <div
       className={`okselector-wrapper ${showMenu && ' active'}`}
-      onClick={(e)=>{
+      onClick={(e) => {
         e.stopPropagation()
       }}
     >
@@ -98,30 +110,33 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
               onChange={searchMenu}
               className="search-input-content"
               type="text"
+              placeholder='search'
             />
           </div>
         )}
-        {cacheMenus.map((el, index) => {
-          return (
-            <div
-              className="menu-item select-item"
-              key={el.key || el.title || index}
-              onClick={() => {
-                triggerSelect(el, index)
-              }}
-            >
-              {el.icon && (
-                <Image
-                  width={20}
-                  height={20}
-                  src={el.icon}
-                  alt={`${el.title}-icon`}
-                />
-              )}
-              <div className="title">{el.title}</div>
-            </div>
-          )
-        })}
+        <div className="scroll-wrapper">
+          {cacheMenus.map((el, index) => {
+            return (
+              <div
+                className="menu-item select-item"
+                key={el.key || el.title || index}
+                onClick={() => {
+                  triggerSelect(el, index)
+                }}
+              >
+                {el.icon && (
+                  <Image
+                    width={20}
+                    height={20}
+                    src={el.icon}
+                    alt={`${el.title}-icon`}
+                  />
+                )}
+                <div className="title">{el.title}</div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

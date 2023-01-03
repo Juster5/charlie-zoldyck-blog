@@ -2,11 +2,21 @@ import requestInstance from 'service/fetch'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
-import { slides, currencyList, fiatList } from '../../common/constant'
 import P2PTable from '@/components/BizComponents/P2PTable'
 import OKSelector from '@/components/OKSelector'
-
+import Tabs from '@/components/Tabs'
+import { slides, currencyList, fiatList } from '../../common/constant'
 import './index.scss'
+
+const tabs = [
+  {
+    title: 'Buy',
+    key: 'buy'
+  }, {
+    title: 'Sell',
+    key: 'sell'
+  }
+]
 
 export default function P2P() {
   const { t } = useTranslation()
@@ -14,6 +24,7 @@ export default function P2P() {
 
   const [currency, setCurrency] = useState('USDT')
   const [fait, setFait] = useState('AED')
+  const [side, setSide] = useState('buy')
 
   // 初始化轮播图
   useEffect(() => {
@@ -26,24 +37,25 @@ export default function P2P() {
 
   // 发送请求
   useEffect(() => {
-    console.log(currency)
-    console.log(fait)
-
+    console.log(side);
+    
     requestInstance
-      .get('/api/p2p/buy', {
+      .get('/api/p2p/books', {
         params: {
           currency,
           fait,
+          side: side === 'buy' ? 'sell' : 'buy',
           t: new Date().getTime(),
         },
       } as any)
       .then((res: any) => {
         const { code, data } = res
         if (code === 0) {
-          setTableData(data.buy ? data.buy : [])
+          const { buy, sell } = data
+          setTableData(buy.length > 0 ? buy : sell)
         }
       })
-  }, [currency, fait])
+  }, [currency, fait, side])
 
   const memoSetCurrency = useCallback((el: any) => {
     setCurrency(el.title)
@@ -51,6 +63,10 @@ export default function P2P() {
 
   const memoSetFiat = useCallback((el: any) => {
     setFait(el.title)
+  }, [])
+
+  const memoSetSide = useCallback((el: any)=>{
+    setSide(el.key)
   }, [])
 
   return (
@@ -90,10 +106,12 @@ export default function P2P() {
 
         {/* 过滤器区域 */}
         <div className="filter-content">
+          <Tabs tabs={tabs} onChange={memoSetSide}/>
+
           <OKSelector
             menus={currencyList}
             showSearch={true}
-            onSelect={memoSetCurrency}
+            onSelect={memoSetCurrency}            
           />
           <OKSelector
             menus={fiatList}
@@ -102,7 +120,7 @@ export default function P2P() {
           />
         </div>
 
-        <P2PTable tableData={tableData} fait={fait} currency={currency} />
+        <P2PTable tableData={tableData} fait={fait} currency={currency} side={side}/>
       </div>
     </div>
   )

@@ -35,7 +35,6 @@ const PaymentMethods: React.FC<PropsType> = ({ methods }) => {
               style={{
                 verticalAlign: 'middle',
               }}
-              menuOffsetLeft={80}
               position="center"
               menusRender={() => {
                 return nextArr?.map((el: string) => {

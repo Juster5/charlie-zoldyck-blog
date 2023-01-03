@@ -42,10 +42,7 @@ const Header: NextPage = () => {
   // 全屏时, 防止穿屏滚动
   useEffect(() => {
     if (showDrawer) {
-      const clear = avoidScollingOverflow('body')
-      return () => {
-        clear()
-      }
+      return avoidScollingOverflow()
     }
   }, [showDrawer])
 

@@ -1,5 +1,5 @@
 // 防止文档传屏滚动
-export const avoidScollingOverflow = (selecter: string) => {
+export const avoidScollingOverflow = (selecter: string = 'body') => {
   // 防止穿屏幕滚动
   let element = document.querySelector(selecter)
   element!.setAttribute(

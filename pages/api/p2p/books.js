@@ -1,12 +1,11 @@
 import request from '../../../common/serverRequest';
 
-// 先用爬虫请求数据, 爬不了就用模拟的数据
 export default async function handler(req, res) {
 
-  const { currency, fait, t } = req.query
+  const { currency, fait, side, t } = req.query
   // 拼接okx的请求
   const url =
-  `https://www.okx.com/v3/c2c/tradingOrders/books?t=${t}&quoteCurrency=${fait}&baseCurrency=${currency}&side=buy&paymentMethod=all&userType=all&hideOverseasVerificationAds=false&sortType=recommended`  
+  `https://www.okx.com/v3/c2c/tradingOrders/books?t=${t}&quoteCurrency=${fait}&baseCurrency=${currency}&side=${side}&paymentMethod=all&userType=all&hideOverseasVerificationAds=false&sortType=recommended`  
   
   const result = await request(url)
 

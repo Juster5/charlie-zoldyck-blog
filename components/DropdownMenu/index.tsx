@@ -20,13 +20,11 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
   const clickMenu = (index: any) => {
     if (!expandIndexs[index]) {
       expandIndexs[index] = true
-      console.log(expandIndexs)
       setExpandIndexs({
         ...expandIndexs,
       })
     } else {
       expandIndexs[index] = false
-      console.log(expandIndexs)
       setExpandIndexs({
         ...expandIndexs,
       })
