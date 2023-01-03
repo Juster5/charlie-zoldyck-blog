@@ -24,13 +24,14 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
                 <div className="desc__nickname">
                   {item.nickName}
                   {item.verificationType === 0 && (
-                    <Image
-                      width={16}
-                      height={16}
-                      className="nickname-icon"
-                      src="https://static.okx.com/cdn/assets/imgs/225/23D4D3F3419206E1.png"
-                      alt="nickname-icon"
-                    />
+                    <span className="nickname-icon">
+                      <Image
+                        width={16}
+                        height={16}
+                        src="https://static.okx.com/cdn/assets/imgs/225/23D4D3F3419206E1.png"
+                        alt="nickname-icon"
+                      />
+                    </span>
                   )}
                 </div>
                 <div className="desc__orders">

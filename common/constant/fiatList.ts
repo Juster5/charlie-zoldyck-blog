@@ -1,9 +1,5 @@
 export const fiatList = [
   {
-    icon: 'https://static.coinall.ltd/cdn/assets/imgs/206/16F6BF5C73C8BD70.png',
-    title: 'USD',
-  },
-  {
     icon: 'https://static.coinall.ltd/cdn/assets/imgs/207/855D8870CE2564AF.png',
     title: 'AED',
   },

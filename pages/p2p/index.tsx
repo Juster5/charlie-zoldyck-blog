@@ -15,11 +15,27 @@ export default function P2P() {
   const [currency, setCurrency] = useState('USDT')
   const [fait, setFait] = useState('AED')
 
+  // 初始化轮播图
   useEffect(() => {
+    new Swiper('.slide-wrapper', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      freeMode: true,
+    })
+  }, [])
+
+  // 发送请求
+  useEffect(() => {
+    console.log(currency)
+    console.log(fait)
+
     requestInstance
       .get('/api/p2p/buy', {
-        currency,
-        fait,
+        params: {
+          currency,
+          fait,
+          t: new Date().getTime(),
+        },
       } as any)
       .then((res: any) => {
         const { code, data } = res
@@ -27,12 +43,6 @@ export default function P2P() {
           setTableData(data.buy ? data.buy : [])
         }
       })
-
-    new Swiper('.slide-wrapper', {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-      freeMode: true,
-    })
   }, [currency, fait])
 
   const memoSetCurrency = useCallback((el: any) => {
