@@ -15,7 +15,7 @@
       text-align: center;
       width: 24px;
       height: 24px;
-      @include responsive(lg) {
+      @include responsive(bg) {
         line-height: 32px;
         width: 32px;
         height: 32px;
@@ -47,7 +47,6 @@
         margin-top: 8px;
         color: #7b8293;
         font-size: 12px;
-        font-weight: 500;
         line-height: 16px;
       }
     }
@@ -126,6 +125,55 @@
       background-color: #e3493f;
       &:hover {
         background-color: #d03f36;
+      }
+    }
+  }
+
+  .p2p-mobile-talbe {
+
+    .table-item {
+      padding: 18px 0;
+      border-bottom: thin solid #e9ebf2;
+      color: #1f2533; 
+      .advertisers {
+        margin-bottom: 16px;
+      }
+      .advertisers-desc {
+        padding-right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .order_spread {
+        color: #c4c4c4;
+        margin: 0 4px;
+        font-size: 6px;
+      }
+      .avaliable-content {
+        display: flex;
+        justify-content: space-between;
+        color: #7b8293;
+      }
+      .avaliable-title {
+        color: #1f2533;
+      }
+  
+      .avaliable-amount {
+        color: #7b8293;
+      }
+      .unit-price {
+        font-size: 16px;
+      }
+
+      .item-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+        font-size: 12px;
+        .pay-methods {
+          max-width: 160px;
+        }
       }
     }
   }

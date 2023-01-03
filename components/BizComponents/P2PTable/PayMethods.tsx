@@ -1,6 +1,6 @@
 import React, { useContext, useCallback } from 'react'
 import { GloablContext } from '@/components/GloablContextProvider'
-import { BG, payMethodColor } from 'common/constant'
+import { BG, payMethodColor, SM } from 'common/constant'
 import CollpaseMenu from '../../CollapseMenu'
 
 type PropsType = {
@@ -8,13 +8,15 @@ type PropsType = {
 }
 
 const PaymentMethods: React.FC<PropsType> = ({ methods }) => {
+
   const { responseSize } = useContext(GloablContext)
 
-  console.log(responseSize === BG)
-
   const renderPayMethod = useCallback((paymentMethods: any[]) => {
-    const firstArr = paymentMethods.slice(0, 4) // 先取投四个
-    const nextArr = paymentMethods.slice(4) // 再取第4个之后的
+
+    const splitIndex =  responseSize === SM ? 2 : 4 // 分割线, 移动端取前两个, pc端取前4个
+
+    const firstArr = paymentMethods.slice(0, splitIndex) 
+    const nextArr = paymentMethods.slice(splitIndex) 
 
     return (
       <>
@@ -34,6 +36,7 @@ const PaymentMethods: React.FC<PropsType> = ({ methods }) => {
             style={{
               verticalAlign: 'middle',
             }}
+            position="center"
             menusRender={() => {
               return nextArr?.map((el: string) => {
                 return (
@@ -53,7 +56,7 @@ const PaymentMethods: React.FC<PropsType> = ({ methods }) => {
         )}
       </>
     )
-  }, [])
+  }, [responseSize])
 
   return <>{renderPayMethod(methods)}</>
 }

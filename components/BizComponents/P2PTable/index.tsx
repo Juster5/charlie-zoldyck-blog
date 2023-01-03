@@ -3,6 +3,8 @@ import { GloablContext } from '../../GloablContextProvider'
 import { BG } from 'common/constant'
 
 import PCTable from './PCTable'
+import MobileTable from './MobileTable'
+
 import './index.scss'
 
 export type P2PTablePropsType = {
@@ -27,7 +29,11 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
           fait={fait}
         ></PCTable>
       ) : (
-        <div>小图表</div>
+        <MobileTable
+          tableData={tableData}
+          currency={currency}
+          fait={fait}        
+        />
       )}
     </div>
   )

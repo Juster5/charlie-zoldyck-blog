@@ -1,1 +1,167 @@
-export default {}
+import OKTable from '@/components/OKTable'
+import React, { useMemo } from 'react'
+import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
+import PaymentMethods from './PayMethods'
+import { P2PTablePropsType } from '.'
+
+const PCTable: React.FC<P2PTablePropsType> = ({
+  tableData,
+  currency,
+  fait,
+}) => {
+  const { t } = useTranslation()
+
+  const column = useMemo(() => {
+    return [
+      {
+        title: 'Advertisers',
+        render(item: any) {
+          return (
+            <div className="advertisers">
+              <div className="advertisers-icon">
+                {item.nickName.slice(0, 1)}
+              </div>
+              <div className="advertisers-desc">
+                <div className="desc__nickname">
+                  {item.nickName}
+                  {item.verificationType === 0 && (
+                    <Image
+                      width={16}
+                      height={16}
+                      className="nickname-icon"
+                      src="https://static.okx.com/cdn/assets/imgs/225/23D4D3F3419206E1.png"
+                      alt="nickname-icon"
+                    />
+                  )}
+                </div>
+                <div className="desc__orders">
+                  {t('order', {
+                    count: item.completedOrderQuantity,
+                  })}{' '}
+                  | {(item.completedRate * 100).toFixed(2)}% completion rate
+                </div>
+              </div>
+            </div>
+          )
+        },
+      },
+      {
+        title: 'Available/Order limit',
+        render(item: any) {
+          return (
+            <div className="avaliable-content">
+              <p>
+                <span className="avaliable-title">Available</span>
+                <span className="avaliable-amount">
+                  {item.availableAmount} {currency}
+                </span>
+              </p>
+              <p>
+                <span className="avaliable-title">Order limit</span>
+                <span className="avaliable-amount">
+                  {item.quoteMinAmountPerOrder}-{item.quoteMaxAmountPerOrder}{' '}
+                  {fait}
+                </span>
+              </p>
+            </div>
+          )
+        },
+      },
+      {
+        title: 'Unit price',
+        render(item: any) {
+          return (
+            <div className="unit-price g-buy">
+              {item.price} {fait}{' '}
+            </div>
+          )
+        },
+      },
+      {
+        title: 'Payment methods',
+        render(item: any) {
+          return (
+            <div className="pay-methods">
+              <PaymentMethods methods={item.paymentMethods} />
+            </div>
+          )
+        },
+      },
+      {
+        title: 'Buy/Sell',
+        render() {
+          return <div className="action-button buy">Buy {currency}</div>
+        },
+      },
+    ]
+  }, [])
+
+  return (
+    <div className="p2p-mobile-talbe">
+      {tableData.map((item, index) => {
+        return (
+          <div className="table-item" key={index}>
+            <div className="advertisers">
+              <div className="advertisers-icon">
+                {item.nickName.slice(0, 1)}
+              </div>
+              <div className="advertisers-desc">
+                <div className="desc__nickname">
+                  {item.nickName}
+                  {item.verificationType === 0 && (
+                    <Image
+                      width={16}
+                      height={16}
+                      className="nickname-icon"
+                      src="https://static.okx.com/cdn/assets/imgs/225/23D4D3F3419206E1.png"
+                      alt="nickname-icon"
+                    />
+                  )}
+                </div>
+                <div className="desc__orders">
+                  {t('order', {
+                    count: item.completedOrderQuantity,
+                  })}
+                  <i className="order_spread">|</i>
+                  {(item.completedRate * 100).toFixed(2)}%
+                </div>
+              </div>
+            </div>
+
+            <div className="avaliable-content">
+              <p>
+                <span className="avaliable-title">Available</span>
+                <span className="avaliable-amount">
+                  {item.availableAmount} {currency}
+                </span>
+              </p>
+              <span>Unit price</span>
+            </div>
+            <div className="avaliable-content">
+              <p>
+                <span className="avaliable-title">Order limit</span>
+                <span className="avaliable-amount">
+                  {item.quoteMinAmountPerOrder}-{item.quoteMaxAmountPerOrder}{' '}
+                  {fait}
+                </span>
+              </p>
+              <div className="unit-price g-buy">
+                {item.price} {fait}
+              </div>
+            </div>
+
+             <div className='item-bottom'>
+                <div className='pay-methods'>
+                  <PaymentMethods methods={item.paymentMethods} />
+                </div>
+                <div className="action-button buy">Buy {currency}</div>              
+              </div>     
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+export default PCTable

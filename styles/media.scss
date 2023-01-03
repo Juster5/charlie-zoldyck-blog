@@ -9,8 +9,8 @@
     @media only screen and (min-width: $width-mid) {
       @content;
     }
-  } @else if $width == lg {
-    @media only screen and (min-width: $width-lg) {
+  } @else if $width == bg {
+    @media only screen and (min-width: $width-bg) {
       @content;
     }
   }
@@ -27,7 +27,7 @@
     padding-right: calc(50% - 480px);
   }
 
-  @include responsive(lg) {
+  @include responsive(bg) {
     padding-left: calc(50% - 624px);
     padding-right: calc(50% - 624px);
   }

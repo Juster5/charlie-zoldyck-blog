@@ -109,7 +109,7 @@
   &.show {
     transform: translateX(0);
   }
-  @include responsive(lg) {
+  @include responsive(bg) {
     display: none;
   }
 
