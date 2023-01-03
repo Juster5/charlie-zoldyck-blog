@@ -8,7 +8,7 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
   tableData,
   currency,
   fait,
-  side
+  side,
 }) => {
   const { t } = useTranslation()
 
@@ -62,7 +62,9 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
                   {fait}
                 </span>
               </p>
-              <div className={`unit-price ${side === 'buy' ? 'g-buy' : 'g-sell'}`}>
+              <div
+                className={`unit-price ${side === 'buy' ? 'g-buy' : 'g-sell'}`}
+              >
                 {item.price} {fait}
               </div>
             </div>
@@ -71,7 +73,11 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
               <div className="pay-methods">
                 <PaymentMethods methods={item.paymentMethods} />
               </div>
-              <div className={`action-button ${side === 'buy' ? 'buy' : 'sell'}`}>Buy {currency}</div>
+              <div
+                className={`action-button ${side === 'buy' ? 'buy' : 'sell'}`}
+              >
+                Buy {currency}
+              </div>
             </div>
           </div>
         )

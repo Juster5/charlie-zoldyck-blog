@@ -9,7 +9,7 @@ const PCTable: React.FC<P2PTablePropsType> = ({
   tableData,
   currency,
   fait,
-  side
+  side,
 }) => {
   const { t } = useTranslation()
 
@@ -74,7 +74,9 @@ const PCTable: React.FC<P2PTablePropsType> = ({
         title: 'Unit price',
         render(item: any) {
           return (
-            <div className={`unit-price ${side === 'buy' ? 'g-buy' : 'g-sell'}`}>
+            <div
+              className={`unit-price ${side === 'buy' ? 'g-buy' : 'g-sell'}`}
+            >
               {item.price} {fait}{' '}
             </div>
           )
@@ -93,7 +95,11 @@ const PCTable: React.FC<P2PTablePropsType> = ({
       {
         title: 'Buy/Sell',
         render() {
-          return <div className={`action-button ${side === 'buy' ? 'buy' : 'sell'}`}>Buy {currency}</div>
+          return (
+            <div className={`action-button ${side === 'buy' ? 'buy' : 'sell'}`}>
+              Buy {currency}
+            </div>
+          )
         },
       },
     ]

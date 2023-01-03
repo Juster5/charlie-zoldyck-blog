@@ -5,7 +5,7 @@
   align-items: center;
   font-size: 18px;
   margin-bottom: 24px;
-  border-bottom: 1px solid #ebebeb;  
+  border-bottom: 1px solid #ebebeb;
   @include responsive(bg) {
     font-size: 22px;
     margin-bottom: 30px;
@@ -18,11 +18,11 @@
     // height: 24px;
     // line-height: 24px;
     margin-right: 32px;
-    padding: 16px 0;    
+    padding: 16px 0;
     &.active {
       border-bottom: 2px solid #000;
-      color: #000;      
-      padding-bottom: 14px;    
+      color: #000;
+      padding-bottom: 14px;
     }
-  }  
+  }
 }

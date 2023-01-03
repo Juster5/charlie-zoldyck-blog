@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 // import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import { avoidScollingOverflow } from 'common/util'
@@ -52,18 +58,18 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
   }, [])
 
   useEffect(() => {
-    const clear = () =>{
+    const clear = () => {
       setSearchValue('')
       setShowMenu(false)
     }
     document.addEventListener('click', clear)
 
-    return ()=>{
+    return () => {
       document.removeEventListener('click', clear)
     }
   }, [])
 
-  useEffect(()=>{
+  useEffect(() => {
     if (showMenu && responseSize === SM) {
       return avoidScollingOverflow()
     }
@@ -110,7 +116,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
               onChange={searchMenu}
               className="search-input-content"
               type="text"
-              placeholder='search'
+              placeholder="search"
             />
           </div>
         )}

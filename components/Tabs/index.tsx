@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useState } from 'react'
 
 type TabItemType = {
   title: string
@@ -14,7 +14,6 @@ type TabsProps = {
 import './index.scss'
 
 const Tabs: React.FC<TabsProps> = ({ tabs, onChange, defaultKey }) => {
-
   const [activeKey, setActiveKey] = useState(defaultKey || tabs[0].key)
 
   return (
@@ -22,7 +21,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, onChange, defaultKey }) => {
       {tabs.map((el) => {
         return (
           <div
-            className={`tab-item ${activeKey===el.key && 'active'}`}
+            className={`tab-item ${activeKey === el.key && 'active'}`}
             key={el.key}
             onClick={() => {
               setActiveKey(el.key)

@@ -11,11 +11,12 @@ import './index.scss'
 const tabs = [
   {
     title: 'Buy',
-    key: 'buy'
-  }, {
+    key: 'buy',
+  },
+  {
     title: 'Sell',
-    key: 'sell'
-  }
+    key: 'sell',
+  },
 ]
 
 export default function P2P() {
@@ -37,8 +38,8 @@ export default function P2P() {
 
   // 发送请求
   useEffect(() => {
-    console.log(side);
-    
+    console.log(side)
+
     requestInstance
       .get('/api/p2p/books', {
         params: {
@@ -65,7 +66,7 @@ export default function P2P() {
     setFait(el.title)
   }, [])
 
-  const memoSetSide = useCallback((el: any)=>{
+  const memoSetSide = useCallback((el: any) => {
     setSide(el.key)
   }, [])
 
@@ -106,12 +107,12 @@ export default function P2P() {
 
         {/* 过滤器区域 */}
         <div className="filter-content">
-          <Tabs tabs={tabs} onChange={memoSetSide}/>
+          <Tabs tabs={tabs} onChange={memoSetSide} />
 
           <OKSelector
             menus={currencyList}
             showSearch={true}
-            onSelect={memoSetCurrency}            
+            onSelect={memoSetCurrency}
           />
           <OKSelector
             menus={fiatList}
@@ -120,7 +121,12 @@ export default function P2P() {
           />
         </div>
 
-        <P2PTable tableData={tableData} fait={fait} currency={currency} side={side}/>
+        <P2PTable
+          tableData={tableData}
+          fait={fait}
+          currency={currency}
+          side={side}
+        />
       </div>
     </div>
   )
