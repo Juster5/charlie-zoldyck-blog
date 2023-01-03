@@ -5,7 +5,7 @@
 import * as Sentry from '@sentry/nextjs'
 
 Sentry.init({
-  dsn: "https://3054912eb4be4f0ea7f0440de6583a68@o4504423755808768.ingest.sentry.io/4504423760658432",
+  dsn: "https://b79cff4336e343148a8aa9d69031a665@o4504423755808768.ingest.sentry.io/4504439947001856",
   tracesSampleRate: 1.0,
   // Note: if you want to override the automatic release value, do not set a
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so

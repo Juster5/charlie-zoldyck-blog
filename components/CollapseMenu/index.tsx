@@ -25,7 +25,15 @@ type CollpaseMenuProps = {
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
   const { t } = useTranslation()
 
-  const { children, menu, position, menuClick, menusRender, style, menuOffsetLeft} = props
+  const {
+    children,
+    menu,
+    position,
+    menuClick,
+    menusRender,
+    style,
+    menuOffsetLeft,
+  } = props
   return (
     <div className="collpase-wrapper" style={style}>
       {children}
@@ -33,7 +41,7 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
         <div
           className={`collpase-menu collpase-${position ? position : 'center'}`}
           style={{
-            marginLeft: `-${menuOffsetLeft}px`
+            marginLeft: `-${menuOffsetLeft}px`,
           }}
         >
           {/* 如果有render函数, 优先渲染自定义组件 */}

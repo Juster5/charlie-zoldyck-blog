@@ -16,7 +16,7 @@ const nextConfig = {
 
   // 图片域名白名单
   images: {
-    domains: ['static.okx.com'],
+    domains: ['static.okx.com', 'static.coinall.ltd'],
   },
 
   // webpack配置

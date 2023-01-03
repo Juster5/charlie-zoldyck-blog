@@ -1,9 +1,10 @@
 import requestInstance from 'service/fetch'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
-import { slides } from '../../common/constant'
+import { slides, currencyList, fiatList } from '../../common/constant'
 import P2PTable from '@/components/BizComponents/P2PTable'
+import OKSelector from '@/components/OKSelector'
 
 import './index.scss'
 
@@ -15,21 +16,31 @@ export default function P2P() {
   const [fait, setFait] = useState('AED')
 
   useEffect(() => {
-    console.log(setCurrency, setFait)
-
-    requestInstance.get('/api/p2p/buy').then((res: any) => {
-      const { code, data } = res
-      if (code === 0) {
-        console.log(data)
-        setTableData(data.buy ? data.buy : [])
-      }
-    })
+    requestInstance
+      .get('/api/p2p/buy', {
+        currency,
+        fait,
+      } as any)
+      .then((res: any) => {
+        const { code, data } = res
+        if (code === 0) {
+          setTableData(data.buy ? data.buy : [])
+        }
+      })
 
     new Swiper('.slide-wrapper', {
       slidesPerView: 'auto',
       spaceBetween: 30,
       freeMode: true,
     })
+  }, [currency, fait])
+
+  const memoSetCurrency = useCallback((el: any) => {
+    setCurrency(el.title)
+  }, [])
+
+  const memoSetFiat = useCallback((el: any) => {
+    setFait(el.title)
   }, [])
 
   return (
@@ -65,6 +76,20 @@ export default function P2P() {
               )
             })}
           </div>
+        </div>
+
+        {/* 过滤器区域 */}
+        <div className="filter-content">
+          <OKSelector
+            menus={currencyList}
+            showSearch={true}
+            onSelect={memoSetCurrency}
+          />
+          <OKSelector
+            menus={fiatList}
+            showSearch={true}
+            onSelect={memoSetFiat}
+          />
         </div>
 
         <P2PTable tableData={tableData} fait={fait} currency={currency} />

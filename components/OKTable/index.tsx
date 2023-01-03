@@ -6,7 +6,6 @@ type columnType = {
   dataIndex?: string
   title?: string
   key?: string
-  // width?: number
   render?: Function
 }
 

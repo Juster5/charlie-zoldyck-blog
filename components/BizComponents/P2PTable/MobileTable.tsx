@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import PaymentMethods from './PayMethods'
 import { P2PTablePropsType } from '.'
 
-const PCTable: React.FC<P2PTablePropsType> = ({
+const MobileTable: React.FC<P2PTablePropsType> = ({
   tableData,
   currency,
   fait,
@@ -78,4 +78,4 @@ const PCTable: React.FC<P2PTablePropsType> = ({
   )
 }
 
-export default PCTable
+export default MobileTable

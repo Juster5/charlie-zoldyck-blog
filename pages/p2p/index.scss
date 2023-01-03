@@ -67,10 +67,11 @@
       color: #fff;
       @include responsive(bg) {
         width: 288px;
+        &:hover {
+          transform: translateY(-8px);
+        }
       }
-      &:hover {
-        transform: translateY(-8px);
-      }
+
       &.slide-item-block {
         width: 144px;
       }
@@ -88,6 +89,10 @@
         left: 16px;
         font-size: 12px;
       }
+    }
+
+    .filter-content {
+      margin-top: 30px;
     }
   }
 }
