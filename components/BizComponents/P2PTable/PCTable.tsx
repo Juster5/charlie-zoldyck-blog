@@ -5,12 +5,11 @@ import { useTranslation } from 'react-i18next'
 import PaymentMethods from './PayMethods'
 import { P2PTablePropsType } from '.'
 
-const PCTable: React.FC<P2PTablePropsType>  = ({
+const PCTable: React.FC<P2PTablePropsType> = ({
   tableData,
   currency,
-  fait
+  fait,
 }) => {
-
   const { t } = useTranslation()
 
   const column = useMemo(() => {
@@ -32,7 +31,7 @@ const PCTable: React.FC<P2PTablePropsType>  = ({
                       height={16}
                       className="nickname-icon"
                       src="https://static.okx.com/cdn/assets/imgs/225/23D4D3F3419206E1.png"
-                      alt='nickname-icon'
+                      alt="nickname-icon"
                     />
                   )}
                 </div>
@@ -84,7 +83,7 @@ const PCTable: React.FC<P2PTablePropsType>  = ({
         render(item: any) {
           return (
             <div className="pay-methods">
-              <PaymentMethods methods={item.paymentMethods}/>
+              <PaymentMethods methods={item.paymentMethods} />
             </div>
           )
         },
@@ -98,7 +97,7 @@ const PCTable: React.FC<P2PTablePropsType>  = ({
     ]
   }, [])
 
-  return <OKTable data={tableData} column={column} />  
+  return <OKTable data={tableData} column={column} />
 }
 
 export default PCTable

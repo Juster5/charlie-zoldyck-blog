@@ -1,26 +1,21 @@
 import React, { useContext, useCallback } from 'react'
 import { GloablContext } from '@/components/GloablContextProvider'
-import { BG, payMethodColor } from 'common/constant';
-import CollpaseMenu from '../../CollapseMenu';
+import { BG, payMethodColor } from 'common/constant'
+import CollpaseMenu from '../../CollapseMenu'
 
 type PropsType = {
   methods: []
 }
 
-const PaymentMethods: React.FC<PropsType> = (
-  {
-    methods
-  }
-)=> {
+const PaymentMethods: React.FC<PropsType> = ({ methods }) => {
   const { responseSize } = useContext(GloablContext)
 
-  console.log(responseSize === BG);
-  
-  const renderPayMethod = useCallback((paymentMethods: any[]) => {
+  console.log(responseSize === BG)
 
+  const renderPayMethod = useCallback((paymentMethods: any[]) => {
     const firstArr = paymentMethods.slice(0, 4) // 先取投四个
     const nextArr = paymentMethods.slice(4) // 再取第4个之后的
-    
+
     return (
       <>
         {firstArr?.map((el: string) => {
@@ -58,13 +53,9 @@ const PaymentMethods: React.FC<PropsType> = (
         )}
       </>
     )
-  }, [])  
+  }, [])
 
-  return <>
-    {
-       renderPayMethod(methods)
-    }
-  </>
+  return <>{renderPayMethod(methods)}</>
 }
 
 export default PaymentMethods

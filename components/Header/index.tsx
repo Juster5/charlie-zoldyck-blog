@@ -98,9 +98,13 @@ const Header: NextPage = () => {
         </div>
 
         {/* 多语言区域 */}
-        <CollpaseMenu position="right" menu={langs} menuClick={(el: any)=>{
-          changeLang(el.key)
-        }}>
+        <CollpaseMenu
+          position="right"
+          menu={langs}
+          menuClick={(el: any) => {
+            changeLang(el.key)
+          }}
+        >
           <div className="languages sm-screen-hidden">
             <span className="okx-header-footer-language"></span>
           </div>

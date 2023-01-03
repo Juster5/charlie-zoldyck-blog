@@ -5,4 +5,4 @@ export const SM_WIDTH = 768 // 小屏宽度
 // 屏幕参量
 export const SM = 'sm' // 小屏常量
 export const MID = 'mid' // 中屏宽度
-export const BG= 'bg' // 大屏宽度
+export const BG = 'bg' // 大屏宽度

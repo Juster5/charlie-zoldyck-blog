@@ -19,7 +19,7 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
   const { responseSize } = useContext(GloablContext)
 
   return (
-    <div className='p2p-table'>
+    <div className="p2p-table">
       {responseSize === BG ? (
         <PCTable
           tableData={tableData}

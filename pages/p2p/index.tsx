@@ -67,7 +67,7 @@ export default function P2P() {
           </div>
         </div>
 
-        <P2PTable tableData={tableData} fait={fait} currency={currency}/>
+        <P2PTable tableData={tableData} fait={fait} currency={currency} />
       </div>
     </div>
   )
