@@ -4,23 +4,39 @@
   position: relative;
   height: 100%;
   overflow: hidden;
+  display: inline-block;
 
-  @include responsive(lg) {
-    &:hover {
-      overflow: visible;
-    }
-    &:hover .collpase-menu {
-      z-index: 9999;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-      visibility: visible;
-    }
+  // @include responsive(sm) {
+  //   &:focus .collpase-menu,
+  //   &:active .collpase-menu {
+  //     overflow: visible;
+  //   }
+  //   &:focus .collpase-menu,
+  //   &:active .collpase-menu {
+  //     z-index: 9999;
+  //     opacity: 1;
+  //     transform: translateY(0);
+  //     pointer-events: auto;
+  //     visibility: visible;
+  //   }
+  // }
+
+  // @include responsive(lg) {
+  &:hover {
+    overflow: visible;
   }
+  &:hover .collpase-menu {
+    z-index: 9999;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+  // }
 
   .collpase-menu {
     position: absolute;
-    top: 48px;
+    // top: 48px;
     pointer-events: none;
     min-width: 245px;
     padding: 10px;

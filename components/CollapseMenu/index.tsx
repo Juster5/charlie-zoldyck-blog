@@ -17,39 +17,46 @@ type CollpaseMenuProps = {
   menu?: menuItem[] // 下拉菜单按钮
   position?: 'center' | 'left' | 'right' // 下拉菜单的位置
   menuClick?: Function // 菜单选择事件
+  menusRender?: Function // 子菜单的自定义渲染
+  style: object // 自定义样式
 }
 
 const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
   const { t } = useTranslation()
 
+  const { children, menu, position, menuClick, menusRender, style } = props
   return (
-    <div className="collpase-wrapper">
-      {props.children}
-      {props.menu && props.menu.length && (
+    <div className="collpase-wrapper" style={style}>
+      {children}
+      {/* menu && menu.length &&  */}
+      {
         <div
-          className={`collpase-menu collpase-${
-            props.position ? props.position : 'center'
-          }`}
+          className={`collpase-menu collpase-${position ? position : 'center'}`}
         >
-          {props.menu?.map((el, index) => {
-            return (
-              <div
-                className="menu-item"
-                key={index}
-                onClick={() => {
-                  props.menuClick && props.menuClick(el)
-                }}
-              >
-                {el.icon && <div className={`menu-item__icon  ${el.icon}`} />}
-                <div className="menu-item__text">
-                  <div className="title">{t(el.title)}</div>
-                  <div className="sub-title">{t(el.subTitle)}</div>
-                </div>
-              </div>
-            )
-          })}
+          {/* 如果有render函数, 优先渲染自定义组件 */}
+          {typeof menusRender === 'function'
+            ? menusRender()
+            : menu?.map((el, index) => {
+                return (
+                  <div
+                    className="menu-item"
+                    key={index}
+                    onClick={() => {
+                      menuClick && menuClick()
+                    }}
+                  >
+                    {el.icon && (
+                      <div className={`menu-item__icon  ${el.icon}`} />
+                    )}
+                    <div className="menu-item__text">
+                      <div className="title">{t(el.title)}</div>
+                      <div className="sub-title">{t(el.subTitle)}</div>
+                    </div>
+                  </div>
+                )
+              })}
         </div>
-      )}
+      }
     </div>
   )
 }

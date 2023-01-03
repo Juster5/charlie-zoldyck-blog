@@ -29,7 +29,7 @@ export default function Home() {
 
   useEffect(() => {
     // 首页背景全黑, 其他页面白色
-    document.documentElement.style.backgroundColor = "#000"
+    document.documentElement.style.backgroundColor = '#000'
 
     const videos = document.querySelectorAll('.home-page-video')
     for (let i = 0; i < videos.length; i++) {
@@ -37,8 +37,8 @@ export default function Home() {
       video.play()
     }
 
-    return ()=>{
-      document.documentElement.style.backgroundColor = "#fff"
+    return () => {
+      document.documentElement.style.backgroundColor = '#fff'
     }
   }, [])
 

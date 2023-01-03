@@ -89,7 +89,6 @@
     }
   }
 
-
   // 表格数据样式
   .advertisers {
     display: flex;
@@ -147,9 +146,9 @@
     .avaliable-title {
       color: #7b8293;
       font-weight: 400;
-      margin-right: 12px;      
+      margin-right: 12px;
       font-size: 14px;
-    } 
+    }
     .avaliable-amount {
       color: #1f2533;
       font-size: 14px;
@@ -162,7 +161,7 @@
   }
 
   .pay-methods {
-    max-width: 120px;
+    max-width: 140px;
     .pay-item {
       position: relative;
       display: inline-block;
@@ -178,12 +177,23 @@
       height: 8px;
       margin-right: 3px;
       vertical-align: middle;
-      width: 2px;      
+      width: 2px;
     }
     .pay-name {
       display: inline-block;
       font-size: 12px;
-      vertical-align: middle;      
+      vertical-align: middle;
+    }
+    .pay-methods-more {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      vertical-align: middle;
+      font-size: 12px;
+      transition: all 0.1s ease;
+      &:hover {
+        transform: rotate(-180deg);
+      }
     }
   }
 
@@ -196,16 +206,16 @@
     border-radius: 5px;
     cursor: pointer;
     &.buy {
-      background-color: #05c28c;    
+      background-color: #05c28c;
       &:hover {
-        background-color: #00996d;    
-      }  
+        background-color: #00996d;
+      }
     }
     .sell {
-      background-color: #e3493f;     
+      background-color: #e3493f;
       &:hover {
         background-color: #d03f36;
-      } 
+      }
     }
   }
 }

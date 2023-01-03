@@ -1,7 +1,4 @@
-import { slides } from './slides';
-import { payMethodColor } from './payMethodColor';
+import { slides } from './slides'
+import { payMethodColor } from './payMethodColor'
 
-export {
-  slides,
-  payMethodColor
-}
+export { slides, payMethodColor }
