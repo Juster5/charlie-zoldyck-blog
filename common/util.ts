@@ -13,14 +13,3 @@ export const avoidScollingOverflow = (selecter: string) => {
     element = null
   }
 }
-
-export const getUrlQuery = (url) => {
-  var params = url.split('?')[1].split('&')
-  var obj = {}
-  // for (i = 0; i < params.length; i++) {
-  // var param = params[i].split("=");
-  // obj[param[0]] = param[1]
-  // }
-  params.map((v) => (obj[v.split('=')[0]] = v.split('=')[1]))
-  return
-}
