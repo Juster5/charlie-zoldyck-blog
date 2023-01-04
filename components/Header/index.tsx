@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useCallback, useEffect, useState, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { avoidScollingOverflow } from 'common/util'
+import { langs } from 'common/constant'
 
 import CollpaseMenu from '../CollapseMenu'
 import DropdownMenu from '../DropdownMenu'
@@ -15,17 +16,6 @@ import { GloablContext } from '../GloablContextProvider'
 
 import './index.scss'
 import React from 'react'
-
-const langs = [
-  {
-    title: 'English',
-    key: 'en_US',
-  },
-  {
-    title: '简体中文',
-    key: 'zh_CN',
-  },
-]
 
 const Header: NextPage = () => {
   const { t, i18n } = useTranslation()

@@ -28,10 +28,11 @@ const GloablContextProvider: React.FC<GloablContextProps> = ({
   defaultLang,
   defaultSize,
 }) => {
-
   // 语言和屏幕宽度都是默认先去服务端传进来的参数, 用来做服务端渲染, 客户端则取cookie中的数据
-  const [lang, setLang] = useState(defaultLang || locale) 
-  const [responseSize, setResponseSize] = useState(defaultSize || getResponseSize())
+  const [lang, setLang] = useState(defaultLang || locale)
+  const [responseSize, setResponseSize] = useState(
+    defaultSize || getResponseSize()
+  )
 
   useEffect(() => {
     getResponseSize()
