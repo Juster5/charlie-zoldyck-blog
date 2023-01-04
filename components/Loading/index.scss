@@ -1,4 +1,3 @@
-
 .okx-loading {
   margin: 30px auto;
   display: block;
@@ -6,14 +5,15 @@
   height: 80px;
 }
 .okx-loading:after {
-  content: " ";
+  content: ' ';
   display: block;
   width: 64px;
   height: 64px;
   margin: 8px;
   border-radius: 50%;
   border: 6px solid #fff;
-  border-color: rgba($color: #000000, $alpha: .075) transparent rgba($color: #000000, $alpha: .075) transparent;
+  border-color: rgba($color: #000000, $alpha: 0.075) transparent
+    rgba($color: #000000, $alpha: 0.075) transparent;
   animation: okx-loading 1.2s linear infinite;
 }
 @keyframes okx-loading {

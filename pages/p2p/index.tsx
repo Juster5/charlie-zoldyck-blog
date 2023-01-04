@@ -39,7 +39,6 @@ export default function P2P() {
 
   // 发送请求
   useEffect(() => {
-
     setLoading(true)
 
     requestInstance
@@ -55,12 +54,15 @@ export default function P2P() {
         const { code, data } = res
         if (code === 0) {
           const { buy, sell } = data
-          setTableData(buy && buy.length? buy : sell && sell.length ? sell : [])
+          setTableData(
+            buy && buy.length ? buy : sell && sell.length ? sell : []
+          )
         }
-      }).finally(()=>{
+      })
+      .finally(() => {
         setTimeout(() => {
-          setLoading(false)          
-        }, 300);
+          setLoading(false)
+        }, 300)
       })
   }, [currency, fait, side])
 

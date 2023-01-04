@@ -8,12 +8,11 @@ export const avoidScollingOverflow = (selecter: string = 'body') => {
     `top: ${-top}px; overflow: hidden; position: fixed; width: 100%;`
   )
 
-
   // 返回清除方法
   return () => {
-    element!.removeAttribute('style') 
+    element!.removeAttribute('style')
     document.documentElement.scrollTo({
-      top: top
+      top: top,
     })
     element = null
   }

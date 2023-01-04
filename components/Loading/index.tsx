@@ -5,4 +5,4 @@ const Loading = () => {
   return <div className="okx-loading"></div>
 }
 
-export default React.memo(Loading) 
+export default React.memo(Loading)

@@ -30,8 +30,6 @@ const nextConfig = {
         one.issuer.and = [path.resolve(__dirname)]
       })
     })
-
-    // config.experiments.topLevelAwait = true
     
     // todo: 添加sass全局变量
     // const regexEqual = (x, y) => {

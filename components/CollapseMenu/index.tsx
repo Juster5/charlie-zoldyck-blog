@@ -72,4 +72,4 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
   )
 }
 
-export default React.memo(CollpaseMenu) 
+export default React.memo(CollpaseMenu)

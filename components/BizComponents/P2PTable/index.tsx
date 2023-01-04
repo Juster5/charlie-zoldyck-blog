@@ -24,7 +24,6 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
   const { responseSize } = useContext(GloablContext)
 
   const renderTable = useCallback(() => {
-
     return responseSize !== SM ? (
       <PCTable
         tableData={tableData}
@@ -46,9 +45,13 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
     <div className="p2p-table">
       {tableData.length === 0 ? (
         <div className="empty-wrapper">
-          <Image width={40} height={40} alt="table-empty" src="https://static.okx.com/cdn/assets/imgs/204/8363375D610E1179.png" />                    
+          <Image
+            width={40}
+            height={40}
+            alt="table-empty"
+            src="https://static.okx.com/cdn/assets/imgs/204/8363375D610E1179.png"
+          />
         </div>
-
       ) : (
         renderTable()
       )}
