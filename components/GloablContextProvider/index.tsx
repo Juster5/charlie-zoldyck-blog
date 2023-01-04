@@ -1,8 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { BG_WIDTH, MID_WIDTH, SM_WIDTH, BG, SM, MID } from 'common/constant'
+import React, { useEffect, useState } from 'react'
+import { getResponseSize } from 'common/util'
+// @ts-ignore
+import Cookies from 'js-cookie'
 
 type GloablContextProps = {
   children: any
+  defaultLang?: string // 服务端渲染才有的数据
+  defaultSize?: string // 服务端渲染才有的数据
 }
 
 type GloablContextType = {
@@ -16,30 +20,25 @@ export const GloablContext = React.createContext<GloablContextType>(
   {} as GloablContextType
 )
 
+const locale = Cookies.get('locale')
 const Provider = GloablContext.Provider
 
-const GloablContextProvider: React.FC<GloablContextProps> = ({ children }) => {
-  const [lang, setLang] = useState('en')
-  const [responseSize, setResponseSize] = useState('sm')
+const GloablContextProvider: React.FC<GloablContextProps> = ({
+  children,
+  defaultLang,
+  defaultSize,
+}) => {
 
-  // 检测屏幕宽度
-  const detectSize = useCallback(() => {
-    const width = window.screen.width
-    if (width <= SM_WIDTH) {
-      setResponseSize(SM)
-    } else if (width >= MID_WIDTH && width <= BG_WIDTH) {
-      setResponseSize(MID)
-    } else {
-      setResponseSize(BG)
-    }
-  }, [])
+  // 语言和屏幕宽度都是默认先去服务端传进来的参数, 用来做服务端渲染, 客户端则取cookie中的数据
+  const [lang, setLang] = useState(defaultLang || locale) 
+  const [responseSize, setResponseSize] = useState(defaultSize || getResponseSize())
 
   useEffect(() => {
-    detectSize()
+    getResponseSize()
 
-    window.addEventListener('resize', detectSize, false)
+    window.addEventListener('resize', getResponseSize, false)
     return () => {
-      window.removeEventListener('resize', detectSize, false)
+      window.removeEventListener('resize', getResponseSize, false)
     }
   }, [])
 

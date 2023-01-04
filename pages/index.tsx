@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
-import initI18n from '../common/i18nForServer'
 
 import '@/pages/index.scss'
-
 
 const sectionFourItems = [
   {
@@ -174,16 +172,6 @@ export default function Home() {
   )
 }
 
-Home.getInitialProps = async ({ req, res }: any) => {
-  console.log('==================')
-  console.log(req)
-  console.log('==================')
-  // 盲猜屏幕宽度, 并设置对应的宽度
+// Home.getInitialProps = async ({ req, res }: any) => {
 
-  // 获取返回的语言, 并渲染对应的语言的页面
-  const cookies = res.getHeader('set-cookie');
-  const lang = cookies[0].split(';')[0].split('=')[1]
-  initI18n(lang)
-
-  return {}
-}
+// }

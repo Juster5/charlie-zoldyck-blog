@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+// @ts-ignore
 import Cookies from 'js-cookie'
 import Link from 'next/link'
 import Image from 'next/image'
