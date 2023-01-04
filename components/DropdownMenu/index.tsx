@@ -71,4 +71,4 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
   )
 }
 
-export default DropdownMenu
+export default React.memo(DropdownMenu) 

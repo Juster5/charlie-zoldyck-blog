@@ -57,4 +57,4 @@ const GloablContextProvider: React.FC<GloablContextProps> = ({ children }) => {
   )
 }
 
-export default GloablContextProvider
+export default React.memo(GloablContextProvider)

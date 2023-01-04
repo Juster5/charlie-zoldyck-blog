@@ -12,6 +12,7 @@ import { navs } from './constant'
 import { GloablContext } from '../GloablContextProvider'
 
 import './index.scss'
+import React from 'react'
 
 const langs = [
   {
@@ -138,4 +139,5 @@ const Header: NextPage = () => {
   )
 }
 
-export default Header
+export default React.memo(Header)
+

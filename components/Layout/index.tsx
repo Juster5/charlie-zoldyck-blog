@@ -18,4 +18,4 @@ const Layout = (props: LayoutProps) => {
   )
 }
 
-export default Layout
+export default React.memo(Layout)

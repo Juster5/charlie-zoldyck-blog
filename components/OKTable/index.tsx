@@ -56,4 +56,4 @@ const OKTable: React.FC<OKTablePropsType> = (props) => {
   )
 }
 
-export default OKTable
+export default React.memo(OKTable)

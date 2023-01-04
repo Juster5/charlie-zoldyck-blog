@@ -24,4 +24,4 @@ const Drawer: React.FC<DrawerPropsType> = ({
   )
 }
 
-export default Drawer
+export default React.memo(Drawer)

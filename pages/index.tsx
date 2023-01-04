@@ -91,16 +91,14 @@ export default function Home() {
       <div className="third-section">
         <div className="third-container">
           <div className="third-animation">
-            {/* <picture className="okui-image-webp"> */}
-            {/* <source srcset="https://static.okx.com/cdn/assets/imgs/2212/1F468D0080B73C28.png?x-oss-process=image/format,webp" /> */}
-            <Image
-              className="third-animation-img"
-              src={activeImg}
-              alt="One app. Unlimited possibilities.Lite"
-              width="288"
-              height="624"
-            />
-            {/* </picture> */}
+            <span className="third-animation-img">
+              <Image
+                src={activeImg}
+                alt="One app. Unlimited possibilities.Lite"
+                width="288"
+                height="624"
+              />
+            </span>
           </div>
           <div className="third-body">
             <p className="common-title">
@@ -159,13 +157,14 @@ export default function Home() {
             poster="https://static.okx.com/cdn/assets/imgs/2210/2763D233C494439D.jpg?x-oss-process=image/format,webp"
             src="https://static.okx.com/cdn/assets/files/2210/D47D930F643E7A00.webm"
           />
-          <Image
-            className="mobile-text"
-            alt="With you every step of the wayFrom your first crypto trade to your first NFT purchase, you'll have us to guide you through the process. No stupid questions. No sleepless nights. Have confidence in your crypto."
-            width="400"
-            height="400"
-            src="https://static.okx.com/cdn/assets/imgs/2210/602389EA3A7E31BD.gif"
-          />
+          <span className="mobile-text">
+            <Image
+              alt="With you every step of the wayFrom your first crypto trade to your first NFT purchase, you'll have us to guide you through the process. No stupid questions. No sleepless nights. Have confidence in your crypto."
+              width="400"
+              height="400"
+              src="https://static.okx.com/cdn/assets/imgs/2210/602389EA3A7E31BD.gif"
+            />
+          </span>
         </div>
       </div>
     </div>

@@ -36,4 +36,4 @@ const Tabs: React.FC<TabsProps> = ({ tabs, onChange, defaultKey }) => {
   )
 }
 
-export default Tabs
+export default React.memo(Tabs)

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Swiper from 'swiper'
 import P2PTable from '@/components/BizComponents/P2PTable'
 import OKSelector from '@/components/OKSelector'
+import Loading from '@/components/Loading'
 import Tabs from '@/components/Tabs'
 import { slides, currencyList, fiatList } from '../../common/constant'
 import './index.scss'
@@ -22,7 +23,7 @@ const tabs = [
 export default function P2P() {
   const { t } = useTranslation()
   const [tableData, setTableData] = useState([])
-
+  const [loading, setLoading] = useState(false)
   const [currency, setCurrency] = useState('USDT')
   const [fait, setFait] = useState('AED')
   const [side, setSide] = useState('buy')
@@ -38,7 +39,8 @@ export default function P2P() {
 
   // 发送请求
   useEffect(() => {
-    console.log(side)
+
+    setLoading(true)
 
     requestInstance
       .get('/api/p2p/books', {
@@ -53,8 +55,12 @@ export default function P2P() {
         const { code, data } = res
         if (code === 0) {
           const { buy, sell } = data
-          setTableData(buy.length > 0 ? buy : sell)
+          setTableData(buy && buy.length? buy : sell && sell.length ? sell : [])
         }
+      }).finally(()=>{
+        setTimeout(() => {
+          setLoading(false)          
+        }, 300);
       })
   }, [currency, fait, side])
 
@@ -121,12 +127,16 @@ export default function P2P() {
           />
         </div>
 
-        <P2PTable
-          tableData={tableData}
-          fait={fait}
-          currency={currency}
-          side={side}
-        />
+        {loading ? (
+          <Loading />
+        ) : (
+          <P2PTable
+            tableData={tableData}
+            fait={fait}
+            currency={currency}
+            side={side}
+          />
+        )}
       </div>
     </div>
   )

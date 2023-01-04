@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 import DropdownMenu from '../DropdownMenu'
@@ -42,4 +43,4 @@ const Footer: NextPage = () => {
   )
 }
 
-export default Footer
+export default React.memo(Footer)
