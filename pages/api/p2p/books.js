@@ -9,9 +9,9 @@ export default async function handler(req, res) {
   
   const result = await request(url)
 
-  console.log('==================')
-  console.log(result)
-  console.log('==================')
+  // console.log('==================')
+  // console.log(result)
+  // console.log('==================')
 
   if (result) {
     res?.status(200).json({

@@ -19,9 +19,7 @@ const PCTable: React.FC<P2PTablePropsType> = ({
       render(item: any) {
         return (
           <div className="advertisers">
-            <div className="advertisers-icon">
-              {item.nickName.slice(0, 1)}
-            </div>
+            <div className="advertisers-icon">{item.nickName.slice(0, 1)}</div>
             <div className="advertisers-desc">
               <div className="desc__nickname">
                 {item.nickName}
@@ -40,7 +38,8 @@ const PCTable: React.FC<P2PTablePropsType> = ({
                 {t('order', {
                   count: item.completedOrderQuantity,
                 })}{' '}
-                | {(item.completedRate * 100).toFixed(2)}% {t('p2p_completion_rate')}
+                | {(item.completedRate * 100).toFixed(2)}%{' '}
+                {t('p2p_completion_rate')}
               </div>
             </div>
           </div>
@@ -73,9 +72,7 @@ const PCTable: React.FC<P2PTablePropsType> = ({
       title: t('p2p_unit_price'),
       render(item: any) {
         return (
-          <div
-            className={`unit-price ${side === 'buy' ? 'g-buy' : 'g-sell'}`}
-          >
+          <div className={`unit-price ${side === 'buy' ? 'g-buy' : 'g-sell'}`}>
             {item.price} {fait}{' '}
           </div>
         )

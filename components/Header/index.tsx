@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Cookies from 'js-cookie'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useCallback, useEffect, useState, useContext } from 'react'
@@ -17,11 +18,11 @@ import React from 'react'
 const langs = [
   {
     title: 'English',
-    key: 'en',
+    key: 'en_US',
   },
   {
     title: '简体中文',
-    key: 'zh',
+    key: 'zh_CN',
   },
 ]
 
@@ -52,10 +53,12 @@ const Header: NextPage = () => {
     if (i18n.languages.indexOf(lang) === -1) {
       i18n.loadLanguages(lang, () => {
         i18n.changeLanguage(lang)
+        Cookies.set('locale', lang)
       })
     } else {
       // 否则直接切换语言
       i18n.changeLanguage(lang)
+      Cookies.set('locale', lang)
     }
   }
 
