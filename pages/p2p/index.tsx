@@ -11,11 +11,11 @@ import './index.scss'
 
 const tabs = [
   {
-    title: 'Buy',
+    title: 'buy',
     key: 'buy',
   },
   {
-    title: 'Sell',
+    title: 'sell',
     key: 'sell',
   },
 ]

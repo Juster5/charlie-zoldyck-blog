@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 type TabItemType = {
   title: string
@@ -15,6 +16,7 @@ import './index.scss'
 
 const Tabs: React.FC<TabsProps> = ({ tabs, onChange, defaultKey }) => {
   const [activeKey, setActiveKey] = useState(defaultKey || tabs[0].key)
+  const { t } = useTranslation()
 
   return (
     <div className="okx-tabs">
@@ -28,7 +30,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, onChange, defaultKey }) => {
               typeof onChange === 'function' && onChange(el)
             }}
           >
-            {el.title}
+            {t(el.title)}
           </div>
         )
       })}

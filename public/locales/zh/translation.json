@@ -1,4 +1,6 @@
 {
+  "buy": "购买",
+  "sell": "出售", 
   "homepage_top_btn_buy_crypto": "购买数字货币",
   "homepage_top_btn_deposit_crypto": "充值数字货币",
   "homepage_top_btn_trade_now": "立即交易",
@@ -74,6 +76,15 @@
   "p2p_slide3": "超 5 种买币方式",
   "p2p_slide3_desc": "即刻用IPI支付",
   "p2p_slide4": "欧易 C2C 交易法律免责声明",
-  "order": "{{count}} 单"
+  "order": "{{count}} 单",
+
+  "p2p_advertisers": "商家",
+  "p2p_available/orderlimit" :"数量/限额",
+  "p2p_unit_price": "单价",
+  "p2p_payment_methods": "支付方式",
+  "p2p_buy_sell": "操作",
+  "p2p_available": "剩余数量",
+  "p2p_order_limit": "限额",
+  "p2p_completion_rate": "成交率"
 
 }

@@ -1,4 +1,6 @@
 {
+  "buy": "Buy",
+  "sell": "Sell",
   "homepage_top_btn_buy_crypto": "Buy crypto",
   "homepage_top_btn_deposit_crypto": "Deposit crypto",
   "homepage_top_btn_trade_now": "Trade now",
@@ -76,6 +78,14 @@
   "p2p_slide3_desc": "Pay with PayPal",
   "p2p_slide4": "OKX P2P trading legal disclaimer",
   "order": "{{count}} order",
-  "order_other": "{{count}} orders"
+  "order_other": "{{count}} orders",
+  "p2p_advertisers": "Advertisers",
+  "p2p_available/orderlimit": "Available/Order limit",
+   "p2p_unit_price": "Unit price",
+   "p2p_payment_methods": "Payment methods",
+   "p2p_buy_sell": "Buy/Sell",
+   "p2p_available": "Available",
+   "p2p_order_limit": "Order limit",
+   "p2p_completion_rate": "completion rate"
 
 }

@@ -21,7 +21,7 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
   fait,
   side,
 }) => {
-  const { responseSize } = useContext(GloablContext)
+  const { responseSize, lang } = useContext(GloablContext)
 
   const renderTable = useCallback(() => {
     return responseSize !== SM ? (
@@ -39,7 +39,7 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
         side={side}
       />
     )
-  }, [responseSize])
+  }, [responseSize, lang])
 
   return (
     <div className="p2p-table">

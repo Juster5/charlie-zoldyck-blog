@@ -47,16 +47,16 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
 
             <div className="avaliable-content">
               <p>
-                <span className="avaliable-title">Available</span>
+                <span className="avaliable-title">{t('p2p_available')}</span>
                 <span className="avaliable-amount">
                   {item.availableAmount} {currency}
                 </span>
               </p>
-              <span>Unit price</span>
+              <span>{t('p2p_unit_price')}</span>
             </div>
             <div className="avaliable-content">
               <p>
-                <span className="avaliable-title">Order limit</span>
+                <span className="avaliable-title">{t('p2p_order_limit')}</span>
                 <span className="avaliable-amount">
                   {item.quoteMinAmountPerOrder}-{item.quoteMaxAmountPerOrder}{' '}
                   {fait}
@@ -76,7 +76,7 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
               <div
                 className={`action-button ${side === 'buy' ? 'buy' : 'sell'}`}
               >
-                Buy {currency}
+                {t(side === 'buy' ? 'buy' : 'sell')} {currency}
               </div>
             </div>
           </div>
