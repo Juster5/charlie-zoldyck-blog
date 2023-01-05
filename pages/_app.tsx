@@ -31,6 +31,7 @@ export default function MyApp(props: IProps) {
 
 MyApp.getInitialProps = ({ ctx }: any) => {
   const { req } = ctx
+  if (!req) return {}
   const { cookies, headers } = req
   const defaultLanguage = getHeaderDefaultLang(headers['accept-language'])
   const userAgent = headers['user-agent']

@@ -6,6 +6,7 @@ export const navs = [
         icon: 'okx-header-footer-buy-with-card',
         title: 'header_0_loop1',
         subTitle: 'header_0_loop1_subtitle0',
+        href: '/p2p',
       },
       {
         icon: 'okx-header-footer-p2p-trading',

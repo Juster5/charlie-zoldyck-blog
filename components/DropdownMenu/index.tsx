@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import './index.scss'
@@ -13,12 +13,13 @@ type MenuItemType = {
 
 type DropdownMenuProps = {
   menu: MenuItemType[]
+  menuClick: Function
 }
 
-const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu, menuClick }) => {
   const [expandIndexs, setExpandIndexs] = useState<any>({})
 
-  const clickMenu = (index: any) => {
+  const expandMenu = (index: any) => {
     if (!expandIndexs[index]) {
       expandIndexs[index] = true
       setExpandIndexs({
@@ -46,7 +47,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
             <div
               className="menu-item"
               onClick={() => {
-                clickMenu(el.title)
+                expandMenu(el.title)
               }}
             >
               <div className="menu-item-title">{t(el.title)}</div>
@@ -60,7 +61,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
               <div className="sub-item-wrapper">
                 {el.children.map((subEl, index) => {
                   return (
-                    <div className="sub-item" key={subEl.title + index}>
+                    <div
+                      className="sub-item"
+                      key={subEl.title + index}
+                      onClick={() => {
+                        menuClick(el)
+                      }}
+                    >
                       {t(subEl.title)}
                     </div>
                   )

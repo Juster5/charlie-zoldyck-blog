@@ -29,7 +29,6 @@
     z-index: 9999;
     opacity: 1;
     transform: translateY(0);
-    // -webkit-transform: translateY(0);
     pointer-events: auto;
     visibility: visible;
   }
@@ -37,9 +36,7 @@
 
   .collpase-menu {
     position: absolute;
-    // top: 48px;
     pointer-events: none;
-    // min-width: 245px;
     min-width: auto;
     padding: 10px;
     border-radius: 6px;
@@ -49,9 +46,7 @@
     visibility: hidden;
     opacity: 0;
     transform: translateY(50px);
-    // -webkit-transform: translateY(50px);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    // -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     &.show-in-column {
       display: flex;
       width: 400px;

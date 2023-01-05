@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 // @ts-ignore
 import Cookies from 'js-cookie'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useCallback, useEffect, useState, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -19,14 +20,11 @@ import React from 'react'
 
 const Header: NextPage = () => {
   const { t, i18n } = useTranslation()
+  const router = useRouter()
 
   const [showDrawer, setShowDrawer] = useState(false)
 
   const { lang, setLang, responseSize } = useContext(GloablContext)
-
-  console.log('==================')
-  console.log(responseSize)
-  console.log('==================')
 
   const clickMenu = useCallback(() => {
     setShowDrawer(true)
@@ -43,7 +41,7 @@ const Header: NextPage = () => {
     }
   }, [showDrawer])
 
-  const changeLang = (lang: string) => {
+  const changeLang = useCallback((lang: string) => {
     // 不存在语言包, 则加载语言包, 然后切换语言
     if (i18n.languages.indexOf(lang) === -1) {
       i18n.loadLanguages(lang, () => {
@@ -56,7 +54,11 @@ const Header: NextPage = () => {
       Cookies.set('locale', lang)
     }
     setLang(lang)
-  }
+  }, [])
+
+  const gotoP2P = useCallback(() => {
+    router.push('/p2p')
+  }, [])
 
   return (
     <>
@@ -76,6 +78,7 @@ const Header: NextPage = () => {
                 menu={el.children}
                 key={el.title}
                 showInColumn={el.children.length > 6}
+                menuClick={gotoP2P}
               >
                 <div className="nav-item">
                   <span>{t(el.title)}</span>
@@ -137,7 +140,7 @@ const Header: NextPage = () => {
           })}
         </div>
 
-        {<DropdownMenu menu={navs} />}
+        {<DropdownMenu menu={navs} menuClick={gotoP2P} />}
       </Drawer>
     </>
   )
