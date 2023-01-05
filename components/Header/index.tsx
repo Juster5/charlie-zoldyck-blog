@@ -57,7 +57,7 @@ const Header: NextPage = () => {
   }, [])
 
   const gotoP2P = useCallback(() => {
-    closeDrawer()    
+    closeDrawer()
     router.push('/p2p')
   }, [])
 
