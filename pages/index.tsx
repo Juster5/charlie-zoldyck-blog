@@ -133,7 +133,6 @@ export default function Home() {
                     }`}
                     onClick={() => {
                       setActiveIndex(index)
-                      // setActiveImg(el.img)
                     }}
                   >
                     {t(el.title)}

@@ -42,12 +42,12 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
       {children}
 
       {/* 如果有render函数, 优先渲染自定义组件 */}
-      <div className="collpase-menu">
-        {typeof menusRender === 'function' && menusRender()}
-      </div>
+      {typeof menusRender === 'function' && (
+        <div className="collpase-menu"> menusRender()</div>
+      )}
 
       {/* 没有渲染函数则渲染默认样式 */}
-      {!menusRender && menu && menu.length > 0 && (
+      {menu && menu.length > 0 && (
         <div
           className={`collpase-menu collpase-${
             position ? position : 'center'

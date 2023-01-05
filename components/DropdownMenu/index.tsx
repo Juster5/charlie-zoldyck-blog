@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import './index.scss'
@@ -13,7 +13,7 @@ type MenuItemType = {
 
 type DropdownMenuProps = {
   menu: MenuItemType[]
-  menuClick: Function
+  menuClick?: Function
 }
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu, menuClick }) => {
@@ -65,7 +65,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu, menuClick }) => {
                       className="sub-item"
                       key={subEl.title + index}
                       onClick={() => {
-                        menuClick(el)
+                        typeof menuClick === 'function' &&  menuClick(el)
                       }}
                     >
                       {t(subEl.title)}

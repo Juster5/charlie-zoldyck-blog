@@ -11,3 +11,5 @@ export const langs = [
     key: ZH,
   },
 ]
+
+export const langPath = '/static/[lang]/[size]'

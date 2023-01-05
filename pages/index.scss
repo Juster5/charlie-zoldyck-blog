@@ -67,7 +67,8 @@
       padding-right: 12px;
     }
     .second-body {
-      @include responsive(bg) {
+      margin-top: 40px;
+      @include responsive(mid) {
         margin-top: 80px;
       }
     }
@@ -89,12 +90,13 @@
     .third-container {
       display: flex;
       flex-direction: column-reverse;
+      width: 100%;
       @include responsive(mid) {
-        margin-left: 16.6667%;
+        margin-left: 16.66667%;
         flex-direction: row;
       }
       @include responsive(bg) {
-        margin-left: 0;
+        margin-left: 16.66667%;
       }
     }
 
