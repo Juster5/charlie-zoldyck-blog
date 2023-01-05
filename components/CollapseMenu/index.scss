@@ -6,22 +6,11 @@
   overflow: hidden;
   display: inline-block;
 
-  // @include responsive(sm) {
-  //   &:focus .collpase-menu,
-  //   &:active .collpase-menu {
-  //     overflow: visible;
-  //   }
-  //   &:focus .collpase-menu,
-  //   &:active .collpase-menu {
-  //     z-index: 9999;
-  //     opacity: 1;
-  //     transform: translateY(0);
-  //     pointer-events: auto;
-  //     visibility: visible;
-  //   }
+  // &.actived  .collpase-menu {
+  //   opacity: 0;
+  //   transform: translateY(50px);
   // }
 
-  // @include responsive(bg) {
   &:hover {
     overflow: visible;
   }
@@ -32,7 +21,7 @@
     pointer-events: auto;
     visibility: visible;
   }
-  // }
+
 
   .collpase-menu {
     position: absolute;
@@ -55,6 +44,7 @@
         width: 50%;
       }
     }
+
   }
   .collpase-center {
     left: -50%;

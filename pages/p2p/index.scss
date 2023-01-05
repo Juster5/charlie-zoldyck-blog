@@ -65,7 +65,7 @@
       cursor: pointer;
       transition: all 0.5s ease;
       color: #fff;
-      @include responsive(bg) {
+      @include responsive(mid) {
         width: 288px;
         &:hover {
           transform: translateY(-8px);

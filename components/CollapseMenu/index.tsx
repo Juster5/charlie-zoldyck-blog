@@ -62,6 +62,7 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
                 className="menu-item"
                 key={index}
                 onClick={() => {
+                  setActived(true)
                   menuClick && menuClick(el)
                 }}
               >
