@@ -38,7 +38,7 @@
     display: none;
     @include responsive(mid) {
       display: block;
-    }    
+    }
   }
   .mobile-footer {
     display: block;
@@ -54,12 +54,12 @@
 
     .community-title {
       display: none;
-      @include responsive (mid) {
+      @include responsive(mid) {
         display: block;
         color: #fafafa;
         font-size: 20px;
         font-weight: 700;
-        margin-right: 30px;        
+        margin-right: 30px;
       }
     }
     .community-icon {

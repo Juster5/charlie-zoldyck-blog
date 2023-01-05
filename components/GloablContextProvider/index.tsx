@@ -35,7 +35,7 @@ const GloablContextProvider: React.FC<GloablContextProps> = ({
   const [responseSize, setResponseSize] = useState(defaultSize || SM)
 
   // 观测屏幕宽度变化, 并设置
-  const dective = useCallback(()=>{
+  const dective = useCallback(() => {
     setResponseSize(getResponseSize())
   }, [])
 

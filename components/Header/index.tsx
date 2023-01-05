@@ -27,7 +27,7 @@ const Header: NextPage = () => {
   console.log('==================')
   console.log(responseSize)
   console.log('==================')
-  
+
   const clickMenu = useCallback(() => {
     setShowDrawer(true)
   }, [])
@@ -90,9 +90,7 @@ const Header: NextPage = () => {
 
         {/* 登录区域 */}
         <div className="login-wrapper">
-          <span className="login mr12">
-            {t('common_login')}
-          </span>
+          <span className="login mr12">{t('common_login')}</span>
           <span className="signup">{t('common_signup')}</span>
           <span
             className="menu okx-header-footer-hamburger"
@@ -101,17 +99,19 @@ const Header: NextPage = () => {
         </div>
 
         {/* 多语言区域 */}
-        {responseSize === BG && <CollpaseMenu
-          position="right"
-          menu={langs}
-          menuClick={(el: any) => {
-            changeLang(el.key)
-          }}
-        >
-          <div className="languages">
-            <span className="okx-header-footer-language"></span>
-          </div>            
-        </CollpaseMenu>}
+        {responseSize === BG && (
+          <CollpaseMenu
+            position="right"
+            menu={langs}
+            menuClick={(el: any) => {
+              changeLang(el.key)
+            }}
+          >
+            <div className="languages">
+              <span className="okx-header-footer-language"></span>
+            </div>
+          </CollpaseMenu>
+        )}
       </header>
 
       {/* 移动端菜单区域 */}
