@@ -52,6 +52,14 @@
     // -webkit-transform: translateY(50px);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     // -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &.show-in-column {
+      display: flex;
+      width: 400px;
+      flex-wrap: wrap;
+      .menu-item {
+        width: 50%;
+      }
+    }
   }
   .collpase-center {
     left: -50%;

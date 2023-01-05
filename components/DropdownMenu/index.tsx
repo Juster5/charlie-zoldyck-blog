@@ -6,7 +6,8 @@ import './index.scss'
 type MenuItemType = {
   title: string
   children: {
-    subTitle: string
+    title: string
+    subTitle?: string
   }[]
 }
 
@@ -49,7 +50,9 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
               }}
             >
               <div className="menu-item-title">{t(el.title)}</div>
-              <div className="menu-arrow okx-header-footer-arrow-chevrons-down"></div>
+              {el.children && el.children.length > 0 && (
+                <div className="menu-arrow okx-header-footer-arrow-chevrons-down"></div>
+              )}
             </div>
 
             {/* 二级标题 */}
@@ -57,8 +60,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu }) => {
               <div className="sub-item-wrapper">
                 {el.children.map((subEl, index) => {
                   return (
-                    <div className="sub-item" key={subEl.subTitle + index}>
-                      {t(subEl.subTitle)}
+                    <div className="sub-item" key={subEl.title + index}>
+                      {t(subEl.title)}
                     </div>
                   )
                 })}

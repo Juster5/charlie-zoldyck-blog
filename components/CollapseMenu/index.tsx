@@ -8,7 +8,8 @@ type menuItem =
   | {
       icon?: string // 图标
       title?: string // 标题
-      subTitle?: string // 子标题
+      subTitle?: string // 子标题,
+      subMenu: menuItem[] // 次级菜单
     }
   | any
 
@@ -19,6 +20,7 @@ type CollpaseMenuProps = {
   menuClick?: Function // 菜单选择事件
   menusRender?: Function // 子菜单的自定义渲染
   style?: object // 自定义样式
+  showInColumn?: boolean // 分列显示
   menuOffsetLeft?: number // 菜单位置偏移量
 }
 
@@ -33,41 +35,43 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
     menusRender,
     style,
     menuOffsetLeft,
+    showInColumn,
   } = props
   return (
     <div className="collpase-wrapper" style={style}>
       {children}
-      {
+
+      {/* 如果有render函数, 优先渲染自定义组件 */}
+      {typeof menusRender === 'function' && menusRender()}
+
+      {!menusRender && menu && menu.length > 0 && (
         <div
-          className={`collpase-menu collpase-${position ? position : 'center'}`}
+          className={`collpase-menu collpase-${
+            position ? position : 'center'
+          } ${showInColumn ? 'show-in-column' : ''}`}
           style={{
             marginLeft: `-${menuOffsetLeft}px`,
           }}
         >
-          {/* 如果有render函数, 优先渲染自定义组件 */}
-          {typeof menusRender === 'function'
-            ? menusRender()
-            : menu?.map((el, index) => {
-                return (
-                  <div
-                    className="menu-item"
-                    key={index}
-                    onClick={() => {
-                      menuClick && menuClick(el)
-                    }}
-                  >
-                    {el.icon && (
-                      <div className={`menu-item__icon  ${el.icon}`} />
-                    )}
-                    <div className="menu-item__text">
-                      <div className="title">{t(el.title)}</div>
-                      <div className="sub-title">{t(el.subTitle)}</div>
-                    </div>
-                  </div>
-                )
-              })}
+          {menu?.map((el, index) => {
+            return (
+              <div
+                className="menu-item"
+                key={index}
+                onClick={() => {
+                  menuClick && menuClick(el)
+                }}
+              >
+                {el.icon && <div className={`menu-item__icon  ${el.icon}`} />}
+                <div className="menu-item__text">
+                  <div className="title">{t(el.title)}</div>
+                  <div className="sub-title">{t(el.subTitle)}</div>
+                </div>
+              </div>
+            )
+          })}
         </div>
-      }
+      )}
     </div>
   )
 }

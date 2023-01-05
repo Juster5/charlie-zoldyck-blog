@@ -27,9 +27,9 @@ export const getHeaderDefaultLang = (lang: string) => {
   const defaultLang = lang.split(',')[0].replace('-', '_') // 并将zh-CN, 换成zh_CN的格式, 好处理
   return checkLang(defaultLang)
 }
-  
+
 // 如果不是中文或者英文则直接返回英文
-export const checkLang = (defaultLang: string) =>{
+export const checkLang = (defaultLang: string) => {
   return langs.some((el) => el.key === defaultLang) ? defaultLang : langs[0].key
 }
 

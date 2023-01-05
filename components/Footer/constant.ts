@@ -1,148 +1,201 @@
 export const navs = [
   {
-    title: 'header_buy_crypto',
-    link: '/marker',
+    title: 'footer_0_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop1',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop1',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop1',
+      },
+      {
+        title: 'footer_3_loop1',
+      },
+      {
+        title: 'footer_4_loop1',
+      },
+      {
+        title: 'footer_5_loop1',
+      },
+      {
+        title: 'footer_6_loop1',
+      },
+      {
+        title: 'footer_7_loop1',
+      },
+      {
+        title: 'footer_8_loop1',
+      },
+      {
+        title: 'footer_9_loop1',
+      },
+      {
+        title: 'footer_10_loop1',
+      },
+      {
+        title: 'footer_11_loop1',
       },
     ],
   },
   {
-    title: 'header_discover',
-    link: '/marker',
+    title: 'footer_1_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop2',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop2',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop2',
+      },
+      {
+        title: 'footer_8_loop0',
+      },
+      {
+        title: 'footer_4_loop2',
+      },
+      {
+        title: 'footer_5_loop2',
+      },
+      {
+        title: 'footer_6_loop2',
+      },
+      {
+        title: 'footer_7_loop2',
+      },
+      {
+        title: 'footer_7_loop0',
+      },
+      {
+        title: 'footer_9_loop2',
+      },
+      {
+        title: 'footer_10_loop2',
       },
     ],
   },
   {
-    title: 'header_trade',
-    link: '/marker',
+    title: 'footer_3_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop4',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop4',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop4',
+      },
+      {
+        title: 'footer_3_loop4',
+      },
+      {
+        title: 'footer_4_loop4',
+      },
+      {
+        title: 'footer_0_loop5',
+      },
+      {
+        title: 'footer_1_loop5',
+      },
+      {
+        title: 'footer_2_loop5',
+      },
+      {
+        title: 'footer_3_loop5',
       },
     ],
   },
   {
-    title: 'header_grow',
-    link: '/marker',
+    title: 'footer_4_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop5',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop5',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop5',
+      },
+      {
+        title: 'footer_3_loop5',
       },
     ],
   },
   {
-    title: 'header_build',
-    link: '/marker',
+    title: 'footer_6_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop7',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop7',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop7',
+      },
+      {
+        title: 'footer_3_loop7',
+      },
+      {
+        title: 'footer_4_loop7',
       },
     ],
   },
   {
-    title: 'header_learn',
-    link: '/marker',
+    title: 'footer_7_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop8',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop8',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop8',
+      },
+      {
+        title: 'footer_3_loop8',
       },
     ],
   },
   {
-    title: 'header_more',
-    link: '/marker',
+    title: 'footer_8_loop0',
     children: [
       {
-        icon: 'okx-header-footer-buy-with-card',
-        title: 'header_buy_with_card',
-        subTitle: 'header_buy_with_other',
+        title: 'footer_0_loop9',
       },
       {
-        icon: 'okx-header-footer-p2p-trading',
-        title: 'header_p2p',
-        subTitle: 'header_p2p_rate',
+        title: 'footer_1_loop9',
       },
       {
-        icon: 'okx-header-footer-third-party-payment',
-        title: 'header_third_pay',
-        subTitle: 'header_third_pay_type',
+        title: 'footer_2_loop9',
+      },
+      {
+        title: 'footer_3_loop9',
+      },
+      {
+        title: 'footer_4_loop9',
+      },
+      {
+        title: 'footer_5_loop9',
+      },
+      {
+        title: 'footer_6_loop9',
+      },
+      {
+        title: 'footer_7_loop9',
+      },
+      {
+        title: 'footer_8_loop9',
+      },
+      {
+        title: 'footer_9_loop9',
       },
     ],
   },

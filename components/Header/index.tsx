@@ -68,10 +68,16 @@ const Header: NextPage = () => {
         <div className="navs">
           {navs.map((el) => {
             return (
-              <CollpaseMenu menu={el.children} key={el.title}>
+              <CollpaseMenu
+                menu={el.children}
+                key={el.title}
+                showInColumn={el.children.length > 6}
+              >
                 <div className="nav-item sm-screen-hidden">
                   <span>{t(el.title)}</span>
-                  <span className="title-arrow okx-header-footer-arrow-chevrons-down"></span>
+                  {el.children && el.children.length > 0 && (
+                    <span className="title-arrow okx-header-footer-arrow-chevrons-down"></span>
+                  )}
                 </div>
               </CollpaseMenu>
             )
