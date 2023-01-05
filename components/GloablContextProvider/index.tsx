@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getResponseSize } from 'common/util'
 // @ts-ignore
 import Cookies from 'js-cookie'
+import { SM } from 'common/constant'
 
 type GloablContextProps = {
   children: any
@@ -30,9 +31,7 @@ const GloablContextProvider: React.FC<GloablContextProps> = ({
 }) => {
   // 语言和屏幕宽度都是默认先去服务端传进来的参数, 用来做服务端渲染, 客户端则取cookie中的数据
   const [lang, setLang] = useState(defaultLang || locale)
-  const [responseSize, setResponseSize] = useState(
-    defaultSize || getResponseSize()
-  )
+  const [responseSize, setResponseSize] = useState(defaultSize || SM)
 
   useEffect(() => {
     getResponseSize()

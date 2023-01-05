@@ -39,7 +39,7 @@ const Header: NextPage = () => {
     }
   }, [showDrawer])
 
-  const changeLang = (lang: any) => {
+  const changeLang = (lang: string) => {
     // 不存在语言包, 则加载语言包, 然后切换语言
     if (i18n.languages.indexOf(lang) === -1) {
       i18n.loadLanguages(lang, () => {
@@ -51,6 +51,7 @@ const Header: NextPage = () => {
       i18n.changeLanguage(lang)
       Cookies.set('locale', lang)
     }
+    setLang(lang)
   }
 
   return (
@@ -117,7 +118,6 @@ const Header: NextPage = () => {
                 className={`mobile-lang-btn ${el.key === lang ? 'active' : ''}`}
                 key={el.key}
                 onClick={() => {
-                  setLang(el.key)
                   changeLang(el.key)
                 }}
               >

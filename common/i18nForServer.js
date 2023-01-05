@@ -9,13 +9,13 @@ export default function initI18n (lang) {
   .use(initReactI18next)
   .init({
     debug: false,
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: lang,
+    fallbackLng: lang,
     interpolation: {
       escapeValue: false,
     },
     resources: {
-      en: {
+      [lang]: {
         translation: resource        
       }
     }
