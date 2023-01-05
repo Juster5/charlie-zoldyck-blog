@@ -43,7 +43,7 @@ const CollpaseMenu: React.FC<CollpaseMenuProps> = (props) => {
 
       {/* 如果有render函数, 优先渲染自定义组件 */}
       {typeof menusRender === 'function' && (
-        <div className="collpase-menu"> menusRender()</div>
+        <div className="collpase-menu"> {menusRender()}</div>
       )}
 
       {/* 没有渲染函数则渲染默认样式 */}

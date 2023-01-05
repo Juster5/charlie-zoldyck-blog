@@ -65,7 +65,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ menu, menuClick }) => {
                       className="sub-item"
                       key={subEl.title + index}
                       onClick={() => {
-                        typeof menuClick === 'function' &&  menuClick(el)
+                        typeof menuClick === 'function' && menuClick(el)
                       }}
                     >
                       {t(subEl.title)}

@@ -4,13 +4,14 @@ import type { NextRequest } from 'next/server'
 import { getHeaderDefaultLang, checkLang } from 'common/util'
 
 export function middleware(request: NextRequest) {
-
   let lang = request.cookies.get('locale')?.value
   let responseSize = request.cookies.get('responseSize')?.value
 
   // 如果浏览器已经设置了宽度和语言, 则直接返回预渲染的页面
   if (lang && responseSize) {
-    return NextResponse.rewrite(new URL(`/static/${lang}/${responseSize}`, request.url))
+    return NextResponse.rewrite(
+      new URL(`/static/${lang}/${responseSize}`, request.url)
+    )
   }
 
   // 获取用户设置的语言, 如果没有则获取浏览器的默认语言, 并设置到浏览器中

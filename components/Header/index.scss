@@ -99,9 +99,9 @@
 }
 
 .fixed-block {
-  display: none;
-  @include responsive(sm) {
-    display: block;
+  display: block;
+  @include responsive(bg) {
+    display: none;
   }
 }
 
@@ -118,9 +118,11 @@
   color: #fafafa;
   transform: translateX(0);
   transition: all 0.5s ease;
-  max-width: 376px;
   &.show {
     transform: translateX(-100%);
+  }
+  @include responsive(mid) {
+    max-width: 476px;
   }
   @include responsive(bg) {
     display: none;

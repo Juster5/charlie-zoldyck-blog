@@ -61,7 +61,7 @@ export default function P2P() {
       })
       .finally(() => {
         setTimeout(() => {
-          setLoading(false)
+        setLoading(false)
         }, 300)
       })
   }, [currency, fait, side])
