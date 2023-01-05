@@ -1,0 +1,47 @@
+@import '@/styles/media.scss';
+
+.homepage-video {
+  margin: 80px 0 40px;
+  display: flex;
+  flex-direction: column;
+  @include responsive(bg) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .video-item {
+    position: relative;
+    margin-top: 20px;
+    min-height: 80vw;
+    padding: 0;
+    width: 100%;
+    @include responsive(mid) {
+      min-height: 390px;
+      width: 32%;
+    }
+  }
+  .video-content {
+    object-fit: contain;
+    width: 100%;
+  }
+  .video-text {
+    background: linear-gradient(
+      0deg,
+      transparent,
+      #000 114.09%,
+      rgba(0, 0, 0, 0.8) 0
+    );
+    left: 0;
+    padding: 28px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    .video-title,
+    .video-desc {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+}

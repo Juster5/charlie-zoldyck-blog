@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import { GloablContext } from '@/components/GloablContextProvider'
-
+import HomepageVideo from '@/components/BizComponents/Hompage/HomepageVideo'
 import '@/pages/index.scss'
 import { SM, EN } from 'common/constant'
 
@@ -190,6 +190,7 @@ export default function Home() {
           )}
         </div>
       </div>
+      <HomepageVideo />
     </div>
   )
 }

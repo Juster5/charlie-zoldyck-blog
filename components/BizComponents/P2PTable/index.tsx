@@ -59,4 +59,4 @@ const P2PTable: React.FC<P2PTablePropsType> = ({
   )
 }
 
-export default P2PTable
+export default React.memo(P2PTable)
