@@ -1,3 +1,4 @@
+// todo:
 // import React, { useContext } from 'react'
 // import Image from 'next/image'
 // import { GloablContext } from '../GloablContextProvider'
@@ -42,3 +43,4 @@
 //   )
 // }
 // export default React.memo(ResponseMedia)
+export default {}
