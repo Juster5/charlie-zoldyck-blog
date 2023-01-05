@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getResponseSize } from 'common/util'
 // @ts-ignore
 import Cookies from 'js-cookie'
+import { checkLang } from 'common/util'
 import { SM } from 'common/constant'
 
 type GloablContextProps = {
@@ -21,7 +22,7 @@ export const GloablContext = React.createContext<GloablContextType>(
   {} as GloablContextType
 )
 
-const locale = Cookies.get('locale')
+const locale = checkLang(Cookies.get('locale'))
 const Provider = GloablContext.Provider
 
 const GloablContextProvider: React.FC<GloablContextProps> = ({
