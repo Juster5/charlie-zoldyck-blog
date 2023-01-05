@@ -4,7 +4,7 @@
   margin: 80px 0 40px;
   display: flex;
   flex-direction: column;
-  @include responsive(bg) {
+  @include responsive(mid) {
     flex-direction: row;
     justify-content: space-between;
   }

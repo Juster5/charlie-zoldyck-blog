@@ -43,12 +43,6 @@ li {
 @media (max-width: $width-min) {
   #body {
     .okx-app {
-      .sm-screen-hidden {
-        display: none;
-      }
-      .sm-screen-show {
-        display: inline-block;
-      }
       .pc-text {
         display: none;
       }
@@ -59,16 +53,24 @@ li {
   }
 }
 
+// 中屏样式
+@media (min-width: $width-mid) {
+  #body {
+    .okx-app {
+      .pc-text {
+        display: block;
+      }
+      .mobile-text {
+        display: none;
+      }
+    }
+  }
+}
+
 // 大屏样式
 @media (min-width: $width-min) {
   #body {
     .okx-app {
-      .bg-screen-hidden {
-        display: none;
-      }
-      .bg-screen-show {
-        display: inline-block;
-      }
       .pc-text {
         display: block;
       }

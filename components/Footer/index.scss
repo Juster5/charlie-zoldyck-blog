@@ -34,6 +34,18 @@
     }
   }
 
+  .pc-footer {
+    display: none;
+    @include responsive(mid) {
+      display: block;
+    }    
+  }
+  .mobile-footer {
+    display: block;
+    @include responsive(mid) {
+      display: none;
+    }
+  }
   .okx-footer-community {
     display: flex;
     align-items: center;
@@ -41,10 +53,14 @@
     margin-top: 44px;
 
     .community-title {
-      color: #fafafa;
-      font-size: 20px;
-      font-weight: 700;
-      margin-right: 30px;
+      display: none;
+      @include responsive (mid) {
+        display: block;
+        color: #fafafa;
+        font-size: 20px;
+        font-weight: 700;
+        margin-right: 30px;        
+      }
     }
     .community-icon {
       color: #909090;

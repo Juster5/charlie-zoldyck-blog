@@ -114,8 +114,8 @@ export default function Home() {
                     : sectionFourItems[activeIndex].img_zh
                 }
                 alt="One app. Unlimited possibilities.Lite"
-                width="288"
-                height="624"
+                width="280"
+                height="580"
               />
             </span>
           </div>

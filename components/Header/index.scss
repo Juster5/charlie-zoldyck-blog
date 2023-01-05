@@ -2,8 +2,10 @@
 
 .okx-header {
   z-index: 9999;
+  padding: 0 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 48px;
   padding: 0 24px;
   background-color: #121212;
@@ -14,31 +16,33 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 16px;
   }
 
-  .navs {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    height: 100%;
-    .nav-item {
-      position: relative;
+  .pc-navs {
+    display: none;
+    @include responsive(mid) {
       display: flex;
-      padding: 0 10px;
       align-items: center;
+      flex: 1;
       height: 100%;
-      cursor: pointer;
-      &:hover {
-        .title-arrow {
-          transform: rotate(-180deg);
-          margin-left: 12px;
+      .nav-item {
+        position: relative;
+        display: flex;
+        padding: 0 10px;
+        align-items: center;
+        height: 100%;
+        cursor: pointer;
+        &:hover {
+          .title-arrow {
+            transform: rotate(-180deg);
+            margin-left: 12px;
+          }
         }
       }
-    }
-    .title-arrow {
-      margin-left: 12px;
-      transition: all 0.1s ease;
+      .title-arrow {
+        margin-left: 12px;
+        transition: all 0.1s ease;
+      }      
     }
   }
 
@@ -49,12 +53,15 @@
   }
 
   .languages {
-    display: flex;
-    align-items: center;
-    margin-left: 12px;
-    font-size: 20px;
-    cursor: pointer;
-    height: 100%;
+    display: none;
+    @include responsive(bg) {
+      display: flex;
+      align-items: center;
+      margin-left: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      height: 100%;      
+    }
   }
 }
 
@@ -66,8 +73,11 @@
   }
 
   .login {
-    display: inline-block;
-    cursor: pointer;
+    display: none;
+    @include responsive(mid) {
+      display: inline-block;
+      cursor: pointer;
+    }
   }
   .signup {
     display: inline-block;
@@ -82,6 +92,9 @@
   .menu {
     margin-left: 20px;
     font-size: 20px;
+    @include responsive(bg) {
+      display: none;
+    }
   }
 }
 
@@ -96,18 +109,18 @@
   z-index: 9999;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 100%;
   width: 100%;
   height: 100%;
   padding: 48px 24px;
   background-color: #000;
   overflow: auto;
   color: #fafafa;
-  transform: translateX(100%);
+  transform: translateX(0);
   transition: all 0.5s ease;
 
   &.show {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
   @include responsive(bg) {
     display: none;

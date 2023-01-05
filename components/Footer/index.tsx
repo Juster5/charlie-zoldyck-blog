@@ -13,7 +13,7 @@ const Footer: NextPage = () => {
 
   return (
     <div className="okx-footer">
-      <div className="pc-footer sm-screen-hidden">
+      <div className="pc-footer">
         <ul className="list-wrapper">
           {navs.map((el, index) => {
             return (
@@ -34,7 +34,7 @@ const Footer: NextPage = () => {
         </ul>
       </div>
 
-      <div className="mobile-footer bg-screen-hidden">
+      <div className="mobile-footer">
         <DropdownMenu menu={navs} />
       </div>
 

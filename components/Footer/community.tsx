@@ -7,7 +7,7 @@ const Community: React.FC = () => {
   const { t } = useTranslation()
   return (
     <div className="okx-footer-community">
-      <div className="community-title sm-screen-hidden">
+      <div className="community-title">
         <span>{t('footer_community')}</span>
       </div>
       {communities.map((el, index) => {

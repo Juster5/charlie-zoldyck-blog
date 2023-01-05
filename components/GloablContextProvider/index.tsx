@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { getResponseSize } from 'common/util'
 // @ts-ignore
 import Cookies from 'js-cookie'
@@ -34,12 +34,17 @@ const GloablContextProvider: React.FC<GloablContextProps> = ({
   const [lang, setLang] = useState(defaultLang || locale)
   const [responseSize, setResponseSize] = useState(defaultSize || SM)
 
-  useEffect(() => {
-    getResponseSize()
+  // 观测屏幕宽度变化, 并设置
+  const dective = useCallback(()=>{
+    setResponseSize(getResponseSize())
+  }, [])
 
-    window.addEventListener('resize', getResponseSize, false)
+  useEffect(() => {
+    dective()
+
+    window.addEventListener('resize', dective, false)
     return () => {
-      window.removeEventListener('resize', getResponseSize, false)
+      window.removeEventListener('resize', dective, false)
     }
   }, [])
 

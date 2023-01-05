@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useCallback, useEffect, useState, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { avoidScollingOverflow } from 'common/util'
-import { langs } from 'common/constant'
+import { BG, langs } from 'common/constant'
 
 import CollpaseMenu from '../CollapseMenu'
 import DropdownMenu from '../DropdownMenu'
@@ -22,8 +22,12 @@ const Header: NextPage = () => {
 
   const [showDrawer, setShowDrawer] = useState(false)
 
-  const { lang, setLang } = useContext(GloablContext)
+  const { lang, setLang, responseSize } = useContext(GloablContext)
 
+  console.log('==================')
+  console.log(responseSize)
+  console.log('==================')
+  
   const clickMenu = useCallback(() => {
     setShowDrawer(true)
   }, [])
@@ -64,8 +68,8 @@ const Header: NextPage = () => {
           </Link>
         </div>
 
-        {/* 导航栏区域 */}
-        <div className="navs">
+        {/* pc端导航栏区域 */}
+        <div className="pc-navs">
           {navs.map((el) => {
             return (
               <CollpaseMenu
@@ -73,7 +77,7 @@ const Header: NextPage = () => {
                 key={el.title}
                 showInColumn={el.children.length > 6}
               >
-                <div className="nav-item sm-screen-hidden">
+                <div className="nav-item">
                   <span>{t(el.title)}</span>
                   {el.children && el.children.length > 0 && (
                     <span className="title-arrow okx-header-footer-arrow-chevrons-down"></span>
@@ -86,28 +90,28 @@ const Header: NextPage = () => {
 
         {/* 登录区域 */}
         <div className="login-wrapper">
-          <span className="login sm-screen-hidden mr12">
+          <span className="login mr12">
             {t('common_login')}
           </span>
           <span className="signup">{t('common_signup')}</span>
           <span
-            className="menu bg-screen-hidden okx-header-footer-hamburger"
+            className="menu okx-header-footer-hamburger"
             onClick={clickMenu}
           ></span>
         </div>
 
         {/* 多语言区域 */}
-        <CollpaseMenu
+        {responseSize === BG && <CollpaseMenu
           position="right"
           menu={langs}
           menuClick={(el: any) => {
             changeLang(el.key)
           }}
         >
-          <div className="languages sm-screen-hidden">
+          <div className="languages">
             <span className="okx-header-footer-language"></span>
-          </div>
-        </CollpaseMenu>
+          </div>            
+        </CollpaseMenu>}
       </header>
 
       {/* 移动端菜单区域 */}

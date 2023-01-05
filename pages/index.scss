@@ -43,6 +43,9 @@
       justify-content: center;
       align-items: center;
     }
+    @include responsive(mid) {
+      margin-left: 16.66666667%;
+    }    
     @include responsive(bg) {
       width: 25%;
       margin-left: 16.66666667%;
@@ -75,22 +78,24 @@
   }
 
   .third-section {
-    padding-bottom: 120px;
-    padding-top: 120px;
-    @include responsive(sm) {
-      padding-top: 60px;
-      padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;    
+    @include responsive(mid) {
+      padding-bottom: 120px;
+      padding-top: 120px;
     }
     .third-container {
       display: flex;
-      @include responsive(sm) {
-        flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      @include responsive(mid) {
+        margin-left: 16.6667%;
+        flex-direction: row;
       }
     }
+    
     .third-animation {
-      @include responsive(bg) {
-        margin-left: 16.66667%;
-      }
       @include responsive(sm) {
         width: 100%;
         margin-left: 0;
