@@ -5,10 +5,10 @@ import { EN } from './constant';
 // @ts-ignore
 import Cookies from 'js-cookie'
 
-
+export default function init(defaultLang) {
 // 浏览器端i18n, 需要动态加载语言包
 if (typeof window !== 'undefined') {
-  const lang = Cookies.get('locale') || EN
+  const lang = defaultLang || Cookies.get('locale') || EN
   i18n
   .use(initReactI18next)
   .use(Backend)
@@ -21,4 +21,5 @@ if (typeof window !== 'undefined') {
       escapeValue: false,
     },
   });
+}
 }

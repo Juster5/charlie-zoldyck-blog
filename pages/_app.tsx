@@ -1,20 +1,25 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import Layout from 'components/Layout'
 import ErrorBoundary from 'components/ErrorBoundary'
 import GloablContextProvider from '@/components/GloablContextProvider'
+import init from '../common/i18n'
 import initI18n from '../common/i18nForServer'
 import { checkLang, getHeaderDefaultLang, isMobile } from 'common/util'
 import { langPath } from 'common/constant'
 import 'swiper/css'
 import '@/styles/global.scss'
 import '@/styles/media.scss'
-import '../common/i18n'
 
 type IProps = AppProps & { lang?: string; responseSize?: string }
 
 export default function MyApp(props: IProps) {
   const { Component, lang, responseSize } = props
+
+  // 客户端加载语言包
+  useEffect(() => {
+    init(lang)
+  }, [])
 
   return (
     <Suspense fallback="loading">
@@ -39,7 +44,6 @@ MyApp.getInitialProps = ({ ctx }: any) => {
     responseSize = query.size
   } else {
     // 否则, 则从cookie里面取
-
     if (!req || !req.cookies || !req.headers) return {}
 
     const { cookies, headers } = req

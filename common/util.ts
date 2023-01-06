@@ -29,7 +29,7 @@ export const getHeaderDefaultLang = (lang: string) => {
   }
 
   const firstLang = lang.split(';') // 返回例如 zh-CN,zh; 或者en, zh, 目前只处理zh-CN这种情况
-  const defaultLang = firstLang[0]?.split(',')[0]  // 返回例如 zh-CN
+  const defaultLang = firstLang[0]?.split(',')[0] // 返回例如 zh-CN
   return checkLang(defaultLang)
 }
 

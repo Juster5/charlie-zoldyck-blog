@@ -10,7 +10,6 @@ export default function initI18n (lang) {
     debug: false,
     lng: lang,
     fallbackLng: lang,
-    load: 'currentOnly',
     interpolation: {
       escapeValue: false,
     },
