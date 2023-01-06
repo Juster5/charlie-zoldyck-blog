@@ -5,17 +5,17 @@ import { initReactI18next } from 'react-i18next';
 const resource = require('../public/locales/en/translation.json')
 
 i18n.use(initReactI18next)
-    .init({
-      debug: false,
-      lng: 'en',
-      fallbackLng: 'en',
-      interpolation: {
-        escapeValue: false,
-      },
-      resources: {
-        en: {
-          translation: resource        
-        }
-      }    
-    });
+  .init({
+    debug: false,
+    lng: 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+    resources: {
+      en: {
+        translation: resource
+      }
+    }
+  });
 

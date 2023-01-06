@@ -39,26 +39,32 @@ export const getHeaderDefaultLang = (acceptLangs: string) => {
   const langs = acceptLangs.split(';') //  eg zh-CN,zh ; en-US ; en
   for (let i = 0; i < langs.length; i++) {
     for (let j = 0; j < supportLangs.length; j++) {
-      // 以下两种情况都表示匹配到支持的语言, 则直接返回支持的语言
+      // 以下三种种情况都表示匹配到支持的语言, 则直接返回支持的语言
+
+      // 浏览器zh-CN,zh  : 服务端zh-CN
       if (langs[i].indexOf(supportLangs[j]) !== -1) {
-        // zh-CN,zh  : zh-CN
         return supportLangs[j]
       }
 
+      // 服务端zh-CN : 浏览器zh
       if (supportLangs[j].indexOf(langs[i]) !== -1) {
-        // zh : zh-CN
+        return langs[i]
+      }
+
+      // zh-TW, zh-CN, 语言相同, 地区不同
+      if (supportLangs[j].slice(0, 2) === langs[i].slice(0, 2)) {
         return langs[i]
       }
     }
   }
 
-  // 否则返回默认支持的语言, 即英语
+  // 没有交集返回默认支持的语言, 即英语
   return supportLangs[0]
 }
 
 // 检测当前语言是否支持, 不支持则返回英语en-US
 export const checkLang = (defaultLang: string) => {
-  return supportLangs.indexOf(defaultLang) === -1
+  return supportLangs.indexOf(defaultLang) !== -1
     ? defaultLang
     : supportLangs[0]
 }
