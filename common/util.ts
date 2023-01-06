@@ -27,7 +27,7 @@ export const getHeaderDefaultLang = (lang: string) => {
   if (!lang) {
     return langs[0].key
   }
-  const defaultLang = lang.split(',')[0].replace('-', '_') // 并将zh-CN, 换成zh_CN的格式, 好处理
+  const defaultLang = lang.split(',')[0].replace('_', '-') // 并将zh_CN, 换成zh-CN的格式, 好处理
   return checkLang(defaultLang)
 }
 

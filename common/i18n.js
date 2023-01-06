@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
   .use(Backend)
   .init({
     debug: false,
-    lng: 'en-US',
+    lng: lang,
     fallbackLng: lang,
     interpolation: {
       escapeValue: false,

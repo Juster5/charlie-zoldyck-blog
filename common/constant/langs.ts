@@ -1,5 +1,5 @@
-export const ZH = 'zh_CN'
-export const EN = 'en_US'
+export const ZH = 'zh-CN'
+export const EN = 'en-US'
 
 export const langs = [
   {
