@@ -12,4 +12,4 @@ export const langs = [
   },
 ]
 
-export const langPath = '/static/[lang]/[size]'
+export const langPath = '/locale/[lang]/[size]'

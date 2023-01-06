@@ -22,6 +22,7 @@ export const GloablContext = React.createContext<GloablContextType>(
   {} as GloablContextType
 )
 
+// todo 浏览器设置语言的优先级, 需要现充locale上面设
 const locale = checkLang(Cookies.get('locale'))
 const Provider = GloablContext.Provider
 

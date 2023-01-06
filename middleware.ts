@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
   // 如果浏览器已经设置了宽度和语言, 则直接返回预渲染的页面
   if (lang && responseSize) {
     return NextResponse.rewrite(
-      new URL(`/static/${lang}/${responseSize}`, request.url)
+      new URL(`/locale/${lang}/${responseSize}`, request.url)
     )
   }
 
