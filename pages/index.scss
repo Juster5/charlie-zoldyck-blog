@@ -101,9 +101,13 @@
     }
 
     .third-animation {
+      margin-top: 60px;
       @include responsive(sm) {
         width: 100%;
         margin-left: 0;
+      }
+      @include responsive(mid) {
+        margin-top: 0;
       }
     }
     .third-animation-img {

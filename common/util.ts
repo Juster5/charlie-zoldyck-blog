@@ -1,4 +1,12 @@
-import { BG_WIDTH, MID_WIDTH, SM_WIDTH, BG, SM, MID, supportLangs } from 'common/constant'
+import {
+  BG_WIDTH,
+  MID_WIDTH,
+  SM_WIDTH,
+  BG,
+  SM,
+  MID,
+  supportLangs,
+} from 'common/constant'
 // @ts-ignore
 import Cookies from 'js-cookie'
 
@@ -28,15 +36,17 @@ export const getHeaderDefaultLang = (acceptLangs: string) => {
   }
 
   // 查询浏览器支持的语言是否在服务端支持的语言列表中
-  const langs = acceptLangs.split(';')  //  eg zh-CN,zh ; en-US ; en
-  for (let i = 0; i < langs.length; i ++) {
-    for (let j = 0; j < supportLangs.length; j ++) {
+  const langs = acceptLangs.split(';') //  eg zh-CN,zh ; en-US ; en
+  for (let i = 0; i < langs.length; i++) {
+    for (let j = 0; j < supportLangs.length; j++) {
       // 以下两种情况都表示匹配到支持的语言, 则直接返回支持的语言
-      if (langs[i].indexOf(supportLangs[j]) !== -1) { // zh-CN,zh  : zh-CN
+      if (langs[i].indexOf(supportLangs[j]) !== -1) {
+        // zh-CN,zh  : zh-CN
         return supportLangs[j]
       }
 
-      if (supportLangs[j].indexOf(langs[i]) !== -1) { // zh : zh-CN
+      if (supportLangs[j].indexOf(langs[i]) !== -1) {
+        // zh : zh-CN
         return langs[i]
       }
     }
@@ -48,13 +58,15 @@ export const getHeaderDefaultLang = (acceptLangs: string) => {
 
 // 检测当前语言是否支持, 不支持则返回英语en-US
 export const checkLang = (defaultLang: string) => {
-  return supportLangs.indexOf(defaultLang) === -1 ? defaultLang : supportLangs[0]
+  return supportLangs.indexOf(defaultLang) === -1
+    ? defaultLang
+    : supportLangs[0]
 }
 
 // 判断是否为移动端
 export const isMobile = (userAgent: string) => {
   const ua = userAgent.toLowerCase()
-  return /mobile|android|iphone|ipod|phone/i.test(ua)
+  return /mobile|iphone|ipod|phone/i.test(ua)
 }
 
 // 获取屏幕大小, 并设置到cookie中, 方便下次访问服务端渲染, 可以根据屏幕大小返回不同的资源
