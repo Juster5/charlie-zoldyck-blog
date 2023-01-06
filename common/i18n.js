@@ -15,7 +15,8 @@ if (typeof window !== 'undefined') {
   .init({
     debug: false,
     lng: lang,
-    fallbackLng: lang,
+    load: 'currentOnly',
+    fallbackLng: EN,
     interpolation: {
       escapeValue: false,
     },

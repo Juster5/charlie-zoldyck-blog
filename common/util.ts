@@ -22,16 +22,18 @@ export const avoidScollingOverflow = (selecter: string = 'body') => {
   }
 }
 
-// 格式化浏览器默认语言, 并检测语言是否支持
+// 格式化浏览器默认语言, 并检测语言是否支持, 一般浏览器传过来的格式为这种 accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6,ja;q=0.5, 需要解析一下
 export const getHeaderDefaultLang = (lang: string) => {
   if (!lang) {
     return langs[0].key
   }
-  const defaultLang = lang.split(',')[0].replace('_', '-') // 并将zh_CN, 换成zh-CN的格式, 好处理
+
+  const firstLang = lang.split(';') // 返回例如 zh-CN,zh; 或者en, zh, 目前只处理zh-CN这种情况
+  const defaultLang = firstLang[0]?.split(',')[0]  // 返回例如 zh-CN
   return checkLang(defaultLang)
 }
 
-// 如果不是中文或者英文则直接返回英文
+// 检测当前语言是否支持, 不支持则返回英语en-US
 export const checkLang = (defaultLang: string) => {
   return langs.some((el) => el.key === defaultLang) ? defaultLang : langs[0].key
 }
