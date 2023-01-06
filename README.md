@@ -1,29 +1,9 @@
-# Next.js + Jest
+# 一个基于Next.js的多语言, 响应式C端项目
 
-This example shows how to configure Jest to work with Next.js.
+### 目前已实现功能:
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+1 国际化
 
-## How to Use
+2 响应式
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
-
-In your terminal, run the following command:
-
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
-
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
-
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
-
-## Run Jest Tests
-
-```bash
-npm test
-```
+3 基于以上功能的服务端渲染, 预渲染
