@@ -6,7 +6,7 @@ import GloablContextProvider from '@/components/GloablContextProvider'
 import init from '../common/i18n'
 import initI18n from '../common/i18nForServer'
 import { checkLang, getHeaderDefaultLang, isMobile } from 'common/util'
-import { langPath } from 'common/constant'
+import { langPath, SM } from 'common/constant'
 import 'swiper/css'
 import '@/styles/global.scss'
 import '@/styles/media.scss'
@@ -56,7 +56,7 @@ MyApp.getInitialProps = ({ ctx }: any) => {
 
     // 首选cookie中传递过来的屏幕宽度, 如果没有则根据user-agent来判断是否为手机, 如果不是则不做处理
     responseSize =
-      cookies.responseSize || (isMobile(userAgent) ? 'SM' : undefined)
+      cookies.responseSize || (isMobile(userAgent) ? SM : undefined)
   }
 
   // 设置语言, 并渲染对应的语言的页面

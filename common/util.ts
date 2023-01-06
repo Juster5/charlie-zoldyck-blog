@@ -1,7 +1,6 @@
-import { BG_WIDTH, MID_WIDTH, SM_WIDTH, BG, SM, MID } from 'common/constant'
+import { BG_WIDTH, MID_WIDTH, SM_WIDTH, BG, SM, MID, supportLangs } from 'common/constant'
 // @ts-ignore
 import Cookies from 'js-cookie'
-import { langs } from 'common/constant'
 
 // 防止文档传屏滚动
 export const avoidScollingOverflow = (selecter: string = 'body') => {
@@ -23,19 +22,33 @@ export const avoidScollingOverflow = (selecter: string = 'body') => {
 }
 
 // 格式化浏览器默认语言, 并检测语言是否支持, 一般浏览器传过来的格式为这种 accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6,ja;q=0.5, 需要解析一下
-export const getHeaderDefaultLang = (lang: string) => {
-  if (!lang) {
-    return langs[0].key
+export const getHeaderDefaultLang = (acceptLangs: string) => {
+  if (!acceptLangs) {
+    return supportLangs[0]
   }
 
-  const firstLang = lang.split(';') // 返回例如 zh-CN,zh; 或者en, zh, 目前只处理zh-CN这种情况
-  const defaultLang = firstLang[0]?.split(',')[0] // 返回例如 zh-CN
-  return checkLang(defaultLang)
+  // 查询浏览器支持的语言是否在服务端支持的语言列表中
+  const langs = acceptLangs.split(';')  //  eg zh-CN,zh ; en-US ; en
+  for (let i = 0; i < langs.length; i ++) {
+    for (let j = 0; j < supportLangs.length; j ++) {
+      // 以下两种情况都表示匹配到支持的语言, 则直接返回支持的语言
+      if (langs[i].indexOf(supportLangs[j]) !== -1) { // zh-CN,zh  : zh-CN
+        return supportLangs[j]
+      }
+
+      if (supportLangs[j].indexOf(langs[i]) !== -1) { // zh : zh-CN
+        return langs[i]
+      }
+    }
+  }
+
+  // 否则返回默认支持的语言, 即英语
+  return supportLangs[0]
 }
 
 // 检测当前语言是否支持, 不支持则返回英语en-US
 export const checkLang = (defaultLang: string) => {
-  return langs.some((el) => el.key === defaultLang) ? defaultLang : langs[0].key
+  return supportLangs.indexOf(defaultLang) === -1 ? defaultLang : supportLangs[0]
 }
 
 // 判断是否为移动端

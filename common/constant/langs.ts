@@ -12,4 +12,8 @@ export const langs = [
   },
 ]
 
+// 服务端支持的语言
+export const supportLangs = [ZH, EN]
+
+// 静态资源缓存目录
 export const langPath = '/locale/[lang]/[size]'
