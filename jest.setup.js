@@ -5,8 +5,21 @@
 // Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect'
 
-// 测试时默认引入国际化
-// import './common/i18nForTest'
+// mock国际化
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str) => str,
+      i18n: {
+        changeLanguage: () => new Promise(() => {}),
+      },
+    };
+  },
+}));
+
+// mock swiper, 因为不支持ems
+jest.mock('swiper', () => jest.fn(() => {}));
+
 
 beforeAll(()=>{
 
