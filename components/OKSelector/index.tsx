@@ -29,7 +29,7 @@ type OKSelectorProps = {
 }
 
 const OKSelector: React.FC<OKSelectorProps> = (props) => {
-  const { menus, showSearch, onSelect } = props
+  const { menus, showSearch = true, onSelect } = props
 
   const [showMenu, setShowMenu] = useState(false)
   const [searchValue, setSearchValue] = useState('')
@@ -81,6 +81,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
       onClick={(e) => {
         e.stopPropagation()
       }}
+      title={selectValue.title}
     >
       <div
         className="default-value menu-item"
@@ -100,7 +101,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
         <div className="title">{selectValue.title}</div>
         <span className="okx-header-footer-arrow-chevrons-down"></span>
       </div>
-      <div className="menus">
+      <menu className="menus">
         {showSearch && (
           <div className="search-input">
             <div className="search-icon">
@@ -123,7 +124,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
         <div className="scroll-wrapper">
           {cacheMenus.map((el, index) => {
             return (
-              <div
+              <li
                 className="menu-item select-item"
                 key={el.key || el.title || index}
                 onClick={() => {
@@ -139,11 +140,11 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
                   />
                 )}
                 <div className="title">{el.title}</div>
-              </div>
+              </li>
             )
           })}
         </div>
-      </div>
+      </menu>
     </div>
   )
 }

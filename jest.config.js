@@ -7,7 +7,6 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
-  moduleDirectories: ["node_modules", "<rootDir>/"],  
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
@@ -17,7 +16,6 @@ const customJestConfig = {
     '^service/(.*)$': '<rootDir>/service/$1'
   },
   testEnvironment: 'jest-environment-jsdom', 
-
   // transformIgnorePatterns: ['node_modules/(?!(swiper)/)'],  
 
 }

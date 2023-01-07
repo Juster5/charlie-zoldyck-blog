@@ -49,10 +49,10 @@
     justify-content: space-between;
   }
   .scroll-wrapper {
-    height: calc(100% - 28px);
+    height: calc(100% - 42px);
     overflow: auto;
     @include responsive(mid) {
-      max-height: 248px;
+      height: 210px;
     }
   }
   .menu-item {

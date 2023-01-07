@@ -60,9 +60,7 @@ export default function P2P() {
         }
       })
       .finally(() => {
-        // setTimeout(() => {
         setLoading(false)
-        // }, 300)
       })
   }, [currency, fait, side])
 
@@ -82,13 +80,13 @@ export default function P2P() {
     <div className="p2p-container">
       {/* 标题区域 */}
       <div className="fixed-header">
-        <div className="fixed-header_nav">{t('p2p_title')}</div>
+        <div className="fixed-header_nav" data-name="p2p_title">{t('p2p_title')}</div>
       </div>
 
       {/* 主内容区域 */}
       <div className="padding-wrapper">
-        <div className="session-title">{t('p2p_title')}</div>
-        <div className="session-desc">{t('p2p_desc')}</div>
+        <h2 className="session-title">{t('p2p_title')}</h2>
+        <h4 className="session-desc" data-name="p2p_desc">{t('p2p_desc')}</h4>
 
         <div className="slide-wrapper">
           <div className="swiper-wrapper">
