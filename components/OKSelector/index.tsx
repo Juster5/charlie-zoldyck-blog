@@ -117,7 +117,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
               onChange={searchMenu}
               className="search-input-content"
               type="text"
-              placeholder={t('search')}
+              placeholder={t('search') as string}
             />
           </div>
         )}
