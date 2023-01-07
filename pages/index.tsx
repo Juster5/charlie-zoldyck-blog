@@ -55,7 +55,7 @@ export default function Home() {
         <video
           className="first-img home-page-video"
           title={t('okx_web_home_global_hero_title_favourite_app') as string}
-          autoPlay
+          // autoPlay
           playsInline
           loop
           width="280"
@@ -86,7 +86,7 @@ export default function Home() {
           <video
             className="img-wrapper home-page-video"
             title={t('okx_web_home_global_trader_title_pro_trader') as string}
-            autoPlay
+            // autoPlay
             playsInline
             webkit-playsinline="true"
             loop
@@ -177,7 +177,7 @@ export default function Home() {
             <video
               className="img-wrapper pc-text home-page-video"
               title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
-              autoPlay
+              // autoPlay
               playsInline
               loop
               width="936"
