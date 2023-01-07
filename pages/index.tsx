@@ -38,11 +38,11 @@ export default function Home() {
     // 首页背景全黑, 其他页面白色
     document.documentElement.style.backgroundColor = '#000'
 
-    // const videos = document.querySelectorAll('.home-page-video')
-    // for (let i = 0; i < videos.length; i++) {
-    //   const video = videos[i] as HTMLVideoElement
-    //   video.play()
-    // }
+    const videos = document.querySelectorAll('.home-page-video')
+    for (let i = 0; i < videos.length; i++) {
+      const video = videos[i] as HTMLVideoElement
+      video.play()
+    }
 
     return () => {
       document.documentElement.style.backgroundColor = '#fff'
@@ -55,7 +55,7 @@ export default function Home() {
         <video
           className="first-img home-page-video"
           title={t('okx_web_home_global_hero_title_favourite_app') as string}
-          // autoPlay
+          autoPlay
           playsInline
           loop
           width="280"
@@ -177,12 +177,12 @@ export default function Home() {
             <video
               className="img-wrapper pc-text home-page-video"
               title="Trade like a proGet the lowest fees, fastest transactions, powerful APIs, and more."
-              // autoPlay
+              autoPlay
+              muted
               playsInline
               loop
               width="936"
               height="536"
-              muted
               poster="https://static.okx.com/cdn/assets/imgs/2210/2763D233C494439D.jpg?x-oss-process=image/format,webp"
               src="https://static.okx.com/cdn/assets/files/2210/D47D930F643E7A00.webm"
             />
