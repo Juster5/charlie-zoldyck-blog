@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import { avoidScollingOverflow } from 'common/util'
 import { GloablContext } from '../GloablContextProvider'
@@ -35,7 +35,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
   const [searchValue, setSearchValue] = useState('')
   const [selectValue, setSelectValue] = useState(menus[0])
   const { responseSize } = useContext(GloablContext)
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
 
   const cacheMenus = useMemo(() => {
     if (searchValue && searchValue.length > 0) {
@@ -116,7 +116,7 @@ const OKSelector: React.FC<OKSelectorProps> = (props) => {
               onChange={searchMenu}
               className="search-input-content"
               type="text"
-              placeholder="search"
+              placeholder={t('search')}
             />
           </div>
         )}
