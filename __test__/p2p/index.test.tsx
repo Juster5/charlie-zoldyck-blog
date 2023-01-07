@@ -1,6 +1,6 @@
-import { render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, act, fireEvent, } from '@testing-library/react'
 
-import P2P from '../index'
+import P2P from '@/pages/p2p/index'
 
 beforeEach(async () => {
   await act(async () => {
