@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import Backend from 'i18next-chained-backend';
+// import Backend from 'i18next-chained-backend';
 
 import HttpApi from "i18next-http-backend";
 // import LocalStorageBackend from 'i18next-localstorage-backend';
@@ -14,7 +14,7 @@ export default function init(defaultLang) {
     const lang = defaultLang || Cookies.get('locale') || EN
     i18n
       .use(initReactI18next)
-      .use(Backend)
+      .use(HttpApi)
       .init({
         debug: false,
         lng: lang,
@@ -23,18 +23,6 @@ export default function init(defaultLang) {
         interpolation: {
           escapeValue: false,
         },
-        backend: {
-          backends: [
-            // LocalStorageBackend,
-            HttpApi
-          ],
-          backendOptions: [
-            // {
-            //   defaultVersion: 'v0.0.1',
-            //   expirationTime: 7 * 24 * 60 * 60 * 1000,
-            // }
-          ]
-        }
       });
   }
 }
