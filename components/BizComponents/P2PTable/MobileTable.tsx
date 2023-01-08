@@ -16,7 +16,7 @@ const MobileTable: React.FC<P2PTablePropsType> = ({
     <div className="p2p-mobile-talbe">
       {tableData.map((item, index) => {
         return (
-          <div className="table-item" key={index}>
+          <div className="table-item" key={index} data-row-key={index}>
             <div className="advertisers">
               <div className="advertisers-icon">
                 {item.nickName.slice(0, 1)}

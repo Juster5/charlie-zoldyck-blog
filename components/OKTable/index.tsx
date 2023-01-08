@@ -32,10 +32,10 @@ const OKTable: React.FC<OKTablePropsType> = (props) => {
             })}
           </tr>
         </thead>
-        <tbody className="okx-table-tbody">
+        <tbody className="okx-table-tbody" >
           {data?.map((el, index) => {
             return (
-              <tr className="okx-table-tr" key={el.key || index}>
+              <tr className="okx-table-tr" key={el.key || index} data-row-key={index}>
                 {column.map((item, itemIndex) => {
                   return (
                     <td className="okx-table-td" key={item.key || itemIndex}>
