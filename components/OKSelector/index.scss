@@ -52,7 +52,7 @@
     height: calc(100% - 42px);
     overflow: auto;
     @include responsive(mid) {
-      height: 210px;
+      max-height: 210px;
     }
   }
   .menu-item {
