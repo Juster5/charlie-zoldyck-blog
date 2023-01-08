@@ -1,8 +1,7 @@
 {
   "code": 0,
   "data": {
-    "sell": [],
-    "buy": [
+    "sell": [
       {
         "alreadyTraded": false,
         "availableAmount": "35000.00",
@@ -195,8 +194,53 @@
         "side": "buy",
         "userType": "all",
         "verificationType": 0
-      }
-    ]
+      },
+      {
+        "alreadyTraded": false,
+        "availableAmount": "99925.00",
+        "baseCurrency": "usdt",
+        "black": false,
+        "cancelledOrderQuantity": 130,
+        "completedOrderQuantity": 1174,
+        "completedRate": "0.9003",
+        "creatorType": "certified",
+        "guideUpgradeKyc": false,
+        "id": "221207000209159",
+        "intention": false,
+        "maxCompletedOrderQuantity": 0,
+        "maxUserCreatedDate": 0,
+        "merchantId": "8e9efe0c5f",
+        "minCompletedOrderQuantity": 0,
+        "minCompletionRate": "0.0",
+        "minKycLevel": 1,
+        "minSellOrders": 0,
+        "mine": false,
+        "nickName": "IOFPCOIN",
+        "paymentMethods": [
+          "Zelle",
+          "Revolut",
+          "Wise",
+          "PayPal",
+          "Skrill",
+          "Cash App",
+          "Neteller",
+          "Paysera"
+        ],
+        "price": "0.70",
+        "publicUserId": "26bcf1cd32",
+        "quoteCurrency": "usd",
+        "quoteMaxAmountPerOrder": "2000.00",
+        "quoteMinAmountPerOrder": "10.00",
+        "quoteScale": 2,
+        "quoteSymbol": "$",
+        "receivingAds": false,
+        "safetyLimit": false,
+        "side": "buy",
+        "userType": "all",
+        "verificationType": 0
+      }                  
+    ],
+    "buy": []
   },
   "msg": ""
 }

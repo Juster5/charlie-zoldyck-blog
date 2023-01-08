@@ -1,17 +1,18 @@
-import { render, screen, act, fireEvent, } from '@testing-library/react'
-import { queryByAttribute } from '@testing-library/dom'
+import { render, screen, act, fireEvent } from '@testing-library/react'
 
 import P2P from '@/pages/p2p/index'
 
+let container: any = null
+
 beforeEach(async () => {
   await act(async () => {
-    render(<P2P />)
+    const res = render(<P2P />)
+    container = res.container
   })
 })
 
 // 渲染测试
 describe('P2P渲染页面测试', () => {
-
   test('标题渲染正常', () => {
     const title = screen.getByRole('heading', {
       level: 2,
@@ -53,11 +54,10 @@ describe('P2P渲染页面测试', () => {
 
 // 交互测试
 describe('P2P交互测试', () => {
-
   test('首次访问数据加载正常', () => {
-    const rows = queryByAttribute.bind(null, 'data-row-key')
-    // mock数据设置了3条
-    expect(rows.length).toEqual(3)
+    const rows = container.querySelectorAll('[data-row-key]')
+    // 初次渲染mock接口返回5条
+    expect(rows.length).toEqual(5)
   })
 
   test('点击Sell按钮, 高亮', async () => {

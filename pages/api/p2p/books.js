@@ -8,6 +8,9 @@ export default async function handler(req, res) {
   `https://www.okx.com/v3/c2c/tradingOrders/books?t=${t}&quoteCurrency=${fait}&baseCurrency=${currency}&side=${side}&paymentMethod=all&userType=all&hideOverseasVerificationAds=false&sortType=recommended`  
 
   const result = await request(url)
+  console.log('=======result===========')
+  console.log(result)
+  console.log('==================')
 
   if (result) {
     res?.status(200).json({
