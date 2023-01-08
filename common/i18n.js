@@ -19,7 +19,7 @@ export default function init(defaultLang) {
         debug: false,
         lng: lang,
         load: 'currentOnly',
-        fallbackLng: EN,
+        fallbackLng: lang,
         interpolation: {
           escapeValue: false,
         },
