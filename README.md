@@ -9,7 +9,7 @@
 3 基于以上功能的服务端渲染, 预渲染
 
 访问链接为(需翻墙): 
-https://okx.charlie-zoldyck.cn
+https://www.charlie-zoldyck.cn
 https://okx-juster5.vercel.app
 
 
